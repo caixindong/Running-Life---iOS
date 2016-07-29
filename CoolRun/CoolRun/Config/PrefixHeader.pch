@@ -1,0 +1,76 @@
+//
+//  PrefixHeader.pch
+//  CoolRun
+//
+//  Created by 蔡欣东 on 16/5/20.
+//  Copyright © 2016年 蔡欣东. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)(((rgbValue) & 0xFF0000) >> 16))/255.0 green:((float)(((rgbValue) & 0xFF00) >> 8))/255.0 blue:((float)((rgbValue) & 0xFF))/255.0 alpha:1.0]
+
+#define WeakObj(o) __weak typeof(o) o##Weak = o;
+#define StrongObj(o) __strong typeof(o) o##Strong = o;
+
+
+//key 用户id
+#define UID @"UID"
+//KEY token
+#define TOKEN @"TOKEN"
+//key 第一次启动时间
+#define FIRSTLAUNCHDATE @"LAUNCHDATE"
+//key 最后一次同步时间
+#define LASTSYNDATE @"LASTSYNDATE"
+//key 是否登录
+#define ISLOGIN @"ISLOGIN"
+//key 用户
+#define USER @"USER"
+
+#define UmengAppkey @"5740280ee0f55a5edc002836"
+#define WEIXINAppID @"wxef505bdf677830a9"
+#define WEIXINAppSecret @"28b49b8dcd84561d1307dfb6c0f3d8ed"
+
+//定义返回请求数据的block类型
+typedef void (^ReturnValueBlock) (id returnValue);
+
+typedef void (^ErrorCodeBlock) (id errorCode);
+
+typedef void (^FailureBlock)(void);
+
+
+#import <CoreLocation/CoreLocation.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <MapKit/MapKit.h>
+#import "MathController.h"
+#import <AVFoundation/AVFoundation.h>
+#import "JVFloatingDrawerAnimation.h"
+#import "AppDelegate.h"
+#import "JVFloatingDrawerSpringAnimator.h"
+#import "RecordManager.h"
+#import <CoreMotion/CoreMotion.h>
+#import "SZCalendarPicker.h"
+#import <HealthKit/HealthKit.h>
+#import "HealthKitManager.h"
+#import "ActionSheetDatePicker.h"
+#import "ActionSheetStringPicker.h"
+#import "UMSocial.h" 
+#import "UMSocialWechatHandler.h"
+#import "AFNetworking.h"
+#import "MyNetworkRequest.h"
+#import "MBProgressHUD.h"
+#import "Utils.h"
+#import "MyUserDefault.h"
+#import "UIImageView+WebCache.h"
+#import "Config.h"
+#import "FBKVOController.h"
+#import "UserStatusManager.h"
+#import "MJRefresh.h"
+#import "NSDate+week.h"
+#endif /* PrefixHeader_pch */

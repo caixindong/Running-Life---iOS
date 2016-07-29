@@ -1,0 +1,6 @@
+#include "ActionSheetPicker-3.0.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/ActionSheetPicker-3.0" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AMapLocation" "${PODS_ROOT}/Headers/Public/AMapLocation/AMapLocationKit" "${PODS_ROOT}/Headers/Public/ActionSheetPicker-3.0" "${PODS_ROOT}/Headers/Public/JVFloatingDrawer" "${PODS_ROOT}/Headers/Public/UMengSocial"
+OTHER_LDFLAGS = ${ACTIONSHEETPICKER_____OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES
