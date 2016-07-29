@@ -13,20 +13,35 @@
 #import "RecordManager.h"
 #import "UserModel.h"
 @interface ResultViewController ()<MKMapViewDelegate>
+
 @property (nonatomic, weak) IBOutlet MKMapView* mapView;
+
 @property (nonatomic, weak) IBOutlet UILabel* distanceLabel;
+
 @property (nonatomic, weak) IBOutlet UILabel* timeLabel;
+
 @property (nonatomic, weak) IBOutlet UILabel *paceLabel;
+
 @property (weak, nonatomic) IBOutlet UIView *navView;
+
 @property (weak, nonatomic) IBOutlet UILabel *kllLable;
-@property (nonatomic,strong)ResultViewModel* viewModel;
-@property (nonatomic,strong)RecordManager* manager;
+
 @property (weak, nonatomic) IBOutlet UILabel *rankLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *headPic;
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+
 @property (nonatomic, assign) float weight;
+
+@property (nonatomic,strong)ResultViewModel* viewModel;
+
+@property (nonatomic,strong)RecordManager* manager;
+
 @end
 
 @implementation ResultViewController

@@ -9,29 +9,37 @@
 #import "MapViewController.h"
 
 @interface MapViewController ()<MKMapViewDelegate,AMapLocationManagerDelegate>
+
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
+
 @property (nonatomic, strong) AMapLocationManager* locationManager;
+
 @property (nonatomic, strong) NSMutableArray* locations;
+
 @property (nonatomic, strong) NSTimer *timer;
+
 @property(nonatomic,assign)BOOL firstLocate;
+
 @end
 
 @implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"load");
+
     [_myMapView setShowsUserLocation:YES];
+    
     _firstLocate = YES;
+    
     [self.locationManager startUpdatingLocation];
 }
 
 #pragma mark - AMapLocationManagerDelegate
-- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error{
+- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error {
     [_locationManager stopUpdatingLocation];
 }
 
-- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
+- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location {
     
     if (location.horizontalAccuracy < 30) {
         _firstLocate = NO;
@@ -110,22 +118,8 @@
 }
 
 - (IBAction)closeBtn:(UIButton *)sender {
-//    CATransition* animation = [CATransition animation];
-//    animation.duration = 1.0f;
-//    animation.timingFunction = UIViewAnimationCurveEaseInOut;
-//    //执行完是否移除
-//    animation.removedOnCompletion = NO;
-//    //过渡效果
-//    animation.type = @"pageCurl";
-//    //过渡方向
-//    //animation.subtype = kCATransitionFromRight;
-//    //设置之后endProgress才有效
-//    animation.fillMode = kCAFillModeForwards;
-//    animation.endProgress = 1;
-//    [self.view.layer addAnimation:animation forKey:nil];
-//    self.view.hidden = YES;
-    
     self.view.transform = CGAffineTransformIdentity;
+    
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.view.transform= CGAffineTransformMakeScale(0.01, 0.01);
         

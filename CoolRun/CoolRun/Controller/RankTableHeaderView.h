@@ -12,5 +12,4 @@
 
 +(CGFloat)heightOfRankTableHeaderView;
 
-
 @end

@@ -14,12 +14,16 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property(nonatomic,strong)SDKInitProcess* SDKProcess;
-@property(nonatomic,strong)AppUIInitProcess* UIProcess;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property(nonatomic,strong)SDKInitProcess* SDKProcess;
+
+@property(nonatomic,strong)AppUIInitProcess* UIProcess;
+
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (AppDelegate *)globalDelegate;
 - (void)saveContext;

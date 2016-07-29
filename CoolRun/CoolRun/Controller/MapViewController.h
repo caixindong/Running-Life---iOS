@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MapViewController : UIViewController
+
+/**
+ *  是否可以定位
+ */
 @property(nonatomic,assign)BOOL locateEnable;
+
 @end

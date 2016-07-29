@@ -10,9 +10,13 @@
 #import "RankingUserModel.h"
 
 @interface RankTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *rankLable;
+
 @property (weak, nonatomic) IBOutlet UIImageView *userImg;
+
 @property (weak, nonatomic) IBOutlet UILabel *username;
+
 @property (weak, nonatomic) IBOutlet UILabel *userKcal;
 
 - (void)showUIWithModel:(RankingUserModel *)model;
