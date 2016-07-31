@@ -125,6 +125,7 @@
 		4EDF40C21D4CEC0500819445 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40BB1D4CEC0500819445 /* AppDelegate.m */; };
 		4EDF40C31D4CEC0500819445 /* SDKInitProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40BE1D4CEC0500819445 /* SDKInitProcess.m */; };
 		4EDF40C41D4CEC0500819445 /* AppUIInitProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40C11D4CEC0500819445 /* AppUIInitProcess.m */; };
+		4EDF40C71D4CEDE800819445 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40C61D4CEDE800819445 /* HomeViewModel.m */; };
 		ABA45CD221061B8AB952B278 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 052A9A9842AC7EAEB7797987 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -359,6 +360,8 @@
 		4EDF40BE1D4CEC0500819445 /* SDKInitProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKInitProcess.m; sourceTree = "<group>"; };
 		4EDF40C01D4CEC0500819445 /* AppUIInitProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUIInitProcess.h; sourceTree = "<group>"; };
 		4EDF40C11D4CEC0500819445 /* AppUIInitProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUIInitProcess.m; sourceTree = "<group>"; };
+		4EDF40C51D4CEDE800819445 /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		4EDF40C61D4CEDE800819445 /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		4EF150C51CF0627D00DAA01F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4EF150C71CF0629300DAA01F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		4EF150C91CF0629C00DAA01F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -963,11 +966,11 @@
 		4EDF40571D4CEBFA00819445 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4EDF405C1D4CEBFA00819445 /* Manager */,
 				4EDF40581D4CEBFA00819445 /* Location+CoreDataProperties.h */,
 				4EDF40591D4CEBFA00819445 /* Location+CoreDataProperties.m */,
 				4EDF405A1D4CEBFA00819445 /* Location.h */,
 				4EDF405B1D4CEBFA00819445 /* Location.m */,
-				4EDF405C1D4CEBFA00819445 /* Manager */,
 				4EDF40651D4CEBFA00819445 /* MultiColorPolyline.h */,
 				4EDF40661D4CEBFA00819445 /* MultiColorPolyline.m */,
 				4EDF40671D4CEBFA00819445 /* RankingUserModel.h */,
@@ -1027,6 +1030,8 @@
 		4EDF40761D4CEBFA00819445 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4EDF40C51D4CEDE800819445 /* HomeViewModel.h */,
+				4EDF40C61D4CEDE800819445 /* HomeViewModel.m */,
 				4EDF40771D4CEBFA00819445 /* RankViewModel.h */,
 				4EDF40781D4CEBFA00819445 /* RankViewModel.m */,
 				4EDF40791D4CEBFA00819445 /* ResultViewModel.h */,
@@ -1367,6 +1372,7 @@
 				4E592DAA1CF6073F00006F70 /* SDWebImageDecoder.m in Sources */,
 				4EDF40A41D4CEBFA00819445 /* Location.m in Sources */,
 				4E592DA91CF6073F00006F70 /* SDWebImageCompat.m in Sources */,
+				4EDF40C71D4CEDE800819445 /* HomeViewModel.m in Sources */,
 				4E592DA71CF6073F00006F70 /* NSData+ImageContentType.m in Sources */,
 				4EDF401C1D4CEBEE00819445 /* HealthKitManager.m in Sources */,
 				4EB39C4E1D031FF700772749 /* MJRefreshAutoNormalFooter.m in Sources */,

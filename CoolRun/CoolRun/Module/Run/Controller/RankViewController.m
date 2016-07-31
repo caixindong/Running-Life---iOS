@@ -18,14 +18,6 @@ static NSString *const CELLID = @"RankTableViewCell";
 
 @property (nonatomic, strong) RankTableHeaderView *headView;
 
-//@property (nonatomic, copy) NSArray *usernameArr;
-//
-//@property (nonatomic, copy) NSArray *userPicArr;
-//
-//@property (nonatomic, copy) NSArray *userKcalArr;
-//
-//@property (nonatomic, copy) NSArray *userRankArr;
-
 @property (nonatomic, copy) NSArray *dataArray;
 
 @property (nonatomic, strong)RankViewModel *viewModel;
@@ -33,6 +25,7 @@ static NSString *const CELLID = @"RankTableViewCell";
 @property (nonatomic, strong)MJRefreshNormalHeader *header;
 
 @property (nonatomic, strong)MJRefreshAutoNormalFooter *footer;
+
 @end
 
 @implementation RankViewController
@@ -75,11 +68,6 @@ static NSString *const CELLID = @"RankTableViewCell";
                           }];
     
     [self.header beginRefreshing];
-    
-//    _usernameArr = @[@"蔡欣东",@"尹子韶",@"钟鑫基",@"宦小明",@"关哲伦"];
-//    _userKcalArr = @[@"1000卡路里",@"900卡路里",@"820卡路里",@"800卡路里",@"600卡路里"];
-//    _userPicArr = @[@"head1",@"head2",@"head3",@"head4",@"head5"];
-//    _userRankArr = @[@"1",@"2",@"3",@"4",@"4"];
 }
 
 #pragma mark - private
@@ -101,14 +89,14 @@ static NSString *const CELLID = @"RankTableViewCell";
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _dataArray.count;
+    return _dataArray.count ? _dataArray.count:1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RankTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CELLID];
     
-    [cell showUIWithModel:_dataArray[indexPath.row]];
+    //[cell showUIWithModel:_dataArray[indexPath.row]];
     
     return cell;
 }

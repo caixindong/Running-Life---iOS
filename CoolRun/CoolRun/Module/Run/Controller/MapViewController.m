@@ -128,7 +128,8 @@
     }];
 }
 
-#pragma mark - setter
+#pragma mark - getter and setter
+
 -(void)setLocateEnable:(BOOL)locateEnable{
     if (locateEnable) {
         [self.locationManager startUpdatingLocation];

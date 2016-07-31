@@ -7,20 +7,10 @@
 //
 
 #import "HomeViewController.h"
-#import "Run.h"
-#define weight 60
+#import "HomeViewModel.h"
 
-@interface HomeViewController (){
-    /**
-     *  总距离
-     */
-    float _totalDistance;
-    
-    /**
-     *  总时间
-     */
-    int _totaltime;
-}
+
+@interface HomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *topBackView;
 
@@ -38,10 +28,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *rankLabel;
 
+@property (nonatomic, strong) HomeViewModel *viewModel;
+
 /**
  *  定位管理器
  */
 @property(nonatomic,strong)CLLocationManager* locationManager;
+
 
 @end
 
@@ -49,10 +42,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _totaltime = 0;
-    
-    _totalDistance = 0.00;
     
     /**
      *  判断是否可以定位
@@ -68,30 +57,18 @@
     self.rewardBgView.layer.borderColor = UIColorFromRGB(0xE8E9E8).CGColor;
     
     self.rewardBgView.layer.borderWidth = 1;
-    
-    
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    RecordManager* manager = [[RecordManager alloc]init];
+    _distanceLabel.text = self.viewModel.distanceLabelText;
     
-    _totalDistance = [manager totalDistance];
+    _countLabel.text = self.viewModel.countLabelText;
     
-    _totaltime = [manager totalTime];
+    _speedLabel.text = self.viewModel.speedLabelText;
     
-    _distanceLabel.text = [MathController stringifyDistance:_totalDistance];
-    
-    _countLabel.text = [NSString stringWithFormat:@"%ld",(long)[manager runCount]];
-    
-    _speedLabel.text = [MathController stringifyAvgPaceFromDist:_totalDistance overTime:_totaltime];
-    
-    NSDate *date = [NSDate date];
-    
-    _rankTimeLabel.text = [date convertToStringWithWeek];
-    
+    _rankTimeLabel.text = self.viewModel.rankTimeLabelText;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -100,6 +77,7 @@
 
 
 #pragma mark - event reponse
+
 /**
  *  打开抽屉
  *
@@ -119,12 +97,12 @@
     if ([_infoLabel.text isEqualToString:@"总公里"]) {
         _infoLabel.text = @"总卡路里";
         
-        _distanceLabel.text = [MathController stringifyKcalFromDist:_totalDistance withWeight:weight];
+        _distanceLabel.text = self.viewModel.kcalText;
         
     }else{
         _infoLabel.text = @"总公里";
         
-        _distanceLabel.text = [MathController stringifyDistance:_totalDistance];
+        _distanceLabel.text = self.viewModel.distanceLabelText;
     }
 }
 
@@ -139,6 +117,15 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+
+#pragma mark - getter and setter
+
+- (HomeViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[HomeViewModel alloc] init];
+    }
+    return _viewModel;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

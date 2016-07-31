@@ -8,7 +8,19 @@
 
 #import "RecordManager.h"
 
+static RecordManager *manager;
+
 @implementation RecordManager
+
++ (RecordManager *)shareManager {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (!manager) {
+            manager = [[RecordManager alloc] init];
+        }
+    });
+     return manager;
+}
 
 -(Run*)addRunRecordWithDis:(NSNumber *)distance
                    withDur:(NSNumber *)duration

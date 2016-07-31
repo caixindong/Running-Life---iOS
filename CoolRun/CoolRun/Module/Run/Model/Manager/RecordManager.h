@@ -16,6 +16,14 @@
  */
 @interface RecordManager : BaseDataManager
 
+
+/**
+ *  全局管理器
+ *
+ *  @return 
+ */
++ (RecordManager *)shareManager;
+
 /**
  *  添加记录
  *

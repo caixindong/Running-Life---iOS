@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-
-
 @interface LoginViewModel : NSObject
+
 -(void)postUserName:(NSString*)usn password:(NSString*)pwd withSuccessBlock:(ReturnValueBlock)successBlock failWithError:(ErrorCodeBlock)errorBlock failWithNetworkWithBlock:(FailureBlock)failBlock;
 
 @end
