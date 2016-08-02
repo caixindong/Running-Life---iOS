@@ -37,7 +37,7 @@
                                     day:1
                                complete:^(id arr) {
                                    self.kcalArr = arr;
-                                   NSLog(@"%@",self.kcalArr);
+                                
                                    dispatch_async(dispatch_get_main_queue(), ^{
                                        [self drawRecord];
                                        self.runKcalArr = [self.recordManager getKcalDataWithMonth:month year:year weight:65];
@@ -157,7 +157,7 @@
     _recordLayer = [CAShapeLayer layer];
     for (int i = 1; i<self.kcalArr.count; i++) {
         CGFloat recordH = [self.kcalArr[i] intValue]*lineHight/1200;
-        NSLog(@"%f",recordH);
+
         [recordPath moveToPoint:CGPointMake(20+aliginW*i, HEIGHT-20)];
         [recordPath addLineToPoint:CGPointMake(20+aliginW*i, HEIGHT-20-recordH)];
     }

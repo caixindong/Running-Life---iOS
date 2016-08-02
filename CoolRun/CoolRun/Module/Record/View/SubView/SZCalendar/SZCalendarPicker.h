@@ -9,14 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface SZCalendarPicker : UIView<UICollectionViewDelegate , UICollectionViewDataSource>
+
 @property (nonatomic , strong) NSDate *date;
+
 @property (nonatomic , strong) NSDate *today;
 
 @property(nonatomic,copy)NSArray* specialDataArr;
 
 @property (nonatomic, copy) void(^calendarBlock)(NSDate* date);
+
 @property(nonatomic,copy) void(^changeMonthBlock)(NSInteger year,NSInteger month);
 
-
 + (instancetype)showOnView:(UIView *)view;
+
 @end

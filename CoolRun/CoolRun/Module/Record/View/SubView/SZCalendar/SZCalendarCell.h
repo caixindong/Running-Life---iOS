@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SZCalendarCell : UICollectionViewCell
+
 @property (nonatomic , strong) UILabel *dateLabel;
+
 @property(nonatomic,strong)UIView* typeView;
+
 @end

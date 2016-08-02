@@ -45,7 +45,6 @@ static RecordManager *manager;
         NSMutableArray* dataArr = [NSMutableArray arrayWithCapacity:5];
         for (NSManagedObject* obj in arr) {
             Run* run = (Run*)obj;
-            NSLog(@"%@",run.timestamp);
             [dataArr addObject:run];
         }
         return dataArr;

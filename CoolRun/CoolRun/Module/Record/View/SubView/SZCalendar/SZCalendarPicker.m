@@ -145,41 +145,54 @@ NSString *const SZCalendarCellIdentifier = @"cell";
     } else {
         
         NSInteger daysInThisMonth = [self totaldaysInMonth:_date];
+        
         NSInteger firstWeekday = [self firstWeekdayInThisMonth:_date];
         
         NSInteger day = 0;
+        
         NSInteger i = indexPath.row;
         
         if (i < firstWeekday) {
             cell.typeView.hidden = YES;
-            [cell.dateLabel setText:@""];
             
+            [cell.dateLabel setText:@""];
         }else if (i > firstWeekday + daysInThisMonth - 1){
             cell.typeView.hidden = YES;
+            
             [cell.dateLabel setText:@""];
         }else{
             day = i - firstWeekday + 1;
-            [cell.dateLabel setText:[NSString stringWithFormat:@"%li",(long)day]];
+            
+            [cell.dateLabel setText:[NSString stringWithFormat:@"%ld",(long)day]];
             [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#6f6f6f"]];
-            if (i<self.specialDataArr.count) {
-                if ([self.specialDataArr[day-1] intValue]>0) {
+            
+            if (i < self.specialDataArr.count) {
+                NSLog(@"%d",[self.specialDataArr[day-1] intValue]);
+                if ([self.specialDataArr[day-1] intValue] > 0) {
                     cell.typeView.hidden = NO;
+                    
                 }else{
                     cell.typeView.hidden = YES;
+                    
                 }
             }else{
                 cell.typeView.hidden = YES;
+                
             }
+        
             
             //this month
             if ([_today isEqualToDate:_date]) {
                 if (day == [self day:_date]) {
                     [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#4898eb"]];
+                    
                 } else if (day > [self day:_date]) {
                     [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#cbcbcb"]];
+                    
                 }
             } else if ([_today compare:_date] == NSOrderedAscending) {
                 [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#cbcbcb"]];
+                
             }
         }
     }

@@ -42,7 +42,6 @@ static NSString *const CELLID = @"RankTableViewCell";
                         keyPath:@"haveRefresh"
                         options:NSKeyValueObservingOptionNew
                           block:^(id observer, id object, NSDictionary *change) {
-                              NSLog(@"get data");
                               if ([self.viewModel.haveRefresh boolValue]) {
                                   [_header endRefreshing];
                                   

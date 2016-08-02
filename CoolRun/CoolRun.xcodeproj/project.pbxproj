@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E1A97F01CEECC8800206098 /* bt_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1A97E71CEECC8800206098 /* bt_next@2x.png */; };
-		4E1A97F11CEECC8800206098 /* bt_previous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1A97E81CEECC8800206098 /* bt_previous@2x.png */; };
-		4E1A97F21CEECC8800206098 /* SZCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A97EA1CEECC8800206098 /* SZCalendarCell.m */; };
-		4E1A97F31CEECC8800206098 /* SZCalendarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A97EC1CEECC8800206098 /* SZCalendarPicker.m */; };
-		4E1A97F41CEECC8800206098 /* SZCalendarPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1A97ED1CEECC8800206098 /* SZCalendarPicker.xib */; };
-		4E1A97F51CEECC8800206098 /* UIColor+ZXLazy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A97EF1CEECC8800206098 /* UIColor+ZXLazy.m */; };
 		4E4978331CF1A733007E1EE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E49782E1CF1A733007E1EE5 /* Assets.xcassets */; };
 		4E4978341CF1A733007E1EE5 /* Braggadocio.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E49782F1CF1A733007E1EE5 /* Braggadocio.ttf */; };
 		4E4978351CF1A733007E1EE5 /* Knockout-HTF30-JuniorWelterwt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4978301CF1A733007E1EE5 /* Knockout-HTF30-JuniorWelterwt.otf */; };
@@ -54,6 +48,15 @@
 		4E592DB31CF6073F00006F70 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E592DA11CF6073F00006F70 /* UIImageView+HighlightedWebCache.m */; };
 		4E592DB41CF6073F00006F70 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E592DA31CF6073F00006F70 /* UIImageView+WebCache.m */; };
 		4E592DB51CF6073F00006F70 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E592DA51CF6073F00006F70 /* UIView+WebCacheOperation.m */; };
+		4E7A76471D4E4B08008AF3DA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A76321D4E4B08008AF3DA /* DetailViewController.m */; };
+		4E7A76481D4E4B08008AF3DA /* MyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A76341D4E4B08008AF3DA /* MyRecordViewController.m */; };
+		4E7A76491D4E4B08008AF3DA /* bt_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7A763B1D4E4B08008AF3DA /* bt_next@2x.png */; };
+		4E7A764A1D4E4B08008AF3DA /* bt_previous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7A763C1D4E4B08008AF3DA /* bt_previous@2x.png */; };
+		4E7A764B1D4E4B08008AF3DA /* SZCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A763E1D4E4B08008AF3DA /* SZCalendarCell.m */; };
+		4E7A764C1D4E4B08008AF3DA /* SZCalendarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A76401D4E4B08008AF3DA /* SZCalendarPicker.m */; };
+		4E7A764D1D4E4B08008AF3DA /* SZCalendarPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7A76411D4E4B08008AF3DA /* SZCalendarPicker.xib */; };
+		4E7A764E1D4E4B08008AF3DA /* UIColor+ZXLazy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A76431D4E4B08008AF3DA /* UIColor+ZXLazy.m */; };
+		4E7A764F1D4E4B08008AF3DA /* MyRecordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A76461D4E4B08008AF3DA /* MyRecordViewModel.m */; };
 		4E97C5351CEB73C900702B81 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E97C5341CEB73C900702B81 /* HealthKit.framework */; };
 		4EB39C481D031FF700772749 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB39C1E1D031FF700772749 /* MJRefreshAutoFooter.m */; };
 		4EB39C491D031FF700772749 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB39C201D031FF700772749 /* MJRefreshBackFooter.m */; };
@@ -93,9 +96,6 @@
 		4EDF40981D4CEBFA00819445 /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40341D4CEBFA00819445 /* SelectViewController.m */; };
 		4EDF40991D4CEBFA00819445 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40371D4CEBFA00819445 /* UserModel.m */; };
 		4EDF409A1D4CEBFA00819445 /* UserStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40391D4CEBFA00819445 /* UserStatusManager.m */; };
-		4EDF409B1D4CEBFA00819445 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40411D4CEBFA00819445 /* DetailViewController.m */; };
-		4EDF409C1D4CEBFA00819445 /* MyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40441D4CEBFA00819445 /* MyRecordViewController.m */; };
-		4EDF409D1D4CEBFA00819445 /* MyRecordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40461D4CEBFA00819445 /* MyRecordViewModel.m */; };
 		4EDF409E1D4CEBFA00819445 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF404E1D4CEBFA00819445 /* HomeViewController.m */; };
 		4EDF409F1D4CEBFA00819445 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40501D4CEBFA00819445 /* MapViewController.m */; };
 		4EDF40A01D4CEBFA00819445 /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40521D4CEBFA00819445 /* NewRunViewController.m */; };
@@ -133,15 +133,6 @@
 		052A9A9842AC7EAEB7797987 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC5E8F2B7CA84E53009EF77 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3BE738C6EC32436235226463 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		4E1A97E71CEECC8800206098 /* bt_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_next@2x.png"; sourceTree = "<group>"; };
-		4E1A97E81CEECC8800206098 /* bt_previous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_previous@2x.png"; sourceTree = "<group>"; };
-		4E1A97E91CEECC8800206098 /* SZCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCalendarCell.h; sourceTree = "<group>"; };
-		4E1A97EA1CEECC8800206098 /* SZCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCalendarCell.m; sourceTree = "<group>"; };
-		4E1A97EB1CEECC8800206098 /* SZCalendarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCalendarPicker.h; sourceTree = "<group>"; };
-		4E1A97EC1CEECC8800206098 /* SZCalendarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCalendarPicker.m; sourceTree = "<group>"; };
-		4E1A97ED1CEECC8800206098 /* SZCalendarPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZCalendarPicker.xib; sourceTree = "<group>"; };
-		4E1A97EE1CEECC8800206098 /* UIColor+ZXLazy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZXLazy.h"; sourceTree = "<group>"; };
-		4E1A97EF1CEECC8800206098 /* UIColor+ZXLazy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZXLazy.m"; sourceTree = "<group>"; };
 		4E49782E1CF1A733007E1EE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E49782F1CF1A733007E1EE5 /* Braggadocio.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Braggadocio.ttf; sourceTree = "<group>"; };
 		4E4978301CF1A733007E1EE5 /* Knockout-HTF30-JuniorWelterwt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Knockout-HTF30-JuniorWelterwt.otf"; sourceTree = "<group>"; };
@@ -223,6 +214,21 @@
 		4E592DA31CF6073F00006F70 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		4E592DA41CF6073F00006F70 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		4E592DA51CF6073F00006F70 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		4E7A76311D4E4B08008AF3DA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4E7A76321D4E4B08008AF3DA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4E7A76331D4E4B08008AF3DA /* MyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewController.h; sourceTree = "<group>"; };
+		4E7A76341D4E4B08008AF3DA /* MyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewController.m; sourceTree = "<group>"; };
+		4E7A763B1D4E4B08008AF3DA /* bt_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_next@2x.png"; sourceTree = "<group>"; };
+		4E7A763C1D4E4B08008AF3DA /* bt_previous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_previous@2x.png"; sourceTree = "<group>"; };
+		4E7A763D1D4E4B08008AF3DA /* SZCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCalendarCell.h; sourceTree = "<group>"; };
+		4E7A763E1D4E4B08008AF3DA /* SZCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCalendarCell.m; sourceTree = "<group>"; };
+		4E7A763F1D4E4B08008AF3DA /* SZCalendarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCalendarPicker.h; sourceTree = "<group>"; };
+		4E7A76401D4E4B08008AF3DA /* SZCalendarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCalendarPicker.m; sourceTree = "<group>"; };
+		4E7A76411D4E4B08008AF3DA /* SZCalendarPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZCalendarPicker.xib; sourceTree = "<group>"; };
+		4E7A76421D4E4B08008AF3DA /* UIColor+ZXLazy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZXLazy.h"; sourceTree = "<group>"; };
+		4E7A76431D4E4B08008AF3DA /* UIColor+ZXLazy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZXLazy.m"; sourceTree = "<group>"; };
+		4E7A76451D4E4B08008AF3DA /* MyRecordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewModel.h; sourceTree = "<group>"; };
+		4E7A76461D4E4B08008AF3DA /* MyRecordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewModel.m; sourceTree = "<group>"; };
 		4E97C5341CEB73C900702B81 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		4EB39C1D1D031FF700772749 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		4EB39C1E1D031FF700772749 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -298,12 +304,6 @@
 		4EDF40371D4CEBFA00819445 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		4EDF40381D4CEBFA00819445 /* UserStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserStatusManager.h; sourceTree = "<group>"; };
 		4EDF40391D4CEBFA00819445 /* UserStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserStatusManager.m; sourceTree = "<group>"; };
-		4EDF40401D4CEBFA00819445 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		4EDF40411D4CEBFA00819445 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		4EDF40431D4CEBFA00819445 /* MyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewController.h; sourceTree = "<group>"; };
-		4EDF40441D4CEBFA00819445 /* MyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewController.m; sourceTree = "<group>"; };
-		4EDF40451D4CEBFA00819445 /* MyRecordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewModel.h; sourceTree = "<group>"; };
-		4EDF40461D4CEBFA00819445 /* MyRecordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewModel.m; sourceTree = "<group>"; };
 		4EDF404D1D4CEBFA00819445 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		4EDF404E1D4CEBFA00819445 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		4EDF404F1D4CEBFA00819445 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -399,33 +399,8 @@
 				4E592D841CF6073F00006F70 /* SDWebImage */,
 				4E592D491CF5E91100006F70 /* AFNetworking */,
 				4E592D5D1CF5E91100006F70 /* UIKit+AFNetworking */,
-				4E1A97E51CEECC8800206098 /* SZCalendar */,
 			);
 			path = Vendor;
-			sourceTree = "<group>";
-		};
-		4E1A97E51CEECC8800206098 /* SZCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				4E1A97E61CEECC8800206098 /* Resource */,
-				4E1A97E91CEECC8800206098 /* SZCalendarCell.h */,
-				4E1A97EA1CEECC8800206098 /* SZCalendarCell.m */,
-				4E1A97EB1CEECC8800206098 /* SZCalendarPicker.h */,
-				4E1A97EC1CEECC8800206098 /* SZCalendarPicker.m */,
-				4E1A97ED1CEECC8800206098 /* SZCalendarPicker.xib */,
-				4E1A97EE1CEECC8800206098 /* UIColor+ZXLazy.h */,
-				4E1A97EF1CEECC8800206098 /* UIColor+ZXLazy.m */,
-			);
-			path = SZCalendar;
-			sourceTree = "<group>";
-		};
-		4E1A97E61CEECC8800206098 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				4E1A97E71CEECC8800206098 /* bt_next@2x.png */,
-				4E1A97E81CEECC8800206098 /* bt_previous@2x.png */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		4E49782D1CF1A733007E1EE5 /* Resource */ = {
@@ -538,6 +513,92 @@
 				4E592DA51CF6073F00006F70 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		4E7A762F1D4E4B08008AF3DA /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A76301D4E4B08008AF3DA /* Controller */,
+				4E7A76351D4E4B08008AF3DA /* Model */,
+				4E7A76361D4E4B08008AF3DA /* View */,
+				4E7A76441D4E4B08008AF3DA /* ViewModel */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		4E7A76301D4E4B08008AF3DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A76311D4E4B08008AF3DA /* DetailViewController.h */,
+				4E7A76321D4E4B08008AF3DA /* DetailViewController.m */,
+				4E7A76331D4E4B08008AF3DA /* MyRecordViewController.h */,
+				4E7A76341D4E4B08008AF3DA /* MyRecordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4E7A76351D4E4B08008AF3DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4E7A76361D4E4B08008AF3DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A76371D4E4B08008AF3DA /* Cell */,
+				4E7A76381D4E4B08008AF3DA /* SubView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E7A76371D4E4B08008AF3DA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4E7A76381D4E4B08008AF3DA /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A76391D4E4B08008AF3DA /* SZCalendar */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		4E7A76391D4E4B08008AF3DA /* SZCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A763A1D4E4B08008AF3DA /* Resource */,
+				4E7A763D1D4E4B08008AF3DA /* SZCalendarCell.h */,
+				4E7A763E1D4E4B08008AF3DA /* SZCalendarCell.m */,
+				4E7A763F1D4E4B08008AF3DA /* SZCalendarPicker.h */,
+				4E7A76401D4E4B08008AF3DA /* SZCalendarPicker.m */,
+				4E7A76411D4E4B08008AF3DA /* SZCalendarPicker.xib */,
+				4E7A76421D4E4B08008AF3DA /* UIColor+ZXLazy.h */,
+				4E7A76431D4E4B08008AF3DA /* UIColor+ZXLazy.m */,
+			);
+			path = SZCalendar;
+			sourceTree = "<group>";
+		};
+		4E7A763A1D4E4B08008AF3DA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A763B1D4E4B08008AF3DA /* bt_next@2x.png */,
+				4E7A763C1D4E4B08008AF3DA /* bt_previous@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4E7A76441D4E4B08008AF3DA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A76451D4E4B08008AF3DA /* MyRecordViewModel.h */,
+				4E7A76461D4E4B08008AF3DA /* MyRecordViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4EB39C1B1D031FF700772749 /* MJRefresh */ = {
@@ -740,8 +801,8 @@
 			children = (
 				4EDF40201D4CEBFA00819445 /* Login */,
 				4EDF40311D4CEBFA00819445 /* Public */,
-				4EDF403E1D4CEBFA00819445 /* Record */,
 				4EDF404B1D4CEBFA00819445 /* Run */,
+				4E7A762F1D4E4B08008AF3DA /* Record */,
 				4EDF407B1D4CEBFA00819445 /* Setting */,
 				4EDF40881D4CEBFA00819445 /* User */,
 			);
@@ -868,67 +929,6 @@
 			sourceTree = "<group>";
 		};
 		4EDF403D1D4CEBFA00819445 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4EDF403E1D4CEBFA00819445 /* Record */ = {
-			isa = PBXGroup;
-			children = (
-				4EDF403F1D4CEBFA00819445 /* Controller */,
-				4EDF40401D4CEBFA00819445 /* DetailViewController.h */,
-				4EDF40411D4CEBFA00819445 /* DetailViewController.m */,
-				4EDF40421D4CEBFA00819445 /* Model */,
-				4EDF40431D4CEBFA00819445 /* MyRecordViewController.h */,
-				4EDF40441D4CEBFA00819445 /* MyRecordViewController.m */,
-				4EDF40451D4CEBFA00819445 /* MyRecordViewModel.h */,
-				4EDF40461D4CEBFA00819445 /* MyRecordViewModel.m */,
-				4EDF40471D4CEBFA00819445 /* View */,
-				4EDF404A1D4CEBFA00819445 /* ViewModel */,
-			);
-			path = Record;
-			sourceTree = "<group>";
-		};
-		4EDF403F1D4CEBFA00819445 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		4EDF40421D4CEBFA00819445 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		4EDF40471D4CEBFA00819445 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4EDF40481D4CEBFA00819445 /* Cell */,
-				4EDF40491D4CEBFA00819445 /* SubView */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		4EDF40481D4CEBFA00819445 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		4EDF40491D4CEBFA00819445 /* SubView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SubView;
-			sourceTree = "<group>";
-		};
-		4EDF404A1D4CEBFA00819445 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1292,20 +1292,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E1A97F11CEECC8800206098 /* bt_previous@2x.png in Resources */,
 				4E4978361CF1A733007E1EE5 /* Knockout-HTF67-FullBantamwt.otf in Resources */,
 				4EB39C561D031FF700772749 /* MJRefresh.bundle in Resources */,
 				4EC28EA11CDB93720048759D /* LaunchScreen.storyboard in Resources */,
-				4E1A97F41CEECC8800206098 /* SZCalendarPicker.xib in Resources */,
 				4EC28E991CDB93720048759D /* Main.storyboard in Resources */,
 				4E4978371CF1A733007E1EE5 /* LHF Old Block CondMed.ttf in Resources */,
 				4E4978341CF1A733007E1EE5 /* Braggadocio.ttf in Resources */,
+				4E7A764D1D4E4B08008AF3DA /* SZCalendarPicker.xib in Resources */,
 				4E4978331CF1A733007E1EE5 /* Assets.xcassets in Resources */,
+				4E7A764A1D4E4B08008AF3DA /* bt_previous@2x.png in Resources */,
 				4EDF40AE1D4CEBFA00819445 /* RankTableViewCell.xib in Resources */,
 				4EDF40B01D4CEBFA00819445 /* RankTableHeaderView.xib in Resources */,
 				4E49783D1CF1A77C007E1EE5 /* CoolRun.entitlements in Resources */,
 				4E4978351CF1A733007E1EE5 /* Knockout-HTF30-JuniorWelterwt.otf in Resources */,
-				4E1A97F01CEECC8800206098 /* bt_next@2x.png in Resources */,
+				4E7A76491D4E4B08008AF3DA /* bt_next@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1359,11 +1359,11 @@
 				4EDF401E1D4CEBEE00819445 /* Utils.m in Sources */,
 				4E592D6F1CF5E91100006F70 /* AFHTTPRequestOperationManager.m in Sources */,
 				4EB39C511D031FF700772749 /* MJRefreshBackNormalFooter.m in Sources */,
-				4E1A97F31CEECC8800206098 /* SZCalendarPicker.m in Sources */,
 				4EB39C551D031FF700772749 /* MJRefreshStateHeader.m in Sources */,
 				4E592D771CF5E91100006F70 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4EDF40A61D4CEBFA00819445 /* LocationDataManager.m in Sources */,
 				4EB39C5A1D031FF700772749 /* UIView+MJExtension.m in Sources */,
+				4E7A764C1D4E4B08008AF3DA /* SZCalendarPicker.m in Sources */,
 				4EDF40A91D4CEBFA00819445 /* MultiColorPolyline.m in Sources */,
 				4E592DB11CF6073F00006F70 /* UIImage+MultiFormat.m in Sources */,
 				4EB39C521D031FF700772749 /* MJRefreshBackStateFooter.m in Sources */,
@@ -1379,12 +1379,12 @@
 				4EDF40B41D4CEBFA00819445 /* SettingViewController.m in Sources */,
 				4E592D761CF5E91100006F70 /* AFURLSessionManager.m in Sources */,
 				4EDF40B11D4CEBFA00819445 /* RankViewModel.m in Sources */,
+				4E7A76471D4E4B08008AF3DA /* DetailViewController.m in Sources */,
 				4E592DB31CF6073F00006F70 /* UIImageView+HighlightedWebCache.m in Sources */,
 				4EDF40A71D4CEBFA00819445 /* RecordManager+Kcal.m in Sources */,
 				4E592D701CF5E91100006F70 /* AFHTTPSessionManager.m in Sources */,
 				4E592D781CF5E91100006F70 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4EC608B41CFF1E55004BE874 /* Config.m in Sources */,
-				4EDF409B1D4CEBFA00819445 /* DetailViewController.m in Sources */,
 				4E592D751CF5E91100006F70 /* AFURLResponseSerialization.m in Sources */,
 				4EDF40A01D4CEBFA00819445 /* NewRunViewController.m in Sources */,
 				4E592D6E1CF5E91100006F70 /* AFHTTPRequestOperation.m in Sources */,
@@ -1394,11 +1394,10 @@
 				4EDF40C21D4CEC0500819445 /* AppDelegate.m in Sources */,
 				4E592D7D1CF5E91100006F70 /* UIWebView+AFNetworking.m in Sources */,
 				4EDF40AF1D4CEBFA00819445 /* RankTableHeaderView.m in Sources */,
-				4E1A97F51CEECC8800206098 /* UIColor+ZXLazy.m in Sources */,
 				4EDF409F1D4CEBFA00819445 /* MapViewController.m in Sources */,
 				4EB39C571D031FF700772749 /* MJRefreshConst.m in Sources */,
+				4E7A764F1D4E4B08008AF3DA /* MyRecordViewModel.m in Sources */,
 				4E592D741CF5E91100006F70 /* AFURLRequestSerialization.m in Sources */,
-				4EDF409D1D4CEBFA00819445 /* MyRecordViewModel.m in Sources */,
 				4EDF40B51D4CEBFA00819445 /* SettingViewModel.m in Sources */,
 				4EDF40C31D4CEC0500819445 /* SDKInitProcess.m in Sources */,
 				4EB39C4D1D031FF700772749 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -1411,9 +1410,8 @@
 				4EC608B81CFF281D004BE874 /* FBKVOController.m in Sources */,
 				4EDF40A81D4CEBFA00819445 /* RecordManager.m in Sources */,
 				4EDF40B61D4CEBFA00819445 /* UserSettingViewController.m in Sources */,
-				4EDF409C1D4CEBFA00819445 /* MyRecordViewController.m in Sources */,
-				4E1A97F21CEECC8800206098 /* SZCalendarCell.m in Sources */,
 				4EC28E9C1CDB93720048759D /* CoolRun.xcdatamodeld in Sources */,
+				4E7A764E1D4E4B08008AF3DA /* UIColor+ZXLazy.m in Sources */,
 				4E592D7A1CF5E91100006F70 /* UIImageView+AFNetworking.m in Sources */,
 				4EB39C481D031FF700772749 /* MJRefreshAutoFooter.m in Sources */,
 				4EDF409A1D4CEBFA00819445 /* UserStatusManager.m in Sources */,
@@ -1421,6 +1419,7 @@
 				4E592D7B1CF5E91100006F70 /* UIProgressView+AFNetworking.m in Sources */,
 				4E592DB51CF6073F00006F70 /* UIView+WebCacheOperation.m in Sources */,
 				4EDF40961D4CEBFA00819445 /* LoginViewModel.m in Sources */,
+				4E7A76481D4E4B08008AF3DA /* MyRecordViewController.m in Sources */,
 				4EB39C4C1D031FF700772749 /* MJRefreshHeader.m in Sources */,
 				4E592DA81CF6073F00006F70 /* SDImageCache.m in Sources */,
 				4EDF401B1D4CEBEE00819445 /* NSDate+week.m in Sources */,
@@ -1442,6 +1441,7 @@
 				4EDF40991D4CEBFA00819445 /* UserModel.m in Sources */,
 				4EDF40A31D4CEBFA00819445 /* Location+CoreDataProperties.m in Sources */,
 				4E592D731CF5E91100006F70 /* AFURLConnectionOperation.m in Sources */,
+				4E7A764B1D4E4B08008AF3DA /* SZCalendarCell.m in Sources */,
 				4EB39C4F1D031FF700772749 /* MJRefreshAutoStateFooter.m in Sources */,
 				4E592DB41CF6073F00006F70 /* UIImageView+WebCache.m in Sources */,
 				4EB39C531D031FF700772749 /* MJRefreshGifHeader.m in Sources */,
