@@ -112,9 +112,19 @@
  *  @param sender
  */
 - (IBAction)showRankView:(UIButton *)sender {
-    UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RankViewController"];
+    UserStatusManager* manager = [UserStatusManager shareManager];
     
-    [self presentViewController:vc animated:YES completion:nil];
+    if (manager.isLogin.boolValue) {
+        UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RankViewController"];
+        
+        [self presentViewController:vc animated:YES completion:nil];
+    }else{
+        UIViewController* loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
+    
+
 }
 
 

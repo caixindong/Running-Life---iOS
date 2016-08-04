@@ -120,8 +120,6 @@
 }
 
 -(void)configureView{
-    
-    
     self.distanceLabel.text = [NSString stringWithFormat:@"%@km",[MathController stringifyDistance:self.run.distance.floatValue]];
     
     self.timeLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifySecondCount:self.run.duration.intValue usingLongFormat:NO]];
@@ -131,8 +129,6 @@
     self.kllLable.text = [NSString stringWithFormat:@"%@卡里路",[MathController stringifyKcalFromDist:[self.run.distance floatValue]  withWeight:_weight]];
     
     self.countLabel.text = [NSString stringWithFormat:@"x%.2f",[[MathController stringifyKcalFromDist:[self.run.distance floatValue]  withWeight:_weight] floatValue]/300];
-    
-    
     
     [self loadMap];
 }
@@ -218,7 +214,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

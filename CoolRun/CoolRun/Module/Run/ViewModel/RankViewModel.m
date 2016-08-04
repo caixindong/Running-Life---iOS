@@ -12,7 +12,11 @@
 
 @interface RankViewModel()
 
-@property(nonatomic, strong ,readwrite)NSMutableArray *mutaDataArray;
+@property(nonatomic, strong ,readwrite) NSMutableArray *mutaDataArray;
+
+@property (nonatomic, strong ,readwrite) NSNumber *haveRefresh;
+
+@property (nonatomic, strong, readwrite) NSNumber *fail;
 
 @property(nonatomic, assign)int page;
 
@@ -48,12 +52,12 @@
                                  NSArray *data = [self dataArrayFromDictionary:returnValue];
                                  
                                  [_mutaDataArray addObjectsFromArray:data];
-                                 _haveRefresh = @YES;
+                                 self.haveRefresh = @YES;
                                  
                              } WithErrorCodeBlock:^(id errorCode) {
-                                 _fail = @YES;
+                                 self.fail = @YES;
                              } WithFailtureBlock:^{
-                                 _fail = @YES;
+                                 self.fail = @YES;
                              }];
     }
 }

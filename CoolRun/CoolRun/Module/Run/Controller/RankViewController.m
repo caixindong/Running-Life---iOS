@@ -58,7 +58,7 @@ static NSString *const CELLID = @"RankTableViewCell";
                         keyPath:@"fail"
                         options:NSKeyValueObservingOptionNew
                           block:^(id observer, id object, NSDictionary *change) {
-                              if (self.viewModel.fail) {
+                              if ([self.viewModel.fail boolValue]) {
                                   [_header endRefreshing];
                                   
                                   [_footer endRefreshing];
@@ -88,7 +88,7 @@ static NSString *const CELLID = @"RankTableViewCell";
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _dataArray.count ? _dataArray.count:1;
+    return _dataArray.count;
 }
 
 

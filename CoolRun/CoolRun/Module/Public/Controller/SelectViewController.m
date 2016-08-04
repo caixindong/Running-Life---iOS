@@ -28,6 +28,7 @@
     
     
     [self initView];
+    
     UserStatusManager* manager = [UserStatusManager shareManager];
     
     [self.KVOController observe:manager
@@ -79,8 +80,6 @@
         UIViewController* loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         [self presentViewController:loginVC animated:YES completion:nil];
     }
-   
-    
 }
 
 
