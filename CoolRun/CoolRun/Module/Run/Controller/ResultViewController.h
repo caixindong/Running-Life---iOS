@@ -9,7 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "Run.h"
 
+/**
+ *  跑步结果界面
+ */
 @interface ResultViewController : UIViewController
+
+/**
+ *  跑步记录
+ */
 @property (strong, nonatomic) Run *run;
+
+/**
+ *  是否隐藏navigationBar
+ */
 @property(nonatomic,assign)BOOL hideNav;
+
 @end

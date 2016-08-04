@@ -48,7 +48,6 @@
                                  NSArray *data = [self dataArrayFromDictionary:returnValue];
                                  
                                  [_mutaDataArray addObjectsFromArray:data];
-                                 
                                  _haveRefresh = @YES;
                                  
                              } WithErrorCodeBlock:^(id errorCode) {

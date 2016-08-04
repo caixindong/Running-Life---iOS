@@ -10,15 +10,25 @@
 
 @interface MapViewController ()<MKMapViewDelegate,AMapLocationManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet MKMapView *myMapView;
+/**
+ *  地图
+ */
+@property (weak, nonatomic, readwrite) IBOutlet MKMapView *myMapView;
 
-@property (nonatomic, strong) AMapLocationManager* locationManager;
+/**
+ *  定位管理器
+ */
+@property (nonatomic, strong, readwrite) AMapLocationManager* locationManager;
 
-@property (nonatomic, strong) NSMutableArray* locations;
+/**
+ *  记录位置的数组
+ */
+@property (nonatomic, strong, readwrite) NSMutableArray* locations;
 
-@property (nonatomic, strong) NSTimer *timer;
-
-@property(nonatomic,assign)BOOL firstLocate;
+/**
+ *  是否第一次定位
+ */
+@property(nonatomic, assign, readwrite)BOOL firstLocate;
 
 @end
 
@@ -35,6 +45,7 @@
 }
 
 #pragma mark - AMapLocationManagerDelegate
+
 - (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error {
     [_locationManager stopUpdatingLocation];
 }
@@ -73,12 +84,10 @@
         
     }
     
-    
 }
 
 #pragma mark - MKMapViewDelegate
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
-{
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay {
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolyline *polyLine = (MKPolyline *)overlay;
         MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
@@ -89,7 +98,37 @@
     return nil;
 }
 
--(AMapLocationManager *)locationManager{
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    
+}
+
+#pragma mark - event response
+
+- (IBAction)closeBtn:(UIButton *)sender {
+    self.view.transform = CGAffineTransformIdentity;
+    
+    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        self.view.transform= CGAffineTransformMakeScale(0.01, 0.01);
+        
+    } completion:^(BOOL finished) {
+        self.view.hidden = YES;
+    }];
+}
+
+#pragma mark - getter and setter
+
+- (void)setLocateEnable:(BOOL)locateEnable{
+    if (locateEnable) {
+        [self.locationManager startUpdatingLocation];
+    }else{
+        [self.locationManager stopUpdatingLocation];
+    }
+}
+
+- (AMapLocationManager *)locationManager{
     if (!_locationManager) {
         _locationManager = [[AMapLocationManager alloc] init];
         _locationManager.delegate = self;
@@ -105,37 +144,11 @@
     return _locationManager;
 }
 
--(NSMutableArray *)locations{
+- (NSMutableArray *)locations{
     if (!_locations) {
         _locations = [NSMutableArray array];
     }
     return _locations;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
-
-- (IBAction)closeBtn:(UIButton *)sender {
-    self.view.transform = CGAffineTransformIdentity;
-    
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        self.view.transform= CGAffineTransformMakeScale(0.01, 0.01);
-        
-    } completion:^(BOOL finished) {
-        self.view.hidden = YES;
-    }];
-}
-
-#pragma mark - getter and setter
-
--(void)setLocateEnable:(BOOL)locateEnable{
-    if (locateEnable) {
-        [self.locationManager startUpdatingLocation];
-    }else{
-        [self.locationManager stopUpdatingLocation];
-    }
 }
 
 @end

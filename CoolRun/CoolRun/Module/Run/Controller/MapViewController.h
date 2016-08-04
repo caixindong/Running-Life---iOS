@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  地图界面
+ */
 @interface MapViewController : UIViewController
 
 /**

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  排名界面
+ */
 @interface RankViewController : UIViewController
 
 @end

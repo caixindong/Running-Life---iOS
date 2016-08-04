@@ -8,5 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  跑步界面
+ */
 @interface NewRunViewController : UIViewController
+
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  主页
+ */
 @interface HomeViewController : UIViewController
 
 @end

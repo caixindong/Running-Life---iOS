@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2ABCBF1D51D74400235550 /* RecordShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2ABCBE1D51D74400235550 /* RecordShowView.m */; };
 		4E4978331CF1A733007E1EE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E49782E1CF1A733007E1EE5 /* Assets.xcassets */; };
 		4E4978341CF1A733007E1EE5 /* Braggadocio.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E49782F1CF1A733007E1EE5 /* Braggadocio.ttf */; };
 		4E4978351CF1A733007E1EE5 /* Knockout-HTF30-JuniorWelterwt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E4978301CF1A733007E1EE5 /* Knockout-HTF30-JuniorWelterwt.otf */; };
@@ -133,6 +134,8 @@
 		052A9A9842AC7EAEB7797987 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC5E8F2B7CA84E53009EF77 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3BE738C6EC32436235226463 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4E2ABCBD1D51D74400235550 /* RecordShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordShowView.h; sourceTree = "<group>"; };
+		4E2ABCBE1D51D74400235550 /* RecordShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordShowView.m; sourceTree = "<group>"; };
 		4E49782E1CF1A733007E1EE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E49782F1CF1A733007E1EE5 /* Braggadocio.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Braggadocio.ttf; sourceTree = "<group>"; };
 		4E4978301CF1A733007E1EE5 /* Knockout-HTF30-JuniorWelterwt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Knockout-HTF30-JuniorWelterwt.otf"; sourceTree = "<group>"; };
@@ -564,6 +567,8 @@
 			isa = PBXGroup;
 			children = (
 				4E7A76391D4E4B08008AF3DA /* SZCalendar */,
+				4E2ABCBD1D51D74400235550 /* RecordShowView.h */,
+				4E2ABCBE1D51D74400235550 /* RecordShowView.m */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -1360,6 +1365,7 @@
 				4E592D6F1CF5E91100006F70 /* AFHTTPRequestOperationManager.m in Sources */,
 				4EB39C511D031FF700772749 /* MJRefreshBackNormalFooter.m in Sources */,
 				4EB39C551D031FF700772749 /* MJRefreshStateHeader.m in Sources */,
+				4E2ABCBF1D51D74400235550 /* RecordShowView.m in Sources */,
 				4E592D771CF5E91100006F70 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4EDF40A61D4CEBFA00819445 /* LocationDataManager.m in Sources */,
 				4EB39C5A1D031FF700772749 /* UIView+MJExtension.m in Sources */,

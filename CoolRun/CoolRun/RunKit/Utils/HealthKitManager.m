@@ -101,7 +101,9 @@
             [kcalDatas addObject:@(kcal)];
         }
         if (block) {
-            block(kcalDatas);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                block(kcalDatas);
+            });
         }
     } failWithError:^(NSError * error) {
         if (errorBlock) {

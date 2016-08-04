@@ -39,29 +39,29 @@ static NSString * const detailSegueName = @"RunDetails";
     int     _stopCount;
 }
 
-@property (nonatomic, strong) Run *run;
+@property (nonatomic, strong, readwrite) Run *run;
 
-@property (nonatomic, weak) IBOutlet UILabel* promptLabel;
+@property (nonatomic, weak, readwrite) IBOutlet UILabel* promptLabel;
 
-@property (nonatomic, weak) IBOutlet UILabel* timeLabel;
+@property (nonatomic, weak, readwrite) IBOutlet UILabel* timeLabel;
 
-@property (nonatomic, weak) IBOutlet UILabel* distLabel;
+@property (nonatomic, weak, readwrite) IBOutlet UILabel* distLabel;
 
-@property (nonatomic, weak) IBOutlet UILabel* paceLabel;
+@property (nonatomic, weak, readwrite) IBOutlet UILabel* paceLabel;
 
-@property (nonatomic, weak) IBOutlet UIButton* stopButton;
+@property (nonatomic, weak, readwrite) IBOutlet UIButton* stopButton;
 
-@property (weak, nonatomic) IBOutlet UILabel *kmLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *kmLabel;
 
-@property (weak, nonatomic) IBOutlet UIButton *pauseBtn;
+@property (weak, nonatomic, readwrite) IBOutlet UIButton *pauseBtn;
 
-@property (weak, nonatomic) IBOutlet UIButton *startBtn;
+@property (weak, nonatomic, readwrite) IBOutlet UIButton *startBtn;
 
-@property (weak, nonatomic) IBOutlet UIButton *showMapBtn;
+@property (weak, nonatomic, readwrite) IBOutlet UIButton *showMapBtn;
 
-@property (weak, nonatomic) IBOutlet UIImageView *timeImg;
+@property (weak, nonatomic, readwrite) IBOutlet UIImageView *timeImg;
 
-@property (weak, nonatomic) IBOutlet UIImageView *speedImg;
+@property (weak, nonatomic, readwrite) IBOutlet UIImageView *speedImg;
 
 /**
  *  定位管理
