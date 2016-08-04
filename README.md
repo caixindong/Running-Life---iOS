@@ -2,7 +2,7 @@
 Running Life（开源）是基于HealthKit和高德地图开发的健康跑步助手。
 
 #运行效果
-![image](https://github.com/caixindong/tuangou_iphone/blob/master/runninglifedemo.gif)
+![image](https://github.com/caixindong/Running-Life---iOS/blob/master/runninglifedemo.gif)
 
 #功能
 `. ` 动态绘制跑步路径    
