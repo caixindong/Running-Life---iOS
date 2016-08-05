@@ -36,11 +36,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
-@property (nonatomic, assign) float weight;
-
 @property (nonatomic,strong)ResultViewModel* viewModel;
-
-@property (nonatomic,strong)RecordManager* manager;
 
 @end
 
@@ -48,137 +44,94 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.hideNav) {
-        self.navView.hidden = self.hideNav;
-    }else{
-        self.navView.hidden = NO;
-       
-    }
     
-    self.weight = 65.0;
-    
-    UserStatusManager *manager = [UserStatusManager shareManager];
-    
-    [self.KVOController observe:manager
-                        keyPath:@"isLogin"
-                        options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-                          block:^(id observer, id object, NSDictionary *change) {
-                              NSLog(@"get");
-                              if (manager.isLogin.boolValue) {
-                                  [self.headPic sd_setImageWithURL:[NSURL URLWithString:manager.userModel.avatar] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
-                                  self.nameLabel.text = manager.userModel.realname;
-                                  self.weight = [manager.userModel.weight floatValue];
-                                  _loginBtn.enabled = NO;
-                                  [self getRank];
-                              }else{
-                                  [self.headPic setImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
-                                  self.nameLabel.text = @"未登录";
-                                  self.weight = 65.0;
-                                  _loginBtn.enabled = YES;
-                              }
-    }];
-    
-    manager.isLogin = manager.isLogin;
+    [self KVOHandler];
     
     [self configureView];
 
 }
 
-- (void)getRank {
-        _viewModel = [[ResultViewModel alloc]init];
-    
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        if (self.hideNav) {
-            [_viewModel postRunIDToGetRank:[_run.runid intValue]
-                          withSuccessBlock:^(id returnValue) {
-                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                              _rankLabel.text = [NSString stringWithFormat:@"第%@名",returnValue];
-         
-                          } failWithError:^(id errorCode) {
-                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                          } failWithNetworkWithBlock:^{
-                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                              [Utils showTextHUDWithText:@"请检查网络" addToView:self.view];
-                          }];
-        }else{
-            [_viewModel postRunResultToServer:self.run withSuccessBlock:^(id returnValue) {
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                _rankLabel.text = [NSString stringWithFormat:@"第%@名",returnValue[@"my_ranking"]];
-                [self.manager touchRun:_run
-                                WithID:[returnValue[@"running_result_id"] intValue]];
+#pragma mark - private
 
-                [self.manager syncharonizeRun:_run];
-            } failWithError:^(id errorCode) {
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                NSLog(@"post error is %@",errorCode);
-            } failWithNetworkWithBlock:^{
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                [Utils showTextHUDWithText:@"请检查网络" addToView:self.view];
-                NSLog(@"no net");
-            }];
+- (void)KVOHandler {
+    UserStatusManager *manager = [UserStatusManager shareManager];
+    [self.KVOController observe:manager keyPath:@"isLogin"  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld   block:^(id observer, id object, NSDictionary *change) {
+        if (manager.isLogin.boolValue) {
+            
+            [self.headPic sd_setImageWithURL:[NSURL URLWithString:manager.userModel.avatar] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
+            
+            self.nameLabel.text = manager.userModel.realname;
+            
+            _loginBtn.enabled = NO;
+            
+            [self getRank];
+        } else {
+            
+            [self.headPic setImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
+            
+            self.nameLabel.text = @"未登录";
+            
+            _loginBtn.enabled = YES;
+        }
+    }];
+    manager.isLogin = manager.isLogin;
+    
+    [self.KVOController observe:self.viewModel keyPath:@"rank" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+        if (self.viewModel.rank) {
+            _rankLabel.text = self.viewModel.rank;
+            
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        }
+    }];
+    
+    [self.KVOController observe:self.viewModel keyPath:@"netFail" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld  block:^(id observer, id object, NSDictionary *change) {
+        if ([self.viewModel.netFail boolValue]) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        }
+    }];
+}
+
+- (void)getRank {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+        if (self.hideNav) {
+            [self.viewModel getRank];
+        }else{
+            [self.viewModel postRunRecordToServerAndGetRank];
         }
 }
 
--(void)configureView{
-    self.distanceLabel.text = [NSString stringWithFormat:@"%@km",[MathController stringifyDistance:self.run.distance.floatValue]];
+-(void)configureView {
+    if (self.hideNav) {
+        self.navView.hidden = self.hideNav;
+    }else{
+        self.navView.hidden = NO;
+        
+    }
     
-    self.timeLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifySecondCount:self.run.duration.intValue usingLongFormat:NO]];
+    self.distanceLabel.text = self.viewModel.distanceLabelText;
     
-    self.paceLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifyAvgPaceFromDist:self.run.distance.floatValue overTime:self.run.duration.intValue]];
+    self.timeLabel.text     = self.viewModel.timeLabelText;
     
-    self.kllLable.text = [NSString stringWithFormat:@"%@卡里路",[MathController stringifyKcalFromDist:[self.run.distance floatValue]  withWeight:_weight]];
+    self.paceLabel.text     = self.viewModel.paceLabelText;
     
-    self.countLabel.text = [NSString stringWithFormat:@"x%.2f",[[MathController stringifyKcalFromDist:[self.run.distance floatValue]  withWeight:_weight] floatValue]/300];
+    self.kllLable.text      = self.viewModel.kcalLableText;
+    
+    self.countLabel.text    = self.viewModel.countLabelText;
     
     [self loadMap];
 }
 
-- (void)loadMap
-{
+- (void)loadMap {
     if (self.run.locations.count > 0) {
         
         self.mapView.hidden = NO;
 
-        [self.mapView setRegion:[self mapRegion]];
+        [self.mapView setRegion:self.viewModel.region];
         
-        NSArray *colorSegmentArray = [MathController colorSegmentsForLocations:self.run.locations.array];
-        [self.mapView addOverlays:colorSegmentArray];
+        [self.mapView addOverlays:self.viewModel.colorSegmentArray];
         
     }
-}
-
-- (MKCoordinateRegion)mapRegion
-{
-    MKCoordinateRegion region;
-    Location *initialLoc = self.run.locations.firstObject;
-    
-    float minLat = initialLoc.latitude.floatValue;
-    float minLng = initialLoc.longtitude.floatValue;
-    float maxLat = initialLoc.latitude.floatValue;
-    float maxLng = initialLoc.longtitude.floatValue;
-    
-    for (Location *location in self.run.locations) {
-        if (location.latitude.floatValue < minLat) {
-            minLat = location.latitude.floatValue;
-        }
-        if (location.longtitude.floatValue < minLng) {
-            minLng = location.longtitude.floatValue;
-        }
-        if (location.latitude.floatValue > maxLat) {
-            maxLat = location.latitude.floatValue;
-        }
-        if (location.longtitude.floatValue > maxLng) {
-            maxLng = location.longtitude.floatValue;
-        }
-    }
-    
-    region.center.latitude = (minLat + maxLat) / 2.0f;
-    region.center.longitude = (minLng + maxLng) / 2.0f;
-    
-    region.span.latitudeDelta = (maxLat - minLat) * 2.0f; // 10% padding
-    region.span.longitudeDelta = (maxLng - minLng) * 2.0f; // 10% padding
-    
-    return region;
 }
 
 
@@ -194,23 +147,6 @@
     
     return nil;
 }
-
-#pragma mark - setter
--(void)setRun:(Run *)run
-{
-    if (_run != run) {
-        _run = run;
-    }
-}
-
--(RecordManager *)manager{
-    if (!_manager) {
-        _manager = [[RecordManager alloc]init];
-    }
-    return _manager;
-}
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -250,6 +186,15 @@
     [self presentViewController:loginVC
                        animated:YES
                      completion:nil];
+}
+
+#pragma mark - getter and setter
+
+- (ResultViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[ResultViewModel alloc] initWithRunModel:self.run];
+    }
+    return _viewModel;
 }
 
 @end

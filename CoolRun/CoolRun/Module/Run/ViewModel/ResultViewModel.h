@@ -8,32 +8,73 @@
 
 #import <Foundation/Foundation.h>
 #import "Run.h"
+
 @interface ResultViewModel : NSObject
 
 /**
- *  上传跑步结果
- *
- *  @param run          跑步信息
- *  @param successBlock 成功回调
- *  @param errorBlock   失败回调
- *  @param failBlock    服务器失败回调
+ *  跑步距离
  */
-- (void)postRunResultToServer:(Run*)run
-            withSuccessBlock:(ReturnValueBlock)successBlock
-               failWithError:(ErrorCodeBlock)errorBlock
-    failWithNetworkWithBlock:(FailureBlock)failBlock;
+@property (nonatomic, copy, readonly) NSString *distanceLabelText;
 
 /**
- *  根据跑步ID获取排名
- *
- *  @param runID        跑步ID
- *  @param successBlock 成功回调
- *  @param errorBlock   失败回调
- *  @param failBlock    服务器失败回调
+ *  跑步时间
  */
-- (void)postRunIDToGetRank:(int)runID
-          withSuccessBlock:(ReturnValueBlock)successBlock
-             failWithError:(ErrorCodeBlock)errorBlock
-  failWithNetworkWithBlock:(FailureBlock)failBlock;
+@property (nonatomic, copy, readonly) NSString *timeLabelText;
+
+/**
+ *  跑步步数
+ */
+@property (nonatomic, copy, readonly) NSString *paceLabelText;
+
+/**
+ *  卡路里
+ */
+@property (nonatomic, copy, readonly) NSString *kcalLableText;
+
+/**
+ *  消耗鸡腿数
+ */
+@property (nonatomic, copy, readonly) NSString *countLabelText;
+
+/**
+ *  运动轨迹（不同颜色）
+ */
+@property (nonatomic, copy, readonly) NSArray *colorSegmentArray;
+
+/**
+ *  地图显示区域
+ */
+@property (nonatomic, assign, readonly) MKCoordinateRegion region;
+
+/**
+ *  跑步排名
+ */
+@property (nonatomic, copy, readonly) NSString *rank;
+
+
+/**
+ *  网络失败
+ */
+@property (nonatomic, strong, readonly) NSNumber *netFail;
+
+/**
+ *  构造器
+ *
+ *  @param run 跑步记录
+ *
+ *  @return 
+ */
+- (instancetype)initWithRunModel:(Run *)run;
+
+/**
+ *  上传跑步记录并获取排名
+ */
+- (void)postRunRecordToServerAndGetRank;
+
+/**
+ *  仅仅获取获取跑步排名
+ */
+- (void)getRank;
+
 
 @end

@@ -9,10 +9,15 @@
 #import "NameEditViewController.h"
 #import "UserSettingViewModel.h"
 @interface NameEditViewController ()<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+
 @property(nonatomic,strong)UserSettingViewModel* viewModel;
+
 @property(nonatomic,strong)MBProgressHUD* hud;
+
 @property(nonatomic,strong)UserModel* user;
+
 @end
 
 @implementation NameEditViewController
