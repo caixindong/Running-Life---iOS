@@ -9,25 +9,25 @@
 #import "DetailViewController.h"
 #import "ResultViewController.h"
 @interface DetailViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @property(nonatomic,strong)UIScrollView* scrollView;
+
 @property(nonatomic,strong)NSMutableArray* viewArr;
+
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.view addSubview:self.scrollView];
+    
     [self.view sendSubviewToBack:self.scrollView];
-    for (int i = 0; i<self.viewArr.count; i++) {
-        UIView* cardView = self.viewArr[i];
-        [self.scrollView addSubview: cardView];
-        [cardView setFrame:CGRectMake(WIDTH*i,0, WIDTH, HEIGHT-60)];
-    }
-    if (self.viewArr.count>0) {
-        self.nameLabel.text = [NSString stringWithFormat:@"1/%ld",(unsigned long)self.viewArr.count];
-    }
+    
+    [self initContentView];
     
     [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld  context:nil];
 }
@@ -51,7 +51,22 @@
     }
 }
 
+#pragma mark - private
+
+- (void)initContentView {
+    for (int i = 0; i<self.viewArr.count; i++) {
+        UIView* cardView = self.viewArr[i];
+        [self.scrollView addSubview: cardView];
+        [cardView setFrame:CGRectMake(WIDTH*i,0, WIDTH, HEIGHT-60)];
+    }
+    
+    if (self.viewArr.count>0) {
+        self.nameLabel.text = [NSString stringWithFormat:@"1/%ld",(unsigned long)self.viewArr.count];
+    }
+}
+
 #pragma mark - event
+
 - (IBAction)closeBtnClick:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -80,7 +95,7 @@
 }
 
 #pragma mark - setter and getter
--(UIScrollView *)scrollView{
+- (UIScrollView *)scrollView{
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,40, WIDTH, HEIGHT-40)];
         _scrollView.pagingEnabled = YES;
@@ -88,14 +103,14 @@
     return _scrollView;
 }
 
--(NSMutableArray *)viewArr{
+- (NSMutableArray *)viewArr{
     if (!_viewArr) {
         _viewArr = [NSMutableArray arrayWithCapacity:5];
     }
     return _viewArr;
 }
 
--(void)setRunDataArray:(NSArray *)runDataArray{
+- (void)setRunDataArray:(NSArray *)runDataArray{
      self.scrollView.contentSize = CGSizeMake(WIDTH*runDataArray.count, 0);
     
     for (Run* run in runDataArray) {

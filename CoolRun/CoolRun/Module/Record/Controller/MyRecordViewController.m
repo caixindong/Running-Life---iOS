@@ -39,21 +39,7 @@
     
     [self getKcalData];
     
-    [self.KVOController observe:self.viewModel keyPath:@"updateWalkAndRunData" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
-        if ([self.viewModel.updateWalkAndRunData boolValue]) {
-            _walkAndRunKcalArray    = self.viewModel.walkAndRunKcalArray;
-            _showView.normalRecords = _walkAndRunKcalArray;
-        }
-    }];
-    
-    [self.KVOController observe:self.viewModel keyPath:@"updateRunData" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
-        if ([self.viewModel.updateRunData boolValue]) {
-            _runKcalArray                = self.viewModel.runKcalArray;
-            _showView.specialRecords    = _runKcalArray;
-            _calendar.specialDataArr    = _runKcalArray;
-        }
-    }];
-   
+    [self KVOHandler];
 }
 
 #pragma mark - private
@@ -93,6 +79,23 @@
     [self.viewModel getWalkAndRunKcalArrayWithMonth:comp.month year:comp.year weigth:65];
     
     [self.viewModel getRunKcalArrayWithMonth:comp.month year:comp.year weigth:65];
+}
+
+- (void)KVOHandler {
+    [self.KVOController observe:self.viewModel keyPath:@"updateWalkAndRunData" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+        if ([self.viewModel.updateWalkAndRunData boolValue]) {
+            _walkAndRunKcalArray    = self.viewModel.walkAndRunKcalArray;
+            _showView.normalRecords = _walkAndRunKcalArray;
+        }
+    }];
+    
+    [self.KVOController observe:self.viewModel keyPath:@"updateRunData" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+        if ([self.viewModel.updateRunData boolValue]) {
+            _runKcalArray                = self.viewModel.runKcalArray;
+            _showView.specialRecords    = _runKcalArray;
+            _calendar.specialDataArr    = _runKcalArray;
+        }
+    }];
 }
 
 #pragma mark - getter and setter
