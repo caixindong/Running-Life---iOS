@@ -18,8 +18,6 @@ static NSString *const CELLID = @"RankTableViewCell";
 
 @property (nonatomic, strong) RankTableHeaderView *headView;
 
-@property (nonatomic, copy) NSArray *dataArray;
-
 @property (nonatomic, strong)RankViewModel *viewModel;
 
 @property (nonatomic, strong)MJRefreshNormalHeader *header;
@@ -47,8 +45,6 @@ static NSString *const CELLID = @"RankTableViewCell";
                                   
                                   [_footer endRefreshing];
                                   
-                                  _dataArray = _viewModel.dataArray;
-                                  
                                   [_myTableView reloadData];
                               }
                               
@@ -62,7 +58,6 @@ static NSString *const CELLID = @"RankTableViewCell";
                                   [_header endRefreshing];
                                   
                                   [_footer endRefreshing];
-                                  
                               }
                           }];
     
@@ -88,14 +83,14 @@ static NSString *const CELLID = @"RankTableViewCell";
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _dataArray.count;
+    return self.viewModel.dataArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RankTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CELLID];
     
-    //[cell showUIWithModel:_dataArray[indexPath.row]];
+    //[cell showUIWithModel:self.viewModel.dataArray[indexPath.row]];
     
     return cell;
 }

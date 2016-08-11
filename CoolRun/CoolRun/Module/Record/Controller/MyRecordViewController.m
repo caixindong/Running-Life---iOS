@@ -16,10 +16,6 @@
  */
 @interface MyRecordViewController ()
 
-@property (nonatomic, copy, readwrite) NSArray* walkAndRunKcalArray;
-
-@property (nonatomic,copy, readwrite) NSArray* runKcalArray;
-
 @property (nonatomic, strong, readwrite) RecordShowView *showView;
 
 @property (nonatomic, strong, readwrite) SZCalendarPicker* calendar;
@@ -84,16 +80,14 @@
 - (void)KVOHandler {
     [self.KVOController observe:self.viewModel keyPath:@"updateWalkAndRunData" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
         if ([self.viewModel.updateWalkAndRunData boolValue]) {
-            _walkAndRunKcalArray    = self.viewModel.walkAndRunKcalArray;
-            _showView.normalRecords = _walkAndRunKcalArray;
+            _showView.normalRecords = self.viewModel.walkAndRunKcalArray;
         }
     }];
     
     [self.KVOController observe:self.viewModel keyPath:@"updateRunData" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
         if ([self.viewModel.updateRunData boolValue]) {
-            _runKcalArray                = self.viewModel.runKcalArray;
-            _showView.specialRecords    = _runKcalArray;
-            _calendar.specialDataArr    = _runKcalArray;
+            _showView.specialRecords    = self.viewModel.runKcalArray;
+            _calendar.specialDataArr    = self.viewModel.runKcalArray;
         }
     }];
 }
