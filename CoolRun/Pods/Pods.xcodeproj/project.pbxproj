@@ -40,14 +40,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>03B6CDEDD20B29B4240628C27A6238AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E19DF66F198153CA63661D9F09DD6C2C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>05840B81EC70A4A3CCBB037F92530BDD</key>
+		<key>01674D482E43BE3272647F5DC61D591D</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -56,38 +49,68 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>JVFloatingDrawerView.m</string>
+			<string>ActionSheetDatePicker.m</string>
 			<key>path</key>
-			<string>Pod/Classes/JVFloatingDrawerView.m</string>
+			<string>Pickers/ActionSheetDatePicker.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>069693CDF7D2FA5C66098207569E1421</key>
+		<key>02351416DD441A75F87518D77A209031</key>
 		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
 			<key>includeInIndex</key>
-			<string>0</string>
+			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libActionSheetPicker-3.0.a</string>
+			<string>ActionSheetMultipleStringPicker.h</string>
 			<key>path</key>
-			<string>libActionSheetPicker-3.0.a</string>
+			<string>Pickers/ActionSheetMultipleStringPicker.h</string>
 			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>070AB7912C5AA6B4867DCA84A73658B9</key>
+		<key>026E2B0E2A173EF0CFEA67B5E23C9A16</key>
 		<dict>
-			<key>fileRef</key>
-			<string>8CF2F46D967378D5A06D20055EEE097A</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JVFloatingDrawerSpringAnimator.h</string>
+			<key>path</key>
+			<string>Pod/Classes/JVFloatingDrawerSpringAnimator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0685304D0C07F67F6C71F51FDCA74512</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>1402E82C771254BEBFD305F7BF598558</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>07A366B775B0BD7C2E35CB2F307E2684</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7EDC88F2E92AF8DCF58510F54F069183</string>
+				<string>AD37FCB7378C4819814DEE3024DDF5FC</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
 		</dict>
 		<key>091BCCE7CEAE1669D1DF17ABADA6847C</key>
 		<dict>
@@ -117,77 +140,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>0A09EAB6447060A13053A33E12C1F867</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0A5EFA1B223BD2F3592AE3084085879B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ActionSheetPicker-3.0-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0B65212E7325E13F9E31D6B6C0591A20</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FCAEC00C48FCFD280418F1D220EB711C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0B9E2EDC0C31393092A988181FFB5A95</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>35B73F82A20B736F806B5AE62CF245A3</string>
-			<key>buildPhases</key>
-			<array>
-				<string>47C9A54F8174550238D0553CE5E7868A</string>
-				<string>5FCE5D2F50BE92352C644ACF7C21E6F6</string>
-				<string>8C425311FA8189294902C06A87EC4C41</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>JVFloatingDrawer</string>
-			<key>productName</key>
-			<string>JVFloatingDrawer</string>
-			<key>productReference</key>
-			<string>EEC6A205482295B6467EF6323F92A53E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>0BE57D66DF4976BDD3B06A68C231CCB2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
 		<key>0CBD5A1DC9A47D9174158DFF403528C0</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -216,8 +168,8 @@
 			<array/>
 			<key>dependencies</key>
 			<array>
-				<string>FE4B755B94D6A188C49A47B46F53AA86</string>
-				<string>B327BD784DE2F430167FB7566E285BEE</string>
+				<string>6B734AF91FA01F8BBBA7EE046DE244AD</string>
+				<string>0D82D316D0D6534C5550E30873C6248A</string>
 			</array>
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
@@ -230,12 +182,91 @@
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
 		</dict>
-		<key>1079DE5FFC0016CF811341BE0879E5F0</key>
+		<key>0D82D316D0D6534C5550E30873C6248A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JVFloatingDrawer</string>
+			<key>target</key>
+			<string>6EAE36E20DF056C8DEB91432AC7F0350</string>
+			<key>targetProxy</key>
+			<string>73B14108A349DA060CFE2260645FBE82</string>
+		</dict>
+		<key>0DD8FD8642C57917354620D575EAA0AC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1E38B1CBBD053F70245E4985D486DC24</string>
+			<string>F7DC2188556561EB4208BB450C3AE0B9</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>0EA3FA155A2EF89DC0CF96560E3E01D0</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>10AB77A03106DFCED8D1FEDBA9A97980</key>
+		<dict>
+			<key>fileRef</key>
+			<string>026E2B0E2A173EF0CFEA67B5E23C9A16</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>119E6C19EF3FE4FFEA5C0901B21BB520</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>11B3A06BD11585B9003D88FD314BC63D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JVFloatingDrawerView.h</string>
+			<key>path</key>
+			<string>Pod/Classes/JVFloatingDrawerView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>11DE0B6A15244E3AE3E8BA94A2F03AB5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>DistancePickerView.h</string>
+			<key>path</key>
+			<string>Pickers/DistancePickerView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>11FA92F876D1430062E456906BEB118E</key>
 		<dict>
@@ -252,6 +283,13 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>1402E82C771254BEBFD305F7BF598558</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0EA3FA155A2EF89DC0CF96560E3E01D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>15A529C27057E4A57D259CBC6E6CE49C</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -262,6 +300,21 @@
 			<string>text</string>
 			<key>path</key>
 			<string>Pods-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>167793A6E10916BA7F3093E4CC66FCFE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ActionSheetCustomPicker.m</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetCustomPicker.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -280,65 +333,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>177B6D9DD8E016E53BBB2000F5084D0A</key>
+		<key>187A3449FDD0EE20461025340F49CC97</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>7E220637FE310E064DA82C9BACE6CB88</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/ActionSheetPicker-3.0/ActionSheetPicker-3.0-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>18E9B4CDEF260BB06724A41B96860286</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>6F4FD68197F4E6633B7A8F15896940FA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JVFloatingDrawer-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1A210FDDB3F456885668A6547E60EBDA</key>
 		<dict>
@@ -366,42 +372,27 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1D59B015F0FA7A1271C1C6FD2B48B3DF</key>
+		<key>1D94533E3DD59550DDAF633C3824D9F3</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2F79A930A4D3581C2E72111CE503F8FA</string>
+				<string>F9D1ADC24B271A09B5247E971C2C5060</string>
+				<string>CEF9FA8A3C6E1C57FF4F5327D0C71951</string>
+				<string>C9CB349A0B0C53E4A6B5FF43B9617F0C</string>
+				<string>2BA3812DDAF46066EEFE0FD4640AFC3D</string>
+				<string>0DD8FD8642C57917354620D575EAA0AC</string>
+				<string>8A3D58343D87B9164064CDD6C1CC7B68</string>
+				<string>42D351F5C8A0971111201A8814B20F1A</string>
+				<string>3867C5B1F8EEECD7E0BC8101E668E61F</string>
+				<string>2B40A3CE622CC5EC56A18D7F9C6E2016</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DistancePickerView.h</string>
-			<key>path</key>
-			<string>Pickers/DistancePickerView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1E38B1CBBD053F70245E4985D486DC24</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JVFloatingDrawerViewController.h</string>
-			<key>path</key>
-			<string>Pod/Classes/JVFloatingDrawerViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1ED1485F3E99385A69662A7C783F7EF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0A5EFA1B223BD2F3592AE3084085879B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>1F38BE370464C98C2C299E8008690A20</key>
 		<dict>
@@ -433,12 +424,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2071EB12267F4B7D80472FDA3F75B975</key>
+		<key>22443489BFFFEF162C9C012B0D3AE29C</key>
 		<dict>
-			<key>fileRef</key>
-			<string>35F6F446B4CE6242B129F3D2136CE354</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ActionSheetStringPicker.h</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetStringPicker.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>2355EFB370B7A1A92EE612CA569FE052</key>
 		<dict>
@@ -470,7 +469,22 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>245778005BD5D791EC3A6AEE4A5B0780</key>
+		<key>2773CDDEAB109EA930DC89B9DC05430A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JVFloatingDrawerView.m</string>
+			<key>path</key>
+			<string>Pod/Classes/JVFloatingDrawerView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27FEF520E2E201F1023EB917BB54A996</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -479,9 +493,9 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>AbstractActionSheetPicker.h</string>
+			<string>JVFloatingDrawerAnimation.h</string>
 			<key>path</key>
-			<string>Pickers/AbstractActionSheetPicker.h</string>
+			<string>Pod/Classes/JVFloatingDrawerAnimation.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -524,26 +538,56 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2C24F3BC971047F8A45BFEF9066C1B37</key>
+		<key>2B40A3CE622CC5EC56A18D7F9C6E2016</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0BE57D66DF4976BDD3B06A68C231CCB2</string>
+			<string>565DAAC50DF79F6A9F68F915E2AF5BB0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>2B73E8859E5D5EE0E7F34EB44B761EAA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>187A3449FDD0EE20461025340F49CC97</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>2D6358F25D77483F1D8F9631E3EBF732</key>
+		<key>2BA3812DDAF46066EEFE0FD4640AFC3D</key>
 		<dict>
 			<key>fileRef</key>
-			<string>808D1C6EFF9895789C3421D421220D9A</string>
+			<string>F6169F79C168D6D5FE109F2CF8AA88E2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>2C346DAE2EFD07760D72D137B7FEAF4B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
 		</dict>
 		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
 		<dict>
 			<key>buildConfigurations</key>
 			<array>
-				<string>A70CDAD61F90AC503C7D04CC22DA2923</string>
-				<string>FB45FFD90572718D82AB9092B750F0CA</string>
+				<string>9EB645C612834738B99727720210C23E</string>
+				<string>E39CD1E764776175CB82EEC82A6C9948</string>
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
@@ -552,46 +596,41 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>346CF15790A6C5FEA2B58659D0E9DF5E</key>
+		<key>2F79A930A4D3581C2E72111CE503F8FA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>85614547D8A899FD3EE3A4E4F14D1E36</string>
+			<string>94E0D616A6E7D0E54AF5B725C08C2384</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
 		</dict>
-		<key>35B73F82A20B736F806B5AE62CF245A3</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>7D6DB41FABB8F8EFB8232C024C8D3086</string>
-				<string>B574F7D85191854EFAFEA7ED3D269D22</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>35F6F446B4CE6242B129F3D2136CE354</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>JVFloatingDrawer-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>420A57B09A1D7B66EECC9AEB04068571</key>
+		<key>3867C5B1F8EEECD7E0BC8101E668E61F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D23A4854CE519D42D74C069C72D21703</string>
+			<string>9CC5670BEAADA7E09414A8B7B044B62E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>42D351F5C8A0971111201A8814B20F1A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>93B81D60664B8048A4FAD5F9BC7A9ABB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
 		</dict>
 		<key>433CD3331B6C3787F473C941B61FC68F</key>
 		<dict>
@@ -606,17 +645,28 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>4386E19BD531473DD4E4A0495304789B</key>
+		<key>44C10C1F38144C320C23CD739C77939E</key>
 		<dict>
-			<key>fileRef</key>
-			<string>616583237B519BE20161F0C442649FA7</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>54941D61B83EEA5079833B68FF0E8BB8</string>
+				<string>67D629F79F5494A313065B58667AAF01</string>
+				<string>CD240578B6CAB4B829468B520536F126</string>
+				<string>C129947525A27EA742BAE2E74BEFCEAD</string>
+				<string>ED290A7CFA79DF87C6E4118D5A0A3596</string>
+				<string>9BC7A36057165AFE9E2A65015537856C</string>
+				<string>63EE294C1FC275F5AA6B876D9F5EDF44</string>
+				<string>9E002A3C8D1600033A486FB069B8AE91</string>
+				<string>FA9552C120369AC75CC5D0283BBB7572</string>
+				<string>BF1FF4A80D266C6582723E76AE6C29AE</string>
+				<string>7BFC9B109F3DBCA0869F8CA5A875BFD5</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>46083A9B5E7CC2F7672F7B66C57F3ED2</key>
 		<dict>
@@ -633,65 +683,12 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>46B4F8FAE59FB3DF6A82F09926617288</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AbstractActionSheetPicker.m</string>
-			<key>path</key>
-			<string>Pickers/AbstractActionSheetPicker.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>4740F6ECF7CC97037F7112C84AE0B8E6</key>
 		<dict>
 			<key>fileRef</key>
 			<string>55F0147D6C8EEA4049CDC1C036A7D842</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>47C9A54F8174550238D0553CE5E7868A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>2071EB12267F4B7D80472FDA3F75B975</string>
-				<string>5A8C133DA1207EDA1435BA7E845FCDC5</string>
-				<string>9302AA62DB9BCFA636E17C9956DCEE31</string>
-				<string>420A57B09A1D7B66EECC9AEB04068571</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>4935175EB7F438DFDA948E290AD18E6E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>245778005BD5D791EC3A6AEE4A5B0780</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4AD60A7A3DE237906CB154FF628060CD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ActionSheetMultipleStringPicker.h</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetMultipleStringPicker.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>4C64A6D9F00E90098B0CA47434FC7442</key>
 		<dict>
@@ -742,13 +739,13 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>808D1C6EFF9895789C3421D421220D9A</string>
-				<string>6141960470A47DE688DA094519BD15D7</string>
-				<string>E4B6E71622E4B5763781306FF7537938</string>
-				<string>E19DF66F198153CA63661D9F09DD6C2C</string>
-				<string>05840B81EC70A4A3CCBB037F92530BDD</string>
-				<string>1E38B1CBBD053F70245E4985D486DC24</string>
-				<string>D23A4854CE519D42D74C069C72D21703</string>
+				<string>27FEF520E2E201F1023EB917BB54A996</string>
+				<string>026E2B0E2A173EF0CFEA67B5E23C9A16</string>
+				<string>A272A2079F32A4D308B3E8410902AEB1</string>
+				<string>11B3A06BD11585B9003D88FD314BC63D</string>
+				<string>2773CDDEAB109EA930DC89B9DC05430A</string>
+				<string>9FF46DD79A6D0EEC71C79B517F6EF83C</string>
+				<string>ECD8D3064F4C18EAC5334944EA44F6B8</string>
 				<string>ED31B724A3E0457068E4872D4B3B75E1</string>
 			</array>
 			<key>isa</key>
@@ -775,35 +772,25 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>51E45038BDF33F81456D2BFE584298B8</key>
+		<key>54941D61B83EEA5079833B68FF0E8BB8</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>AAF68AF06D6AF95AFD123879CD1A2AE9</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ActionSheetDatePicker.h</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetDatePicker.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
-		<key>550A72920FF70AEFCAFF71CD1389628E</key>
+		<key>5598A0EFE58E718CB7ABD29C56F80E47</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>ActionSheetDistancePicker.m</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetDistancePicker.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>C6B017DE59D0BF2511EA9BA02CF3409B</string>
+			<key>remoteInfo</key>
+			<string>ActionSheetPicker-3.0</string>
 		</dict>
 		<key>55F0147D6C8EEA4049CDC1C036A7D842</key>
 		<dict>
@@ -818,27 +805,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>56FEE1FD98B542A5E2AA98FC1AD3A0FB</key>
+		<key>565DAAC50DF79F6A9F68F915E2AF5BB0</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>ActionSheetPicker.h</string>
+			<string>SWActionSheet.m</string>
 			<key>path</key>
-			<string>Pickers/ActionSheetPicker.h</string>
+			<string>Pickers/SWActionSheet.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A8C133DA1207EDA1435BA7E845FCDC5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E4B6E71622E4B5763781306FF7537938</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>5B3E271DF6DB541800C7CB5E1C268CC7</key>
 		<dict>
@@ -855,6 +835,26 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>5B430A99C2E15388BE946C7BFDE88F3D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5BFA4AFD458742584F60B8A513D098D4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2773CDDEAB109EA930DC89B9DC05430A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>5C0937CC9C3A3E3B77A70B2AA21886B8</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -870,30 +870,45 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>5C4699EBC13B8FC4641B829AAD3CFADC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ActionSheetPicker.h</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetPicker.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>5E0182DB09CCEC289C93C08D8D7D7CE3</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>245778005BD5D791EC3A6AEE4A5B0780</string>
-				<string>46B4F8FAE59FB3DF6A82F09926617288</string>
-				<string>EC48283D9252DA59FAC7567272550F61</string>
-				<string>60C14AE2F22FE054C53E152EBEA68514</string>
-				<string>85614547D8A899FD3EE3A4E4F14D1E36</string>
-				<string>51E45038BDF33F81456D2BFE584298B8</string>
-				<string>605599A9826C62260F4C6FACB811F9C7</string>
-				<string>850BB00A1DD8F3A707C23FC7B96E1FC9</string>
-				<string>550A72920FF70AEFCAFF71CD1389628E</string>
-				<string>E7B8785ED4636CBAD939AB0EBD8EAB65</string>
-				<string>BAFD03CCD7E0817AA8C56CE8C1989A1F</string>
-				<string>4AD60A7A3DE237906CB154FF628060CD</string>
-				<string>9DC617C5F680986186BE4D0982BE62D6</string>
-				<string>56FEE1FD98B542A5E2AA98FC1AD3A0FB</string>
-				<string>FCAEC00C48FCFD280418F1D220EB711C</string>
-				<string>8CF2F46D967378D5A06D20055EEE097A</string>
-				<string>1D59B015F0FA7A1271C1C6FD2B48B3DF</string>
-				<string>6DF1FF8FBCFECC4425FC938BDF4BBDD6</string>
-				<string>E26CF60D529AC682F42F7B77779E5A9F</string>
-				<string>616583237B519BE20161F0C442649FA7</string>
+				<string>AAF68AF06D6AF95AFD123879CD1A2AE9</string>
+				<string>94E0D616A6E7D0E54AF5B725C08C2384</string>
+				<string>FB39BF0C3F63B98DC90D43BE7AD907A8</string>
+				<string>167793A6E10916BA7F3093E4CC66FCFE</string>
+				<string>63C4717139739D75AB402AE5EF4CD77F</string>
+				<string>7D53477A3801259B4746F57B3D9F828F</string>
+				<string>01674D482E43BE3272647F5DC61D591D</string>
+				<string>7EA034EA4750A2390FB5B80147C52B80</string>
+				<string>E0B2D1F40A4BB13EA09A99BD7088A696</string>
+				<string>D45D58F87961F25EE05D648E1EB6D9A8</string>
+				<string>F6169F79C168D6D5FE109F2CF8AA88E2</string>
+				<string>02351416DD441A75F87518D77A209031</string>
+				<string>F7DC2188556561EB4208BB450C3AE0B9</string>
+				<string>5C4699EBC13B8FC4641B829AAD3CFADC</string>
+				<string>22443489BFFFEF162C9C012B0D3AE29C</string>
+				<string>93B81D60664B8048A4FAD5F9BC7A9ABB</string>
+				<string>11DE0B6A15244E3AE3E8BA94A2F03AB5</string>
+				<string>9CC5670BEAADA7E09414A8B7B044B62E</string>
+				<string>72408D20C3F02F775C88DC0E63200B08</string>
+				<string>565DAAC50DF79F6A9F68F915E2AF5BB0</string>
 				<string>D6F2C1DB7EE761FFD9DEEE51C5BC2C38</string>
 			</array>
 			<key>isa</key>
@@ -920,50 +935,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>5FCE5D2F50BE92352C644ACF7C21E6F6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>2C24F3BC971047F8A45BFEF9066C1B37</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>605599A9826C62260F4C6FACB811F9C7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>ActionSheetDatePicker.m</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetDatePicker.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C14AE2F22FE054C53E152EBEA68514</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>ActionSheetCustomPicker.m</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetCustomPicker.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6141960470A47DE688DA094519BD15D7</key>
+		<key>63C4717139739D75AB402AE5EF4CD77F</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -972,51 +944,18 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JVFloatingDrawerSpringAnimator.h</string>
+			<string>ActionSheetCustomPickerDelegate.h</string>
 			<key>path</key>
-			<string>Pod/Classes/JVFloatingDrawerSpringAnimator.h</string>
+			<string>Pickers/ActionSheetCustomPickerDelegate.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>616583237B519BE20161F0C442649FA7</key>
+		<key>63EE294C1FC275F5AA6B876D9F5EDF44</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>02351416DD441A75F87518D77A209031</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SWActionSheet.m</string>
-			<key>path</key>
-			<string>Pickers/SWActionSheet.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>628B14EB37E976229C94E00531116C31</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>B2AB2F545ECB589EAD7070E9CB9995CE</string>
-			<key>buildPhases</key>
-			<array>
-				<string>7E9A8C0DF5D7C91AB36F26EA762BF3B5</string>
-				<string>65341367E34277719ADF7AFF10D17F75</string>
-				<string>82E085DD2D8E15503861203F005828F2</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>ActionSheetPicker-3.0</string>
-			<key>productName</key>
-			<string>ActionSheetPicker-3.0</string>
-			<key>productReference</key>
-			<string>069693CDF7D2FA5C66098207569E1421</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>641AE05DD55E5E6AC1590CD7B4A18F97</key>
 		<dict>
@@ -1031,38 +970,24 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>65341367E34277719ADF7AFF10D17F75</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A3B0E3B3BD515DDAB696844715BEF0F1</string>
-				<string>7C26E686D6749006CAF4D715FEED3821</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>671BDB95E4D4E877D0CD33AE4956C40C</key>
+		<key>65E841176188411B50F3FE751373BDC4</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>7E220637FE310E064DA82C9BACE6CB88</string>
+			<string>119E6C19EF3FE4FFEA5C0901B21BB520</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/ActionSheetPicker-3.0/ActionSheetPicker-3.0-prefix.pch</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
+				<string>8.1</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
+				<string>NO</string>
 				<key>OTHER_LDFLAGS</key>
 				<string></string>
 				<key>OTHER_LIBTOOLFLAGS</key>
 				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
 				<key>SDKROOT</key>
@@ -1073,7 +998,7 @@
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
-			<string>Debug</string>
+			<string>Release</string>
 		</dict>
 		<key>6751BBE12AA74A01D58F20926ECFE8D5</key>
 		<dict>
@@ -1088,10 +1013,10 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>67CA01A3847774EAC7EBAA93B4B0EF93</key>
+		<key>67D629F79F5494A313065B58667AAF01</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6141960470A47DE688DA094519BD15D7</string>
+			<string>FB39BF0C3F63B98DC90D43BE7AD907A8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1140,32 +1065,29 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6B1FBFEEF00A7C7772324CBACA2AFFB6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>46B4F8FAE59FB3DF6A82F09926617288</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>6DF1FF8FBCFECC4425FC938BDF4BBDD6</key>
+		<key>6B3950FE28FA61E479DDD8CCA9F75A48</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DistancePickerView.m</string>
+			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>Pickers/DistancePickerView.m</string>
+			<string>JVFloatingDrawer-Private.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6B734AF91FA01F8BBBA7EE046DE244AD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>ActionSheetPicker-3.0</string>
+			<key>target</key>
+			<string>C6B017DE59D0BF2511EA9BA02CF3409B</string>
+			<key>targetProxy</key>
+			<string>5598A0EFE58E718CB7ABD29C56F80E47</string>
 		</dict>
 		<key>6E65889C3F5C0B1FD46E42B86C831058</key>
 		<dict>
@@ -1182,7 +1104,47 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6EC0E3DD4538E1A0A6ECFEB53A2AD6DF</key>
+		<key>6EAE36E20DF056C8DEB91432AC7F0350</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>07A366B775B0BD7C2E35CB2F307E2684</string>
+			<key>buildPhases</key>
+			<array>
+				<string>CC40F6473D3CD590C783F9070933EF17</string>
+				<string>0685304D0C07F67F6C71F51FDCA74512</string>
+				<string>DA19C0271A6DE5940A6BFB203B7BEBAA</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>JVFloatingDrawer</string>
+			<key>productName</key>
+			<string>JVFloatingDrawer</string>
+			<key>productReference</key>
+			<string>BA92E593D24D5BF6C2831FD1D7AC4F5B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>72408D20C3F02F775C88DC0E63200B08</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SWActionSheet.h</string>
+			<key>path</key>
+			<string>Pickers/SWActionSheet.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>73B14108A349DA060CFE2260645FBE82</key>
 		<dict>
 			<key>containerPortal</key>
 			<string>D41D8CD98F00B204E9800998ECF8427E</string>
@@ -1191,22 +1153,9 @@
 			<key>proxyType</key>
 			<string>1</string>
 			<key>remoteGlobalIDString</key>
-			<string>0B9E2EDC0C31393092A988181FFB5A95</string>
+			<string>6EAE36E20DF056C8DEB91432AC7F0350</string>
 			<key>remoteInfo</key>
 			<string>JVFloatingDrawer</string>
-		</dict>
-		<key>6F4FD68197F4E6633B7A8F15896940FA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>7504D77633FC8722B07D8C0F80F11A8B</key>
 		<dict>
@@ -1242,8 +1191,8 @@
 		<dict>
 			<key>buildConfigurations</key>
 			<array>
-				<string>A6ADB2AD4B1D7A62F8FF410D2015CA28</string>
-				<string>18E9B4CDEF260BB06724A41B96860286</string>
+				<string>EDA17B399A77A967B7D99400D7C5EBF9</string>
+				<string>65E841176188411B50F3FE751373BDC4</string>
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
@@ -1252,17 +1201,19 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>772651774EB55B559E3C24527114A2BE</key>
+		<key>791B479C0185AE50C53700DE140DD877</key>
 		<dict>
-			<key>fileRef</key>
-			<string>9DC617C5F680986186BE4D0982BE62D6</string>
+			<key>buildConfigurations</key>
+			<array>
+				<string>D53215BF38383B3882461E6B6D73237E</string>
+				<string>CF83F7DCE47FF581F31CB1FB3B5476B0</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
+			<string>XCConfigurationList</string>
 		</dict>
 		<key>7B7BF4A6457F83FD5FC94D6F5D005855</key>
 		<dict>
@@ -1279,42 +1230,27 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7C26E686D6749006CAF4D715FEED3821</key>
+		<key>7BFC9B109F3DBCA0869F8CA5A875BFD5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B1EF49ECE5FDA2BAF2AA1330811BC816</string>
+			<string>72408D20C3F02F775C88DC0E63200B08</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>7D6DB41FABB8F8EFB8232C024C8D3086</key>
+		<key>7D53477A3801259B4746F57B3D9F828F</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FB473A06824B8789722B9DD805B65984</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/JVFloatingDrawer/JVFloatingDrawer-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>XCBuildConfiguration</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>Debug</string>
+			<string>ActionSheetDatePicker.h</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetDatePicker.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>7DB346D0F39D3F0E887471402A8071AB</key>
 		<dict>
@@ -1346,40 +1282,57 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7E220637FE310E064DA82C9BACE6CB88</key>
+		<key>7EA034EA4750A2390FB5B80147C52B80</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ActionSheetDistancePicker.h</string>
 			<key>path</key>
-			<string>ActionSheetPicker-3.0-Private.xcconfig</string>
+			<string>Pickers/ActionSheetDistancePicker.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7E9A8C0DF5D7C91AB36F26EA762BF3B5</key>
+		<key>7ECBF676CFFBE14CE5544C1CC39CFE5B</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6B1FBFEEF00A7C7772324CBACA2AFFB6</string>
-				<string>F863E54860C3C0E8B8039AF2FCDF9359</string>
-				<string>FB873C56C7D1BE6A5ADCA3A587ED76BD</string>
-				<string>B5408B8C1BBB320E39BABA108A2BC7B7</string>
-				<string>D90BE7595BF59D0E89452388E9FF3080</string>
-				<string>772651774EB55B559E3C24527114A2BE</string>
-				<string>1ED1485F3E99385A69662A7C783F7EF9</string>
-				<string>070AB7912C5AA6B4867DCA84A73658B9</string>
-				<string>D8BDF3B52565A55FF736AF037EC9AA72</string>
-				<string>4386E19BD531473DD4E4A0495304789B</string>
-			</array>
+			<key>fileRef</key>
+			<string>A272A2079F32A4D308B3E8410902AEB1</string>
 			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7EDC88F2E92AF8DCF58510F54F069183</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>6B3950FE28FA61E479DDD8CCA9F75A48</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JVFloatingDrawer/JVFloatingDrawer-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
 		</dict>
 		<key>8037FF449136DC4A281304ADBF965FE8</key>
 		<dict>
@@ -1411,21 +1364,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>808D1C6EFF9895789C3421D421220D9A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JVFloatingDrawerAnimation.h</string>
-			<key>path</key>
-			<string>Pod/Classes/JVFloatingDrawerAnimation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>80D337B793803FE699609F861DAC430F</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1441,71 +1379,12 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>82E085DD2D8E15503861203F005828F2</key>
+		<key>839A9A0F4369BA7F83C81F33722D21B8</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>4935175EB7F438DFDA948E290AD18E6E</string>
-				<string>8E3253C73190D77DCD7C3B89AFEB41E1</string>
-				<string>346CF15790A6C5FEA2B58659D0E9DF5E</string>
-				<string>BAD21A3936F1B7B1C521700B888CD1BD</string>
-				<string>8EF65FD63432869AEEB778C8504B6EDB</string>
-				<string>B5103F40E13527F23F21BE16CF2E4E9D</string>
-				<string>EA9F936FFECAE85AE716AFA67F1A15D7</string>
-				<string>F525C218FC44C46D6577AAC086AEF0E7</string>
-				<string>0B65212E7325E13F9E31D6B6C0591A20</string>
-				<string>E3F4AD96571847D2348E8764E296064F</string>
-				<string>C32831F927BAC240E12ABED8E6E5EEE3</string>
-			</array>
+			<key>fileRef</key>
+			<string>11B3A06BD11585B9003D88FD314BC63D</string>
 			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>850BB00A1DD8F3A707C23FC7B96E1FC9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ActionSheetDistancePicker.h</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetDistancePicker.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>85614547D8A899FD3EE3A4E4F14D1E36</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ActionSheetCustomPickerDelegate.h</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetCustomPickerDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8656E6FC022928B1CB40271F0ADFE587</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>628B14EB37E976229C94E00531116C31</string>
-			<key>remoteInfo</key>
-			<string>ActionSheetPicker-3.0</string>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>888E2CBE9938959B5876B9938A8B7ABC</key>
 		<dict>
@@ -1583,48 +1462,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>8C425311FA8189294902C06A87EC4C41</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>2D6358F25D77483F1D8F9631E3EBF732</string>
-				<string>67CA01A3847774EAC7EBAA93B4B0EF93</string>
-				<string>03B6CDEDD20B29B4240628C27A6238AF</string>
-				<string>1079DE5FFC0016CF811341BE0879E5F0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8CF2F46D967378D5A06D20055EEE097A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>ActionSheetStringPicker.m</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetStringPicker.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8E3253C73190D77DCD7C3B89AFEB41E1</key>
+		<key>8A3D58343D87B9164064CDD6C1CC7B68</key>
 		<dict>
 			<key>fileRef</key>
-			<string>EC48283D9252DA59FAC7567272550F61</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8EF65FD63432869AEEB778C8504B6EDB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>850BB00A1DD8F3A707C23FC7B96E1FC9</string>
+			<string>A59A0600AA40FB0FC4A510FC077D4133</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1657,12 +1498,35 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>9302AA62DB9BCFA636E17C9956DCEE31</key>
+		<key>93B81D60664B8048A4FAD5F9BC7A9ABB</key>
 		<dict>
-			<key>fileRef</key>
-			<string>05840B81EC70A4A3CCBB037F92530BDD</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ActionSheetStringPicker.m</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetStringPicker.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>94E0D616A6E7D0E54AF5B725C08C2384</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AbstractActionSheetPicker.m</string>
+			<key>path</key>
+			<string>Pickers/AbstractActionSheetPicker.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>952EEBFAF8F7E620423C9F156F25A506</key>
 		<dict>
@@ -1672,8 +1536,8 @@
 				<string>BF59BC15D23E1E1912C8F334E7236813</string>
 				<string>55F0147D6C8EEA4049CDC1C036A7D842</string>
 				<string>641AE05DD55E5E6AC1590CD7B4A18F97</string>
-				<string>0A09EAB6447060A13053A33E12C1F867</string>
-				<string>6F4FD68197F4E6633B7A8F15896940FA</string>
+				<string>5B430A99C2E15388BE946C7BFDE88F3D</string>
+				<string>119E6C19EF3FE4FFEA5C0901B21BB520</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1797,7 +1661,14 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>9DC617C5F680986186BE4D0982BE62D6</key>
+		<key>9BC7A36057165AFE9E2A65015537856C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D45D58F87961F25EE05D648E1EB6D9A8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9CC5670BEAADA7E09414A8B7B044B62E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1806,93 +1677,20 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>ActionSheetMultipleStringPicker.m</string>
+			<string>DistancePickerView.m</string>
 			<key>path</key>
-			<string>Pickers/ActionSheetMultipleStringPicker.m</string>
+			<string>Pickers/DistancePickerView.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A263F22330514D8A6189C2E984835A7A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>ActionSheetPicker-3.0.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A3B0E3B3BD515DDAB696844715BEF0F1</key>
+		<key>9E002A3C8D1600033A486FB069B8AE91</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0BE57D66DF4976BDD3B06A68C231CCB2</string>
+			<string>5C4699EBC13B8FC4641B829AAD3CFADC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>A5F43C8321CE925177C4E6D0DB6211D4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UMSocialData.h</string>
-			<key>path</key>
-			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_5.0/Header/UMSocialData.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A68CC106C9C47E208553D436C2D3E4F5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>WBHttpRequest+WeiboToken.h</string>
-			<key>path</key>
-			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/SinaSSO/WBHttpRequest+WeiboToken.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A6ADB2AD4B1D7A62F8FF410D2015CA28</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>0A09EAB6447060A13053A33E12C1F867</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>A70CDAD61F90AC503C7D04CC22DA2923</key>
+		<key>9EB645C612834738B99727720210C23E</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -1952,7 +1750,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
+				<string>8.1</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>STRIP_INSTALLED_PRODUCT</key>
@@ -1964,6 +1762,107 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Debug</string>
+		</dict>
+		<key>9FF46DD79A6D0EEC71C79B517F6EF83C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JVFloatingDrawerViewController.h</string>
+			<key>path</key>
+			<string>Pod/Classes/JVFloatingDrawerViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A263F22330514D8A6189C2E984835A7A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ActionSheetPicker-3.0.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A272A2079F32A4D308B3E8410902AEB1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JVFloatingDrawerSpringAnimator.m</string>
+			<key>path</key>
+			<string>Pod/Classes/JVFloatingDrawerSpringAnimator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A59A0600AA40FB0FC4A510FC077D4133</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ActionSheetPicker-3.0-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A5F43C8321CE925177C4E6D0DB6211D4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UMSocialData.h</string>
+			<key>path</key>
+			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_5.0/Header/UMSocialData.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A68CC106C9C47E208553D436C2D3E4F5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WBHttpRequest+WeiboToken.h</string>
+			<key>path</key>
+			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/SinaSSO/WBHttpRequest+WeiboToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A8011E788AB1D7E4D16F12495C277FED</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libActionSheetPicker-3.0.a</string>
+			<key>path</key>
+			<string>libActionSheetPicker-3.0.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>A8DC028310C48BB48773BDE6A12CFD52</key>
 		<dict>
@@ -1995,7 +1894,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>AF22C219212B2424E0B411F422F8CFD0</key>
+		<key>AAF68AF06D6AF95AFD123879CD1A2AE9</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2004,116 +1903,37 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>LWApiConfig.h</string>
+			<string>AbstractActionSheetPicker.h</string>
 			<key>path</key>
-			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/LaiWang/LWApiConfig.h</string>
+			<string>Pickers/AbstractActionSheetPicker.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>B1EF49ECE5FDA2BAF2AA1330811BC816</key>
+		<key>AC0DA05D2591B22BAEB1033CFCBC6AAB</key>
 		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>B256F14E9F474090EBB534E0E3FA08A5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UMSocialBar.h</string>
-			<key>path</key>
-			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_5.0/Header/UMSocialBar.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B2AB2F545ECB589EAD7070E9CB9995CE</key>
-		<dict>
-			<key>buildConfigurations</key>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
 			<array>
-				<string>671BDB95E4D4E877D0CD33AE4956C40C</string>
-				<string>177B6D9DD8E016E53BBB2000F5084D0A</string>
+				<string>D43DE90B910E823234ED9C8A58CCB91D</string>
+				<string>DB74A6CF72639590717EE05843CC02B4</string>
 			</array>
-			<key>defaultConfigurationIsVisible</key>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
 		</dict>
-		<key>B327BD784DE2F430167FB7566E285BEE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>JVFloatingDrawer</string>
-			<key>target</key>
-			<string>0B9E2EDC0C31393092A988181FFB5A95</string>
-			<key>targetProxy</key>
-			<string>6EC0E3DD4538E1A0A6ECFEB53A2AD6DF</string>
-		</dict>
-		<key>B344F55412FB353C9B491C5627318FC2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UMSocialWhatsappHandler.h</string>
-			<key>path</key>
-			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/Whatsapp/UMSocialWhatsappHandler.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B5103F40E13527F23F21BE16CF2E4E9D</key>
+		<key>AC845DA758FA334B8EC4C93AA70F1DB0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E7B8785ED4636CBAD939AB0EBD8EAB65</string>
+			<string>27FEF520E2E201F1023EB917BB54A996</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>B51E685E82731137658D2ED7B7833A6C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ActionSheetPicker-3.0-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B5408B8C1BBB320E39BABA108A2BC7B7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>550A72920FF70AEFCAFF71CD1389628E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>B574F7D85191854EFAFEA7ED3D269D22</key>
+		<key>AD37FCB7378C4819814DEE3024DDF5FC</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>FB473A06824B8789722B9DD805B65984</string>
+			<string>6B3950FE28FA61E479DDD8CCA9F75A48</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -2121,7 +1941,7 @@
 				<key>GCC_PREFIX_HEADER</key>
 				<string>Target Support Files/JVFloatingDrawer/JVFloatingDrawer-prefix.pch</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
+				<string>8.1</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>OTHER_LDFLAGS</key>
@@ -2139,6 +1959,71 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Release</string>
+		</dict>
+		<key>ADF9D7B03D1F77410A4D4CE8E87C68D7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9FF46DD79A6D0EEC71C79B517F6EF83C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AF22C219212B2424E0B411F422F8CFD0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>LWApiConfig.h</string>
+			<key>path</key>
+			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/LaiWang/LWApiConfig.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B256F14E9F474090EBB534E0E3FA08A5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UMSocialBar.h</string>
+			<key>path</key>
+			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_5.0/Header/UMSocialBar.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B344F55412FB353C9B491C5627318FC2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UMSocialWhatsappHandler.h</string>
+			<key>path</key>
+			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/Whatsapp/UMSocialWhatsappHandler.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B51E685E82731137658D2ED7B7833A6C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ActionSheetPicker-3.0-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>B8EEBE7D7BE1AE669AA58579B0828203</key>
 		<dict>
@@ -2187,27 +2072,20 @@
 			<key>xcLanguageSpecificationIdentifier</key>
 			<string>xcode.lang.ruby</string>
 		</dict>
-		<key>BAD21A3936F1B7B1C521700B888CD1BD</key>
+		<key>BA92E593D24D5BF6C2831FD1D7AC4F5B</key>
 		<dict>
-			<key>fileRef</key>
-			<string>51E45038BDF33F81456D2BFE584298B8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BAFD03CCD7E0817AA8C56CE8C1989A1F</key>
-		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
 			<key>includeInIndex</key>
-			<string>1</string>
+			<string>0</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>ActionSheetLocalePicker.m</string>
+			<string>libJVFloatingDrawer.a</string>
 			<key>path</key>
-			<string>Pickers/ActionSheetLocalePicker.m</string>
+			<string>libJVFloatingDrawer.a</string>
 			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>BC913DA8182BFFF17D995E0AD2CB2C13</key>
 		<dict>
@@ -2224,6 +2102,13 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>BF1FF4A80D266C6582723E76AE6C29AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>11DE0B6A15244E3AE3E8BA94A2F03AB5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>BF59BC15D23E1E1912C8F334E7236813</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -2237,19 +2122,44 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C32831F927BAC240E12ABED8E6E5EEE3</key>
+		<key>C129947525A27EA742BAE2E74BEFCEAD</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E26CF60D529AC682F42F7B77779E5A9F</string>
+			<string>7D53477A3801259B4746F57B3D9F828F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
 		<key>C4255859D702D502983777EE20EDBEE1</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0BE57D66DF4976BDD3B06A68C231CCB2</string>
+			<string>0EA3FA155A2EF89DC0CF96560E3E01D0</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>C6B017DE59D0BF2511EA9BA02CF3409B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>791B479C0185AE50C53700DE140DD877</string>
+			<key>buildPhases</key>
+			<array>
+				<string>1D94533E3DD59550DDAF633C3824D9F3</string>
+				<string>AC0DA05D2591B22BAEB1033CFCBC6AAB</string>
+				<string>44C10C1F38144C320C23CD739C77939E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ActionSheetPicker-3.0</string>
+			<key>productName</key>
+			<string>ActionSheetPicker-3.0</string>
+			<key>productReference</key>
+			<string>A8011E788AB1D7E4D16F12495C277FED</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
 		</dict>
 		<key>C8E7FA8A09731D89DA83DC38CB258B87</key>
 		<dict>
@@ -2266,6 +2176,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>C9CB349A0B0C53E4A6B5FF43B9617F0C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0B2D1F40A4BB13EA09A99BD7088A696</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
 		<key>CAF8BA5FD29CD5AF40D831358794B317</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -2280,6 +2202,22 @@
 			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/Tumblr/UMSocialTumblrHandler.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CC40F6473D3CD590C783F9070933EF17</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2B73E8859E5D5EE0E7F34EB44B761EAA</string>
+				<string>7ECBF676CFFBE14CE5544C1CC39CFE5B</string>
+				<string>5BFA4AFD458742584F60B8A513D098D4</string>
+				<string>E17E66B032709E554FE20A47BA5DD1F2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>CC5E43C39680F486B99BD2047CD00AEE</key>
 		<dict>
@@ -2300,8 +2238,8 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>069693CDF7D2FA5C66098207569E1421</string>
-				<string>EEC6A205482295B6467EF6323F92A53E</string>
+				<string>A8011E788AB1D7E4D16F12495C277FED</string>
+				<string>BA92E593D24D5BF6C2831FD1D7AC4F5B</string>
 				<string>69488A539B3F00944F89C6204C028415</string>
 			</array>
 			<key>isa</key>
@@ -2310,6 +2248,13 @@
 			<string>Products</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CD240578B6CAB4B829468B520536F126</key>
+		<dict>
+			<key>fileRef</key>
+			<string>63C4717139739D75AB402AE5EF4CD77F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>CE6003F68986BE0033BE111B6E28A8A6</key>
 		<dict>
@@ -2326,12 +2271,67 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>CEF9FA8A3C6E1C57FF4F5327D0C71951</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01674D482E43BE3272647F5DC61D591D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>CF83F7DCE47FF581F31CB1FB3B5476B0</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>D0875F7048FE81C63C494A63B0EDFBF1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ActionSheetPicker-3.0/ActionSheetPicker-3.0-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>D0875F7048FE81C63C494A63B0EDFBF1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ActionSheetPicker-3.0-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>D0FB9306D21AF23A056944AE037CBFFF</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>0BE57D66DF4976BDD3B06A68C231CCB2</string>
-				<string>B1EF49ECE5FDA2BAF2AA1330811BC816</string>
+				<string>0EA3FA155A2EF89DC0CF96560E3E01D0</string>
+				<string>2C346DAE2EFD07760D72D137B7FEAF4B</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -2352,21 +2352,6 @@
 			<string>AMapLocation</string>
 			<key>path</key>
 			<string>AMapLocation</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D23A4854CE519D42D74C069C72D21703</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JVFloatingDrawerViewController.m</string>
-			<key>path</key>
-			<string>Pod/Classes/JVFloatingDrawerViewController.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2448,10 +2433,62 @@
 			<string></string>
 			<key>targets</key>
 			<array>
-				<string>628B14EB37E976229C94E00531116C31</string>
-				<string>0B9E2EDC0C31393092A988181FFB5A95</string>
+				<string>C6B017DE59D0BF2511EA9BA02CF3409B</string>
+				<string>6EAE36E20DF056C8DEB91432AC7F0350</string>
 				<string>0D1D6653B121A4DA2CA57602DDAAD613</string>
 			</array>
+		</dict>
+		<key>D43DE90B910E823234ED9C8A58CCB91D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0EA3FA155A2EF89DC0CF96560E3E01D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D45D58F87961F25EE05D648E1EB6D9A8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ActionSheetLocalePicker.h</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetLocalePicker.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D53215BF38383B3882461E6B6D73237E</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>D0875F7048FE81C63C494A63B0EDFBF1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ActionSheetPicker-3.0/ActionSheetPicker-3.0-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
 		</dict>
 		<key>D6902043B24EE80EB5ADA66BC659B68A</key>
 		<dict>
@@ -2473,8 +2510,8 @@
 			<key>children</key>
 			<array>
 				<string>A263F22330514D8A6189C2E984835A7A</string>
-				<string>7E220637FE310E064DA82C9BACE6CB88</string>
-				<string>0A5EFA1B223BD2F3592AE3084085879B</string>
+				<string>D0875F7048FE81C63C494A63B0EDFBF1</string>
+				<string>A59A0600AA40FB0FC4A510FC077D4133</string>
 				<string>B51E685E82731137658D2ED7B7833A6C</string>
 			</array>
 			<key>isa</key>
@@ -2501,68 +2538,30 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D8BDF3B52565A55FF736AF037EC9AA72</key>
+		<key>DA19C0271A6DE5940A6BFB203B7BEBAA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AC845DA758FA334B8EC4C93AA70F1DB0</string>
+				<string>10AB77A03106DFCED8D1FEDBA9A97980</string>
+				<string>839A9A0F4369BA7F83C81F33722D21B8</string>
+				<string>ADF9D7B03D1F77410A4D4CE8E87C68D7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DB74A6CF72639590717EE05843CC02B4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6DF1FF8FBCFECC4425FC938BDF4BBDD6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>D90BE7595BF59D0E89452388E9FF3080</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BAFD03CCD7E0817AA8C56CE8C1989A1F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>E19DF66F198153CA63661D9F09DD6C2C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JVFloatingDrawerView.h</string>
-			<key>path</key>
-			<string>Pod/Classes/JVFloatingDrawerView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E26CF60D529AC682F42F7B77779E5A9F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SWActionSheet.h</string>
-			<key>path</key>
-			<string>Pickers/SWActionSheet.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E3F4AD96571847D2348E8764E296064F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1D59B015F0FA7A1271C1C6FD2B48B3DF</string>
+			<string>2C346DAE2EFD07760D72D137B7FEAF4B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>E4B6E71622E4B5763781306FF7537938</key>
+		<key>E0B2D1F40A4BB13EA09A99BD7088A696</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2571,147 +2570,20 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>JVFloatingDrawerSpringAnimator.m</string>
+			<string>ActionSheetDistancePicker.m</string>
 			<key>path</key>
-			<string>Pod/Classes/JVFloatingDrawerSpringAnimator.m</string>
+			<string>Pickers/ActionSheetDistancePicker.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E673A614F1B2EAEC9FD5094909782A2E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>UMSCommentInputControlleriPad.xib</string>
-			<key>path</key>
-			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_5.0/SocialSDKXib/UMSCommentInputControlleriPad.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E7B8785ED4636CBAD939AB0EBD8EAB65</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ActionSheetLocalePicker.h</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetLocalePicker.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E84061E70CD41E91E82B698D390B02E2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UMSocialSinaSSOHandler.h</string>
-			<key>path</key>
-			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/SinaSSO/UMSocialSinaSSOHandler.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EA9F936FFECAE85AE716AFA67F1A15D7</key>
+		<key>E17E66B032709E554FE20A47BA5DD1F2</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4AD60A7A3DE237906CB154FF628060CD</string>
+			<string>ECD8D3064F4C18EAC5334944EA44F6B8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>EC48283D9252DA59FAC7567272550F61</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ActionSheetCustomPicker.h</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetCustomPicker.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ED31B724A3E0457068E4872D4B3B75E1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>09EAADFB681D71FA5BD04FEC917D5748</string>
-				<string>FB473A06824B8789722B9DD805B65984</string>
-				<string>35F6F446B4CE6242B129F3D2136CE354</string>
-				<string>91F687BEE8A6A0FB0A9C06BAF3214DD2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/JVFloatingDrawer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EEC6A205482295B6467EF6323F92A53E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libJVFloatingDrawer.a</string>
-			<key>path</key>
-			<string>libJVFloatingDrawer.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F40EAD82AE3B6D8762BB23B3E4FC5D2A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>WXApi.h</string>
-			<key>path</key>
-			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/Wechat/WXApi.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F525C218FC44C46D6577AAC086AEF0E7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>56FEE1FD98B542A5E2AA98FC1AD3A0FB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F863E54860C3C0E8B8039AF2FCDF9359</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60C14AE2F22FE054C53E152EBEA68514</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>FB45FFD90572718D82AB9092B750F0CA</key>
+		<key>E39CD1E764776175CB82EEC82A6C9948</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -2766,7 +2638,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
+				<string>8.1</string>
 				<key>STRIP_INSTALLED_PRODUCT</key>
 				<string>NO</string>
 				<key>SYMROOT</key>
@@ -2779,23 +2651,155 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>FB473A06824B8789722B9DD805B65984</key>
+		<key>E673A614F1B2EAEC9FD5094909782A2E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>UMSCommentInputControlleriPad.xib</string>
 			<key>path</key>
-			<string>JVFloatingDrawer-Private.xcconfig</string>
+			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_5.0/SocialSDKXib/UMSCommentInputControlleriPad.xib</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>FB873C56C7D1BE6A5ADCA3A587ED76BD</key>
+		<key>E84061E70CD41E91E82B698D390B02E2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UMSocialSinaSSOHandler.h</string>
+			<key>path</key>
+			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/SinaSSO/UMSocialSinaSSOHandler.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ECD8D3064F4C18EAC5334944EA44F6B8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JVFloatingDrawerViewController.m</string>
+			<key>path</key>
+			<string>Pod/Classes/JVFloatingDrawerViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ED290A7CFA79DF87C6E4118D5A0A3596</key>
 		<dict>
 			<key>fileRef</key>
-			<string>605599A9826C62260F4C6FACB811F9C7</string>
+			<string>7EA034EA4750A2390FB5B80147C52B80</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>ED31B724A3E0457068E4872D4B3B75E1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>09EAADFB681D71FA5BD04FEC917D5748</string>
+				<string>6B3950FE28FA61E479DDD8CCA9F75A48</string>
+				<string>187A3449FDD0EE20461025340F49CC97</string>
+				<string>91F687BEE8A6A0FB0A9C06BAF3214DD2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/JVFloatingDrawer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EDA17B399A77A967B7D99400D7C5EBF9</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>5B430A99C2E15388BE946C7BFDE88F3D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F40EAD82AE3B6D8762BB23B3E4FC5D2A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WXApi.h</string>
+			<key>path</key>
+			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/Wechat/WXApi.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F6169F79C168D6D5FE109F2CF8AA88E2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ActionSheetLocalePicker.m</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetLocalePicker.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7DC2188556561EB4208BB450C3AE0B9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ActionSheetMultipleStringPicker.m</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetMultipleStringPicker.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F9D1ADC24B271A09B5247E971C2C5060</key>
+		<dict>
+			<key>fileRef</key>
+			<string>167793A6E10916BA7F3093E4CC66FCFE</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2803,6 +2807,28 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
+		</dict>
+		<key>FA9552C120369AC75CC5D0283BBB7572</key>
+		<dict>
+			<key>fileRef</key>
+			<string>22443489BFFFEF162C9C012B0D3AE29C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FB39BF0C3F63B98DC90D43BE7AD907A8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ActionSheetCustomPicker.h</string>
+			<key>path</key>
+			<string>Pickers/ActionSheetCustomPicker.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FC1FB086D095F10904D2B22C29D3BC5C</key>
 		<dict>
@@ -2818,32 +2844,6 @@
 			<string>Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/Wechat/UMSocialWechatHandler.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FCAEC00C48FCFD280418F1D220EB711C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ActionSheetStringPicker.h</string>
-			<key>path</key>
-			<string>Pickers/ActionSheetStringPicker.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FE4B755B94D6A188C49A47B46F53AA86</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>ActionSheetPicker-3.0</string>
-			<key>target</key>
-			<string>628B14EB37E976229C94E00531116C31</string>
-			<key>targetProxy</key>
-			<string>8656E6FC022928B1CB40271F0ADFE587</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

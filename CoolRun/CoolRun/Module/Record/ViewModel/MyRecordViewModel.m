@@ -11,11 +11,6 @@
 
 @interface MyRecordViewModel()
 
-@property (nonatomic, strong, readwrite) NSNumber *updateWalkAndRunData;
-
-
-@property (nonatomic, strong, readwrite) NSNumber *updateRunData;
-
 @property (nonatomic, copy, readwrite) NSArray *walkAndRunKcalArray;
 
 @property (nonatomic, copy, readwrite) NSArray *runKcalArray;
@@ -50,8 +45,7 @@
                             month:month
                             day:1
                        complete:^(id arr) {
-                           _walkAndRunKcalArray     = arr;
-                           self.updateWalkAndRunData    = @YES;
+                           self.walkAndRunKcalArray     = arr;
                            
                 } failWithError:^(NSError * error) {
                             NSLog(@"get kcal error is %@",error);
@@ -59,8 +53,7 @@
 }
 
 - (void)getRunKcalArrayWithMonth:(NSInteger)month year:(NSInteger)year weigth:(float)weight {
-     _runKcalArray  = [_recordManager getKcalDataWithMonth:month year:year weight:weight];
-     self.updateRunData = @YES;
+     self.runKcalArray  = [_recordManager getKcalDataWithMonth:month year:year weight:weight];
 }
 
 - (NSArray *)getRunRecordWithDate:(NSDate *)date {

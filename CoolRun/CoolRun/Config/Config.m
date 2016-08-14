@@ -10,7 +10,7 @@
 
 @implementation Config
 
-NSString *const BASE_API = @"http://polls.nat123.net/";
+NSString *const BASE_API = @"http://119.29.115.117:8080/";
 
 NSString *const USER_ID = @"id";
 

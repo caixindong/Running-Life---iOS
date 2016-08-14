@@ -53,7 +53,6 @@
 -(void)initView{
     UserModel* user = (UserModel*)[[MyUserDefault shareUserDefault] valueWithKey:USER];
     if (user) {
-        
         [_headPic sd_setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
         
         _nameLabel.text = user.realname;

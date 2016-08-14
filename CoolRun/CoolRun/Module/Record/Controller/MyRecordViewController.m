@@ -78,17 +78,13 @@
 }
 
 - (void)KVOHandler {
-    [self.KVOController observe:self.viewModel keyPath:@"updateWalkAndRunData" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
-        if ([self.viewModel.updateWalkAndRunData boolValue]) {
-            _showView.normalRecords = self.viewModel.walkAndRunKcalArray;
-        }
+    [self.KVOController observe:self.viewModel keyPath:@"walkAndRunKcalArray" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+        _showView.normalRecords = self.viewModel.walkAndRunKcalArray;
     }];
     
-    [self.KVOController observe:self.viewModel keyPath:@"updateRunData" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
-        if ([self.viewModel.updateRunData boolValue]) {
-            _showView.specialRecords    = self.viewModel.runKcalArray;
-            _calendar.specialDataArr    = self.viewModel.runKcalArray;
-        }
+    [self.KVOController observe:self.viewModel keyPath:@"runKcalArray" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+        _showView.specialRecords    = self.viewModel.runKcalArray;
+        _calendar.specialDataArr    = self.viewModel.runKcalArray;
     }];
 }
 

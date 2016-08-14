@@ -8,77 +8,146 @@
 
 #import "UserSettingViewModel.h"
 
-static NSString *const API_TOKEN = @"token";
-static NSString *const API_ID = @"id";
-static NSString *const API_AVATAR = @"avatar";
-static NSString *const API_HEIGHT = @"user_height";
-static NSString *const API_WEIGHT = @"user_weight";
-static NSString *const API_BIRTH = @"user_birth";
-static NSString *const API_SEX = @"user_sex";
-static NSString *const API_REALNAME = @"realname";
+@interface UserSettingViewModel()
+
+@property (nonatomic, strong, readwrite)UserModel *userModel;
+
+@property (nonatomic, strong, readwrite)NSNumber *updateSuccessOrFail;
+
+@property (nonatomic, strong, readwrite)NSNumber *invalid;
+
+@end
 
 @implementation UserSettingViewModel
 
-- (void)uploadImageToServer:(NSData *)imageData
-        withSuccessBlock:(ReturnValueBlock)successBlock
-           failWithError:(ErrorCodeBlock)errorBlock
-failWithNetworkWithBlock:(FailureBlock)failBlock{
+- (instancetype)init {
+    if (self = [super init]) {
+        _userModel = [self userModel];
+    }
+    return self;
+}
+
+- (void)uploadAvatar {
     NSString* uid = [[NSUserDefaults standardUserDefaults]valueForKey:UID];
     NSString* token = [[NSUserDefaults standardUserDefaults]valueForKey:TOKEN];
-    if (imageData&&uid&&token) {
-        NSLog(@"%@",imageData);
-        NSDictionary* params = @{API_TOKEN:token,
-                                 API_ID:uid,
-                                API_AVATAR:[NSString stringWithFormat:@"%@",imageData]};
-        NSLog(@"%@",params);
+    
+    if (uid && token && self.imageData) {
+        NSDictionary* params = @{@"token":token,
+                                 @"id":uid,
+                                 @"avatar":[NSString stringWithFormat:@"%@",self.imageData]};
         [MyNetworkRequest POSTRequestWithURL:API_POST_IMG WithParameter:params WithReturnBlock:^(id returnValue) {
-            if (successBlock) {
-                successBlock(returnValue[@"avatar"]);
-            }
+            NSString *imgUrl = [NSString stringWithFormat:@"%@",returnValue[@"avatar"]];
+            self.userImgUrl = imgUrl;
+            
+            [self refreshLocalUserData];
+            
+            self.updateSuccessOrFail =  @YES;
         } WithErrorCodeBlock:^(id errorCode) {
-            if (errorBlock) {
-                errorBlock(errorCode);
-            }
+            self.updateSuccessOrFail =  @NO;
         } WithFailtureBlock:^{
-            if (failBlock) {
-                failBlock();
-            }
+            self.updateSuccessOrFail =  @NO;
         }];
-        
     }
 }
 
-- (void)postUserSettingWithUserInfo:(UserModel*)user
-                  withSuccessBlock:(ReturnValueBlock)successBlock
-                     failWithError:(ErrorCodeBlock)errorBlock
-          failWithNetworkWithBlock:(FailureBlock)failBlock{
+- (void)updateUserInfo {
     NSString* uid = [[NSUserDefaults standardUserDefaults]valueForKey:UID];
     NSString* token = [[NSUserDefaults standardUserDefaults]valueForKey:TOKEN];
-    if (user&&uid&&token) {
+    if (uid && token && _userModel) {
         NSDictionary* params = @{
-                                 API_ID:uid,
-                                 API_TOKEN:token,
-                                 API_HEIGHT:user.height,
-                                 API_WEIGHT:user.weight,
-                                 API_SEX:user.sex,
-                                 API_BIRTH:user.birth,
-                                 API_REALNAME:user.realname
+                                 @"id":uid,
+                                 @"token":token,
+                                 @"user_height":_userModel.height,
+                                 @"user_weight":_userModel.weight,
+                                 @"user_sex":_userModel.sex,
+                                 @"user_birth":_userModel.birth,
+                                 @"realname":_userModel.realname
                                  };
         [MyNetworkRequest POSTRequestWithURL:API_CHANGE_INFO
                                WithParameter:params
                              WithReturnBlock:^(id returnValue) {
-                                 if (successBlock) {
-                                     successBlock(returnValue);
-                                 }
+                                 [self refreshLocalUserData];
+                                 self.updateSuccessOrFail =  @YES;
                              } WithErrorCodeBlock:^(id errorCode) {
-                                 if (errorBlock) {
-                                     errorBlock(errorCode);
-                                 }
+                                 self.updateSuccessOrFail =  @NO;
                              } WithFailtureBlock:^{
-                                 if (failBlock) {
-                                     failBlock();
-                                 }
+                                 self.updateSuccessOrFail =  @NO;
                              }];
     }
+
 }
+
+- (void)refreshLocalUserData {
+    UserStatusManager *manager = [UserStatusManager shareManager];
+    [[MyUserDefault shareUserDefault] storeValue:_userModel withKey:USER];
+    manager.haveChangeInfo = @YES;
+    self.infoRefresh = @YES;
+}
+
+#pragma mark - getter and setter
+
+- (UserModel *)userModel {
+    return [UserStatusManager shareManager].userModel;
+}
+
+- (NSString *)sexLabelText {
+    return self.userModel.sex;
+}
+
+- (NSString *)realnameLabelText {
+    return self.userModel.realname;
+}
+
+- (NSString *)usernameLableText {
+    return self.userModel.username;
+}
+
+- (NSString *)heightLabelText {
+    return self.userModel.height;
+}
+
+- (NSString *)weightLabelText {
+    return self.userModel.weight;
+}
+
+- (NSString *)birthdayLabelText {
+    return self.userModel.birth;
+}
+
+- (NSString *)userImgUrl {
+    return self.userModel.avatar;
+}
+
+- (void)setSexLabelText:(NSString *)sexLabelText {
+    _userModel.sex  = sexLabelText;
+}
+
+- (void)setRealnameLabelText:(NSString *)realnameLabelText {
+    if ([[realnameLabelText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        self.invalid = @YES;
+        return;
+    }
+    _userModel.realname = realnameLabelText;
+}
+
+- (void)setUsernameLableText:(NSString *)usernameLableText {
+    _userModel.username = usernameLableText;
+}
+
+- (void)setHeightLabelText:(NSString *)heightLabelText {
+    _userModel.height = heightLabelText;
+}
+
+- (void)setWeightLabelText:(NSString *)weightLabelText {
+    _userModel.weight = weightLabelText;
+}
+
+- (void)setBirthdayLabelText:(NSString *)birthdayLabelText {
+    _userModel.birth = birthdayLabelText;
+}
+
+- (void)setUserImgUrl:(NSString *)userImgUrl {
+    _userModel.avatar = userImgUrl;
+}
+
 @end

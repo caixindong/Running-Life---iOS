@@ -10,15 +10,6 @@
 
 @interface MyRecordViewModel : NSObject
 
-/**
- *  是否更新跑步+走路卡路里数据
- */
-@property (nonatomic, strong, readonly) NSNumber *updateWalkAndRunData;
-
-/**
- *  是否更新跑步卡路里数据
- */
-@property (nonatomic, strong, readonly) NSNumber *updateRunData;
 
 /**
  *  跑步+走路卡路里数据

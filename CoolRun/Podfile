@@ -1,4 +1,4 @@
 pod 'AMapLocation'
-pod "JVFloatingDrawer"
 pod 'UMengSocial', '~> 5.0'
+pod "JVFloatingDrawer"
 pod 'ActionSheetPicker-3.0', '~> 2.0.5'
