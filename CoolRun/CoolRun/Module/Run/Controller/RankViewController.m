@@ -14,15 +14,15 @@
 static NSString *const CELLID = @"RankTableViewCell";
 
 @interface RankViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *myTableView;
+@property (strong, nonatomic) UITableView *myTableView;
 
 @property (nonatomic, strong) RankTableHeaderView *headView;
 
 @property (nonatomic, strong)RankViewModel *viewModel;
 
-@property (nonatomic, strong)MJRefreshNormalHeader *header;
+@property (nonatomic, strong)XDRefreshHeader *header;
 
-@property (nonatomic, strong)MJRefreshAutoNormalFooter *footer;
+@property (nonatomic, strong)XDRefreshFooter *footer;
 
 @end
 
@@ -67,6 +67,8 @@ static NSString *const CELLID = @"RankTableViewCell";
 #pragma mark - private
 
 - (void)initTableView {
+    _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
+    
     [_myTableView registerNib:[UINib nibWithNibName:CELLID bundle:nil] forCellReuseIdentifier:CELLID];
     
     _myTableView.rowHeight = [RankTableViewCell heigthOgCell];
@@ -75,9 +77,13 @@ static NSString *const CELLID = @"RankTableViewCell";
     
     _myTableView.tableHeaderView = self.headView;
     
-    _myTableView.mj_header = self.header;
+    _myTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     
-    _myTableView.mj_footer = self.footer;
+    [self.view addSubview:_myTableView];
+    
+    [self header];
+    
+    [self footer];
 }
 
 #pragma mark - UITableViewDataSource
@@ -118,32 +124,24 @@ static NSString *const CELLID = @"RankTableViewCell";
     return _headView;
 }
 
-- (MJRefreshNormalHeader *)header{
+- (XDRefreshHeader *)header{
     if (!_header) {
-        _header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _header = [XDRefreshHeader headerOfScrollView:self.myTableView refreshingBlock:^{
             NSString *date = [[NSDate date] convertToStringWithWeek];
             
             [_viewModel getRankDataWithDate:date];
         }];
-        
-        _header.lastUpdatedTimeLabel.hidden = YES;
     }
     return _header;
 }
 
-- (MJRefreshAutoFooter *)footer{
+- (XDRefreshFooter *)footer{
     if (!_footer) {
-        _footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        _footer = [XDRefreshFooter footerOfScrollView:self.myTableView refreshingBlock:^{
             NSString *date = [[NSDate date] convertToStringWithWeek];
             
             [_viewModel getMoreRankDataWithDate:date];
-            
         }];
-        [_footer setTitle:@"点击加载更多" forState:MJRefreshStateIdle];
-        
-        [_footer setTitle:@"加载中" forState:MJRefreshStateRefreshing];
-        
-        [_footer setTitle:@"没有更多的数据了..." forState:MJRefreshStateNoMoreData];
     }
     return _footer;
 }

@@ -46,19 +46,14 @@
                                  @"time" : date,
                                  @"page" : [NSString stringWithFormat:@"%d",page],
                                  @"interval" : @"5"};
-        [MyNetworkRequest POSTRequestWithURL:API_GET_MONTH_RANKING
-                               WithParameter:params
-                             WithReturnBlock:^(id returnValue) {
-                                 NSArray *data = [self dataArrayFromDictionary:returnValue];
-                                 
-                                 [_mutaDataArray addObjectsFromArray:data];
-                                 self.haveRefresh = @YES;
-                                 
-                             } WithErrorCodeBlock:^(id errorCode) {
-                                 self.fail = @YES;
-                             } WithFailtureBlock:^{
-                                 self.fail = @YES;
-                             }];
+        [XDNetworking postWithUrl: API_GET_MONTH_RANKING refreshRequest:YES cache:NO params:params progressBlock:nil successBlock:^(id response) {
+            NSArray *data = [self dataArrayFromDictionary:response];
+            
+            [_mutaDataArray addObjectsFromArray:data];
+            self.haveRefresh = @YES;
+        } failBlock:^(NSError *error) {
+            self.fail = @YES;
+        }];
     }
 }
 

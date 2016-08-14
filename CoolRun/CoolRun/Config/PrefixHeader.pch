@@ -62,8 +62,7 @@ typedef void (^FailureBlock)(void);
 #import "ActionSheetStringPicker.h"
 #import "UMSocial.h" 
 #import "UMSocialWechatHandler.h"
-#import "AFNetworking.h"
-#import "MyNetworkRequest.h"
+#import "XDNetworking.h"
 #import "MBProgressHUD.h"
 #import "Utils.h"
 #import "MyUserDefault.h"
@@ -71,6 +70,6 @@ typedef void (^FailureBlock)(void);
 #import "Config.h"
 #import "FBKVOController.h"
 #import "UserStatusManager.h"
-#import "MJRefresh.h"
+#import "XDRefresh.h"
 #import "NSDate+week.h"
 #endif /* PrefixHeader_pch */

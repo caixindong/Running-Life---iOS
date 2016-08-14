@@ -22,21 +22,15 @@ failWithNetworkWithBlock:(FailureBlock)failBlock{
                                  @"id":uid,
                                  @"old_password":oldPwd,
                                  @"new_password":pwd};
-        [MyNetworkRequest POSTRequestWithURL:API_CHANGE_PWD
-                               WithParameter:params
-                             WithReturnBlock:^(id returnValue) {
-                                 if (successBlock) {
-                                     successBlock(returnValue);
-                                 }
-                             } WithErrorCodeBlock:^(id errorCode) {
-                                 if (errorBlock) {
-                                     errorBlock(errorCode[@"error"]);
-                                 }
-                             } WithFailtureBlock:^{
-                                 if (failBlock) {
-                                     failBlock();
-                                 }
-                             }];
+        [XDNetworking postWithUrl:API_CHANGE_PWD refreshRequest:YES cache:NO params:params progressBlock:nil successBlock:^(id response) {
+            if (successBlock) {
+                successBlock(response);
+            }
+        } failBlock:^(NSError *error) {
+            if (failBlock) {
+                failBlock();
+            }
+        }];
     }
 }
 

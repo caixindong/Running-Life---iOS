@@ -14,20 +14,16 @@
 -(void)PostUsername:(NSString *)usn password:(NSString *)pwd realname:(NSString *)rename withSuccessBlock:(ReturnValueBlock)successBlock failWithError:(ErrorCodeBlock)errorBlock failWithNetworkWithBlock:(FailureBlock)failBlock{
     if (usn&&pwd&&rename) {
         NSDictionary* dict = @{@"username":usn,@"password":pwd,@"realname":rename};
-        [MyNetworkRequest POSTRequestWithURL:@"signup" WithParameter:dict WithReturnBlock:^(id returnValue) {
-            UserModel* user = [[UserModel alloc]initWithDictionary:returnValue];
+        [XDNetworking postWithUrl:@"signup"  refreshRequest:YES cache:NO params:dict progressBlock:nil successBlock:^(id response) {
+            UserModel* user = [[UserModel alloc]initWithDictionary:response];
             [[NSUserDefaults standardUserDefaults] setValue:user.uid forKey:UID];
-            [[NSUserDefaults standardUserDefaults] setValue:returnValue[@"token"] forKey:TOKEN];
+            [[NSUserDefaults standardUserDefaults] setValue:response[@"token"] forKey:TOKEN];
             [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:ISLOGIN];
             [[MyUserDefault shareUserDefault] storeValue:user withKey:USER];
             if (successBlock) {
                 successBlock(user);
             }
-        } WithErrorCodeBlock:^(id errorCode) {
-            if (errorBlock) {
-                errorBlock(errorCode[@"error"]);
-            }
-        } WithFailtureBlock:^{
+        } failBlock:^(NSError *error) {
             if (failBlock) {
                 failBlock();
             }

@@ -49,17 +49,14 @@ static float weight = 65;
                                  @"token":token,
                                  @"run":runDict};
         
-        [MyNetworkRequest POSTRequestWithURL:@"upload_result" WithParameter:params WithReturnBlock:^(id returnValue) {
-            NSLog(@"%@",returnValue);
-            self.rank = [NSString stringWithFormat:@"第%@名",returnValue[@"my_ranking"]];
+        [XDNetworking postWithUrl:@"upload_result" refreshRequest:YES cache:NO params:params progressBlock:nil successBlock:^(id response) {
+            self.rank = [NSString stringWithFormat:@"第%@名",response[@"my_ranking"]];
             //数据库更新同步状态
             [self.manager touchRun:self.run
-                            WithID:[returnValue[@"running_result_id"] intValue]];
+                            WithID:[response[@"running_result_id"] intValue]];
             
             [self.manager syncharonizeRun:self.run];
-        } WithErrorCodeBlock:^(id errorCode) {
-            self.netFail = @YES;
-        } WithFailtureBlock:^{
+        } failBlock:^(NSError *error) {
             self.netFail = @YES;
         }];
     }
@@ -78,18 +75,12 @@ static float weight = 65;
                                  @"page":@"1",
                                  @"interval":@"5"
                                  };
-        [MyNetworkRequest POSTRequestWithURL:API_GET_RANKING
-                               WithParameter:params
-                             WithReturnBlock:^(id returnValue) {
-                                 self.rank = [NSString stringWithFormat:@"第%@名",returnValue[@"my_ranking"]];
-                                 ;
-
-                             } WithErrorCodeBlock:^(id errorCode) {
-                                 self.netFail = @YES;
-                             } WithFailtureBlock:^{
-                                 self.netFail = @YES;
-                                 
-                             }];
+        [XDNetworking postWithUrl:API_GET_RANKING refreshRequest:YES cache:NO params:params progressBlock:nil successBlock:^(id response) {
+            self.rank = [NSString stringWithFormat:@"第%@名",response[@"my_ranking"]];
+            ;
+        } failBlock:^(NSError *error) {
+            self.netFail = @YES;
+        }];
     }
 
 }

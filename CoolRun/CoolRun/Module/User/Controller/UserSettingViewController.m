@@ -58,7 +58,8 @@
         _birthDayLabel.text = self.viewModel.birthdayLabelText;
         _heightLabel.text = self.viewModel.heightLabelText;
         _weightLabel.text = self.viewModel.weightLabelText;
-        [_headPic sd_setImageWithURL:[NSURL URLWithString:self.viewModel.userImgUrl] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
+        NSLog(@"%@",self.viewModel.userImgUrl);
+        [_headPic sd_setImageWithURL:[NSURL URLWithString:self.viewModel.userImgUrl] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"] options:SDWebImageRefreshCached];
     }];
     
     [self.KVOController observe:self.viewModel keyPath:@"updateSuccessOrFail" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {

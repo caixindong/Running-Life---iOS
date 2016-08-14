@@ -35,16 +35,14 @@
         NSDictionary* params = @{@"token":token,
                                  @"id":uid,
                                  @"avatar":[NSString stringWithFormat:@"%@",self.imageData]};
-        [MyNetworkRequest POSTRequestWithURL:API_POST_IMG WithParameter:params WithReturnBlock:^(id returnValue) {
-            NSString *imgUrl = [NSString stringWithFormat:@"%@",returnValue[@"avatar"]];
+        [XDNetworking postWithUrl:API_POST_IMG refreshRequest:YES cache:NO params:params progressBlock:nil successBlock:^(id response) {
+            NSString *imgUrl = [NSString stringWithFormat:@"%@",response[@"avatar"]];
             self.userImgUrl = imgUrl;
             
             [self refreshLocalUserData];
             
             self.updateSuccessOrFail =  @YES;
-        } WithErrorCodeBlock:^(id errorCode) {
-            self.updateSuccessOrFail =  @NO;
-        } WithFailtureBlock:^{
+        } failBlock:^(NSError *error) {
             self.updateSuccessOrFail =  @NO;
         }];
     }
@@ -63,16 +61,12 @@
                                  @"user_birth":_userModel.birth,
                                  @"realname":_userModel.realname
                                  };
-        [MyNetworkRequest POSTRequestWithURL:API_CHANGE_INFO
-                               WithParameter:params
-                             WithReturnBlock:^(id returnValue) {
-                                 [self refreshLocalUserData];
-                                 self.updateSuccessOrFail =  @YES;
-                             } WithErrorCodeBlock:^(id errorCode) {
-                                 self.updateSuccessOrFail =  @NO;
-                             } WithFailtureBlock:^{
-                                 self.updateSuccessOrFail =  @NO;
-                             }];
+        [XDNetworking postWithUrl:API_CHANGE_INFO refreshRequest:YES cache:NO params:params progressBlock:nil successBlock:^(id response) {
+            [self refreshLocalUserData];
+            self.updateSuccessOrFail =  @YES;
+        } failBlock:^(NSError *error) {
+            self.updateSuccessOrFail =  @NO;
+        }];
     }
 
 }
