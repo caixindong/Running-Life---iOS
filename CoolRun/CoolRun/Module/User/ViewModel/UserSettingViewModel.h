@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserModel.h"
+
 @interface UserSettingViewModel : NSObject
 
 /**
@@ -55,6 +55,11 @@
  */
 @property (nonatomic, strong, readwrite)NSNumber *infoRefresh;
 
+/**
+ *  用户数据模型
+ */
+@property (nonatomic, strong, readwrite)UserModel *userModel;
+
 
 /**
  *  更新信息成功与否
@@ -66,6 +71,8 @@
  */
 @property (nonatomic, strong, readonly)NSNumber *invalid;
 
+
+
 /**
  *  更新头像
  */
@@ -76,33 +83,4 @@
  */
 - (void)updateUserInfo;
 
-
-
-//
-///**
-// *  上传图片
-// *
-// *  @param imageData    图片数据
-// *  @param successBlock 成功Block
-// *  @param errorBlock   失败Block
-// *  @param failBlock    服务器错误Block
-// */
-//- (void)uploadImageToServer:(NSData *)imageData
-//        withSuccessBlock:(ReturnValueBlock)successBlock
-//           failWithError:(ErrorCodeBlock)errorBlock
-//failWithNetworkWithBlock:(FailureBlock)failBlock;
-//
-//
-///**
-// *  上传用户信息
-// *
-// *  @param user         用户model
-// *  @param successBlock 成功Block
-// *  @param errorBlock   失败Block
-// *  @param failBlock    服务器错误Block
-// */
-//- (void)postUserSettingWithUserInfo:(UserModel *)user
-//                  withSuccessBlock:(ReturnValueBlock)successBlock
-//                     failWithError:(ErrorCodeBlock)errorBlock
-//          failWithNetworkWithBlock:(FailureBlock)failBlock;
 @end

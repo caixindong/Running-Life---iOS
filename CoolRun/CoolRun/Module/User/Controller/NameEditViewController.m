@@ -7,14 +7,12 @@
 //
 
 #import "NameEditViewController.h"
-#import "UserSettingViewModel.h"
+
 @interface NameEditViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
-@property(nonatomic,strong)UserSettingViewModel* viewModel;
-
-@property(nonatomic,strong)MBProgressHUD* hud;
+@property(nonatomic,strong) MBProgressHUD* hud;
 
 @end
 
@@ -23,10 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _nameTextField.text = self.viewModel.realnameLabelText;
+    _viewModel.userModel        = [UserStatusManager shareManager].userModel;
+    
+    _nameTextField.text         = self.viewModel.realnameLabelText;
     
     [self KVOHandler];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,15 +33,17 @@
     
 }
 
+#pragma mark - private
+
 - (void)KVOHandler {
-    [self.KVOController observe:self.viewModel keyPath:@"invalid" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+    [self.KVOController observe:_viewModel keyPath:@"invalid" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         [_hud hideAnimated:YES];
         [Utils showTextHUDWithText:@"名字不能为空" addToView:self.view];
     }];
     
-    [self.KVOController observe:self.viewModel keyPath:@"updateSuccessOrFail" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+    [self.KVOController observe:_viewModel keyPath:@"updateSuccessOrFail" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         [_hud hideAnimated:YES];
-        if ([self.viewModel.updateSuccessOrFail boolValue]) {
+        if ([_viewModel.updateSuccessOrFail boolValue]) {
             [Utils showTextHUDWithText:@"修改成功" addToView:self.view];
         }else {
             [Utils showTextHUDWithText:@"修改失败" addToView:self.view];
@@ -51,16 +52,17 @@
 }
 
 #pragma mark - UITextFieldDelegate
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    self.viewModel.realnameLabelText = _nameTextField.text;
+    _hud  = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-     _hud  = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    _viewModel.realnameLabelText = _nameTextField.text;
     
-    [self.viewModel updateUserInfo];
+    [_viewModel updateUserInfo];
     
     [_nameTextField resignFirstResponder];
     
-    return YES;
+    return ![_viewModel.invalid boolValue];
 }
 
 #pragma mark - event
@@ -69,12 +71,4 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - setter and getter
-
-- (UserSettingViewModel *)viewModel{
-    if (!_viewModel) {
-        _viewModel = [[UserSettingViewModel alloc]init];
-    }
-    return _viewModel;
-}
 @end

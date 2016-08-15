@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UserModel.h"
 
 @interface UserSettingViewController : UIViewController
 

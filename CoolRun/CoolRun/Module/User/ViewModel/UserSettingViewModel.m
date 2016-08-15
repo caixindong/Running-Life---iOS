@@ -7,10 +7,9 @@
 //
 
 #import "UserSettingViewModel.h"
+#import "UserModel.h"
 
 @interface UserSettingViewModel()
-
-@property (nonatomic, strong, readwrite)UserModel *userModel;
 
 @property (nonatomic, strong, readwrite)NSNumber *updateSuccessOrFail;
 
@@ -19,13 +18,6 @@
 @end
 
 @implementation UserSettingViewModel
-
-- (instancetype)init {
-    if (self = [super init]) {
-        _userModel = [self userModel];
-    }
-    return self;
-}
 
 - (void)uploadAvatar {
     NSString* uid = [[NSUserDefaults standardUserDefaults]valueForKey:UID];
@@ -49,6 +41,11 @@
 }
 
 - (void)updateUserInfo {
+    if ([[self.realnameLabelText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        self.invalid = @YES;
+        return;
+    }
+    
     NSString* uid = [[NSUserDefaults standardUserDefaults]valueForKey:UID];
     NSString* token = [[NSUserDefaults standardUserDefaults]valueForKey:TOKEN];
     if (uid && token && _userModel) {
@@ -80,36 +77,32 @@
 
 #pragma mark - getter and setter
 
-- (UserModel *)userModel {
-    return [UserStatusManager shareManager].userModel;
-}
-
 - (NSString *)sexLabelText {
-    return self.userModel.sex;
+    return _userModel.sex;
 }
 
 - (NSString *)realnameLabelText {
-    return self.userModel.realname;
+    return _userModel.realname;
 }
 
 - (NSString *)usernameLableText {
-    return self.userModel.username;
+    return _userModel.username;
 }
 
 - (NSString *)heightLabelText {
-    return self.userModel.height;
+    return _userModel.height;
 }
 
 - (NSString *)weightLabelText {
-    return self.userModel.weight;
+    return _userModel.weight;
 }
 
 - (NSString *)birthdayLabelText {
-    return self.userModel.birth;
+    return _userModel.birth;
 }
 
 - (NSString *)userImgUrl {
-    return self.userModel.avatar;
+    return _userModel.avatar;
 }
 
 - (void)setSexLabelText:(NSString *)sexLabelText {
@@ -117,10 +110,6 @@
 }
 
 - (void)setRealnameLabelText:(NSString *)realnameLabelText {
-    if ([[realnameLabelText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-        self.invalid = @YES;
-        return;
-    }
     _userModel.realname = realnameLabelText;
 }
 

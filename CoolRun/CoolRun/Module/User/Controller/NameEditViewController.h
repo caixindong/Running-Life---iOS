@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UserModel.h"
+#import "UserSettingViewModel.h"
+
 @interface NameEditViewController : UIViewController
+
+@property(nonatomic, strong, readwrite)UserSettingViewModel *viewModel;
 
 @end

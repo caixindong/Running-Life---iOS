@@ -36,12 +36,12 @@
     [super viewDidLoad];
     
     [self KVOHandler];
+    
+    self.viewModel.infoRefresh = @YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    self.viewModel.infoRefresh = @YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,13 +52,13 @@
 #pragma mark - private
 - (void)KVOHandler {
     [self.KVOController observe:self.viewModel keyPath:@"infoRefresh" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
-        _realnameLabel.text = self.viewModel.realnameLabelText;
-        _usernameLable.text = self.viewModel.usernameLableText;
-        _sexLable.text = self.viewModel.sexLabelText;
-        _birthDayLabel.text = self.viewModel.birthdayLabelText;
-        _heightLabel.text = self.viewModel.heightLabelText;
-        _weightLabel.text = self.viewModel.weightLabelText;
-        NSLog(@"%@",self.viewModel.userImgUrl);
+        self.viewModel.userModel    = [UserStatusManager shareManager].userModel;
+        _realnameLabel.text         = self.viewModel.realnameLabelText;
+        _usernameLable.text         = self.viewModel.usernameLableText;
+        _sexLable.text              = self.viewModel.sexLabelText;
+        _birthDayLabel.text         = self.viewModel.birthdayLabelText;
+        _heightLabel.text           = self.viewModel.heightLabelText;
+        _weightLabel.text           = self.viewModel.weightLabelText;
         [_headPic sd_setImageWithURL:[NSURL URLWithString:self.viewModel.userImgUrl] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"] options:SDWebImageRefreshCached];
     }];
     
@@ -172,6 +172,7 @@
 
 - (IBAction)changeName:(UIButton *)sender {
     UIViewController *nvc = [self.storyboard instantiateViewControllerWithIdentifier:@"NameEditViewController"];
+    [nvc setValue:self.viewModel forKey:@"viewModel"];
     [self presentViewController:nvc animated:YES completion:nil];
 }
 
