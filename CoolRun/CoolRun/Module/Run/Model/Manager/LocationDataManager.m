@@ -14,13 +14,13 @@
                          longtitude:(NSNumber *)longtitude
                           timestamp:(NSDate *)timestamp{
     Location* location = [NSEntityDescription
-                          insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+                          insertNewObjectForEntityForName:@"Location" inManagedObjectContext:[CoreDataManager shareManager].managedObjectContext];
     
     location.latitude = latitude;
     location.longtitude = longtitude;
     location.timestamp = timestamp;
     
-    [self saveContext];
+    [[CoreDataManager shareManager] saveContext];
     
     return location;
 }

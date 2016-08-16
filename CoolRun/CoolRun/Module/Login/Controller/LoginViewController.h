@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  登陆界面
+ */
 @interface LoginViewController : UIViewController
 
 @end

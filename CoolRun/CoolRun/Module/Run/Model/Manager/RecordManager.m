@@ -26,14 +26,14 @@ static RecordManager *manager;
                    withDur:(NSNumber *)duration
                   withTime:(NSDate *)date
              withLocations:(NSOrderedSet *)locations{
-    Run* newRecord = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
+    Run* newRecord = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:[CoreDataManager shareManager].managedObjectContext];
     newRecord.distance = distance;
     newRecord.duration = duration;
     newRecord.timestamp = date;
     newRecord.flag = [NSNumber numberWithInt:0];
     newRecord.locations = locations;
     newRecord.runid = [NSNumber numberWithInt:0];
-    [self saveContext];
+    [[CoreDataManager shareManager] saveContext];
     return newRecord;
 }
 
@@ -41,7 +41,7 @@ static RecordManager *manager;
     NSFetchRequest* request = [[NSFetchRequest alloc]initWithEntityName:@"Run"];
     NSError* error = nil;
     @try {
-        NSArray* arr = [self.managedObjectContext executeFetchRequest:request error:&error];
+        NSArray* arr = [[CoreDataManager shareManager].managedObjectContext executeFetchRequest:request error:&error];
         NSMutableArray* dataArr = [NSMutableArray arrayWithCapacity:5];
         for (NSManagedObject* obj in arr) {
             Run* run = (Run*)obj;
@@ -56,13 +56,13 @@ static RecordManager *manager;
 - (void)deleteAllRecord{
     NSFetchRequest* request = [[NSFetchRequest alloc]initWithEntityName:@"Run"];
     NSError* error = nil;
-    NSArray* data = [self.managedObjectContext executeFetchRequest:request error:&error
+    NSArray* data = [[CoreDataManager shareManager].managedObjectContext  executeFetchRequest:request error:&error
                      ];
     @try {
         for (NSManagedObject* obj in data) {
-            [self.managedObjectContext deleteObject:obj];
+            [[CoreDataManager shareManager].managedObjectContext  deleteObject:obj];
         }
-        [self saveContext];
+        [[CoreDataManager shareManager] saveContext];
     } @catch (NSException *exception) {
         NSLog(@"delete error is %@",error.userInfo);
     }
@@ -132,7 +132,7 @@ static RecordManager *manager;
     request.predicate = predicate;
     NSError* error = nil;
     @try {
-        NSArray* arr = [self.managedObjectContext executeFetchRequest:request error:&error];
+        NSArray* arr = [[CoreDataManager shareManager].managedObjectContext  executeFetchRequest:request error:&error];
         NSMutableArray* dataArr = [NSMutableArray arrayWithCapacity:5];
         for (NSManagedObject* obj in arr) {
             Run* run = (Run*)obj;
@@ -150,12 +150,12 @@ static RecordManager *manager;
     request.predicate = predicate;
     NSError* error = nil;
     @try {
-        NSArray* arr = [self.managedObjectContext executeFetchRequest:request error:&error];
+        NSArray* arr = [[CoreDataManager shareManager].managedObjectContext  executeFetchRequest:request error:&error];
         for (NSManagedObject* obj in arr) {
             Run* run = (Run*)obj;
             run.flag = [NSNumber numberWithInt:1];
         }
-        [self saveContext];
+        [[CoreDataManager shareManager] saveContext];
     } @catch (NSException *exception) {
         NSLog(@"synchronizedRunData error is %@",error.userInfo);
     }
@@ -163,12 +163,12 @@ static RecordManager *manager;
 
 - (void)syncharonizeRun:(Run *)run{
     run.flag = [NSNumber numberWithInt:1];
-    [self saveContext];
+    [[CoreDataManager shareManager] saveContext];
 }
 
 - (void)touchRun:(Run *)run WithID:(int)runid{
     run.runid = [NSNumber numberWithInt:runid];
-    [self saveContext];
+    [[CoreDataManager shareManager] saveContext];
 }
 
 @end

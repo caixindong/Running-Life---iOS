@@ -12,6 +12,7 @@
 #import "ResultViewModel.h"
 #import "RecordManager.h"
 #import "UserModel.h"
+
 @interface ResultViewController ()<MKMapViewDelegate>
 
 @property (nonatomic, weak) IBOutlet MKMapView* mapView;
@@ -55,7 +56,8 @@
 
 - (void)KVOHandler {
     UserStatusManager *manager = [UserStatusManager shareManager];
-    [self.KVOController observe:manager keyPath:@"isLogin"  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld   block:^(id observer, id object, NSDictionary *change) {
+    [self.KVOController observe:manager keyPath:@"isLogin"  options:NSKeyValueObservingOptionNew   block:^(id observer, id object, NSDictionary *change) {
+        NSLog(@"%@",change);
         if (manager.isLogin.boolValue) {
             
             [self.headPic sd_setImageWithURL:[NSURL URLWithString:manager.userModel.avatar] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
@@ -74,9 +76,10 @@
             _loginBtn.enabled = YES;
         }
     }];
-    manager.isLogin = manager.isLogin;
     
-    [self.KVOController observe:self.viewModel keyPath:@"rank" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+    //manager.isLogin = @YES;
+    
+    [self.KVOController observe:self.viewModel keyPath:@"rank" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         if (self.viewModel.rank) {
             _rankLabel.text = self.viewModel.rank;
             
@@ -84,7 +87,7 @@
         }
     }];
     
-    [self.KVOController observe:self.viewModel keyPath:@"netFail" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld  block:^(id observer, id object, NSDictionary *change) {
+    [self.KVOController observe:self.viewModel keyPath:@"netFail" options:NSKeyValueObservingOptionNew  block:^(id observer, id object, NSDictionary *change) {
         if ([self.viewModel.netFail boolValue]) {
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         }

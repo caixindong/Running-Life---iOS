@@ -6,9 +6,9 @@
 //  Copyright © 2016年 蔡欣东. All rights reserved.
 //
 
-#import "BaseDataManager.h"
+#import <Foundation/Foundation.h>
 
-@interface LocationDataManager : BaseDataManager
+@interface LocationDataManager : NSObject
 
 /**
  *  插入位置循序

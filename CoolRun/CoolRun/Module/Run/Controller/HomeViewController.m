@@ -28,6 +28,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *rankLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *drawerBtn;
+
+
 @property (nonatomic, strong) HomeViewModel *viewModel;
 
 /**
@@ -57,6 +60,8 @@
     self.rewardBgView.layer.borderColor = UIColorFromRGB(0xE8E9E8).CGColor;
     
     self.rewardBgView.layer.borderWidth = 1;
+    
+    //[self KVOHandler];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -73,6 +78,21 @@
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - private
+- (void)KVOHandler {
+    UserStatusManager *userManager = [UserStatusManager shareManager];
+    
+    [self.KVOController observe:userManager keyPath:@"isLogin" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        if (![userManager.isLogin boolValue]) {
+            _drawerBtn.hidden = YES;
+        }else {
+            _drawerBtn.hidden = NO;
+        }
+    }];
+    
+    userManager.isLogin = userManager.isLogin;
 }
 
 

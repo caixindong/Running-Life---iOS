@@ -9,10 +9,15 @@
 #import "ChangePwdViewController.h"
 #import "SettingViewModel.h"
 @interface ChangePwdViewController ()<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *oldPwdTextfield;
+
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextfield;
+
 @property(nonatomic,strong)SettingViewModel* viewModel;
+
 @property(nonatomic,strong)MBProgressHUD* hud;
+
 @end
 
 @implementation ChangePwdViewController
@@ -57,7 +62,8 @@
 }
 
 #pragma mark - setter and getter
--(SettingViewModel *)viewModel{
+
+- (SettingViewModel *)viewModel{
     if (!_viewModel) {
         _viewModel = [[SettingViewModel alloc]init];
     }
@@ -66,7 +72,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

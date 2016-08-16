@@ -16,7 +16,7 @@
 
 @property(nonatomic,copy)NSArray* specialDataArr;
 
-@property (nonatomic, copy) void(^calendarBlock)(NSDate* date);
+@property (nonatomic, copy) void(^selectDate)(NSDate* date);
 
 @property(nonatomic,copy) void(^changeMonthBlock)(NSInteger year,NSInteger month);
 

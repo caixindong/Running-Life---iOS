@@ -56,9 +56,10 @@
      self.runKcalArray  = [_recordManager getKcalDataWithMonth:month year:year weight:weight];
 }
 
-- (NSArray *)getRunRecordWithDate:(NSDate *)date {
+- (DetailViewModel *)getRunRecordWithDate:(NSDate *)date {
     NSArray *dataArray = [_recordManager getRunInfoInDate:date];
-    return [dataArray copy];
+    DetailViewModel *viewModel = [[DetailViewModel alloc] initWithRunDatas:[dataArray copy]];
+    return viewModel;
 }
 
 @end

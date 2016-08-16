@@ -10,11 +10,9 @@
 #import "ResultViewController.h"
 @interface DetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *nameLabel;
 
-@property(nonatomic,strong)UIScrollView* scrollView;
-
-@property(nonatomic,strong)NSMutableArray* viewArr;
+@property(nonatomic, strong, readwrite) UIScrollView* scrollView;
 
 @end
 
@@ -23,46 +21,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.scrollView];
-    
-    [self.view sendSubviewToBack:self.scrollView];
+    [self initScrollView];
     
     [self initContentView];
     
-    [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld  context:nil];
-}
-
-
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    [self KVOHandler];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    if ([keyPath isEqualToString:@"contentOffset"]) {
-        CGFloat x = self.scrollView.contentOffset.x;
-        NSLog(@"%f",x);
-        NSInteger page = x/WIDTH;
-        self.nameLabel.text = [NSString stringWithFormat:@"%ld/%ld",page+1,(unsigned long)self.viewArr.count];
-    }
-}
-
 #pragma mark - private
 
-- (void)initContentView {
-    for (int i = 0; i<self.viewArr.count; i++) {
-        UIView* cardView = self.viewArr[i];
-        [self.scrollView addSubview: cardView];
-        [cardView setFrame:CGRectMake(WIDTH*i,0, WIDTH, HEIGHT-60)];
-    }
+- (void)initScrollView {
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,40, WIDTH, HEIGHT-40)];
     
-    if (self.viewArr.count>0) {
-        self.nameLabel.text = [NSString stringWithFormat:@"1/%ld",(unsigned long)self.viewArr.count];
-    }
+    _scrollView.contentSize = CGSizeMake(WIDTH*_viewModel.runDatas.count, 0);
+    
+    _scrollView.pagingEnabled = YES;
+    
+    [self.view addSubview:_scrollView];
+    
+    [self.view sendSubviewToBack:_scrollView];
+}
+
+- (void)initContentView {
+    [_viewModel.runDatas enumerateObjectsUsingBlock:^(Run* obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        ResultViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+        vc.run = obj;
+        vc.hideNav = YES;
+        UIView* cardView = vc.view;
+        [self.scrollView addSubview: cardView];
+        [cardView setFrame:CGRectMake(WIDTH*idx, 0, WIDTH, HEIGHT-60)];
+    }];
+    
+    if (_viewModel.runDatas.count>0) self.nameLabel.text = [NSString stringWithFormat:@"1/%ld",(unsigned long)_viewModel.runDatas.count];
+
+}
+
+- (void)KVOHandler {
+    [self.KVOController observe:self.scrollView keyPath:@"contentOffset" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        CGFloat x = self.scrollView.contentOffset.x;
+        NSInteger page = x/WIDTH;
+        self.nameLabel.text = [NSString stringWithFormat:@"%ld/%ld",page+1,(unsigned long)_viewModel.runDatas.count];
+    }];
 }
 
 #pragma mark - event
@@ -94,31 +97,6 @@
     }
 }
 
-#pragma mark - setter and getter
-- (UIScrollView *)scrollView{
-    if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,40, WIDTH, HEIGHT-40)];
-        _scrollView.pagingEnabled = YES;
-    }
-    return _scrollView;
-}
 
-- (NSMutableArray *)viewArr{
-    if (!_viewArr) {
-        _viewArr = [NSMutableArray arrayWithCapacity:5];
-    }
-    return _viewArr;
-}
-
-- (void)setRunDataArray:(NSArray *)runDataArray{
-     self.scrollView.contentSize = CGSizeMake(WIDTH*runDataArray.count, 0);
-    
-    for (Run* run in runDataArray) {
-        ResultViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-        vc.run = run;
-        vc.hideNav = YES;
-        [self.viewArr addObject:vc.view];
-    }
-}
 
 @end

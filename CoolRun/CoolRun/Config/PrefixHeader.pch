@@ -72,4 +72,6 @@ typedef void (^FailureBlock)(void);
 #import "UserStatusManager.h"
 #import "XDRefresh.h"
 #import "NSDate+week.h"
+#import "CoreDataManager.h"
+
 #endif /* PrefixHeader_pch */

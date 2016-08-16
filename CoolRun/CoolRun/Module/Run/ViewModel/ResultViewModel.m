@@ -40,6 +40,7 @@ static float weight = 65;
 }
 
 - (void)postRunRecordToServerAndGetRank {
+     NSLog(@"上传跑步");
     NSString* uid = [[NSUserDefaults standardUserDefaults]valueForKey:UID];
     NSString* token = [[NSUserDefaults standardUserDefaults]valueForKey:TOKEN];
     if (uid && token && self.run) {
@@ -49,7 +50,7 @@ static float weight = 65;
                                  @"token":token,
                                  @"run":runDict};
         
-        [XDNetworking postWithUrl:@"upload_result" refreshRequest:YES cache:NO params:params progressBlock:nil successBlock:^(id response) {
+        [XDNetworking postWithUrl:API_UPLOAD_RESULT refreshRequest:YES cache:NO params:params progressBlock:nil successBlock:^(id response) {
             self.rank = [NSString stringWithFormat:@"第%@名",response[@"my_ranking"]];
             //数据库更新同步状态
             [self.manager touchRun:self.run
@@ -64,6 +65,7 @@ static float weight = 65;
 }
 
 - (void)getRank {
+    NSLog(@"获取名词");
     NSString* uid   = [[NSUserDefaults standardUserDefaults]valueForKey:UID];
     NSString* token = [[NSUserDefaults standardUserDefaults]valueForKey:TOKEN];
     int runID       = [self.run.runid intValue];

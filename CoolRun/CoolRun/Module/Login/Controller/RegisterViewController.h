@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  注册页面
+ */
 @interface RegisterViewController : UIViewController
 
 @end

@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseDataManager.h"
 #import "Run.h"
 #import "Location.h"
 
 /**
  *  跑步记录管理者
  */
-@interface RecordManager : BaseDataManager
+@interface RecordManager : NSObject
 
 
 /**

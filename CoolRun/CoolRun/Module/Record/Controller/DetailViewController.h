@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewModel.h"
 
+/**
+ *  跑步记录详情页
+ */
 @interface DetailViewController : UIViewController
 
-@property(nonatomic,copy)NSArray* runDataArray;
+@property (nonatomic, readwrite, strong)DetailViewModel *viewModel;
 
 @end

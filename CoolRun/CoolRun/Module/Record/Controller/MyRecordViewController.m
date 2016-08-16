@@ -33,9 +33,10 @@
     
     [self initShowView];
     
+    [self KVOHandler];
+    
     [self getKcalData];
     
-    [self KVOHandler];
 }
 
 #pragma mark - private
@@ -53,14 +54,12 @@
         [selfWeakStrong.viewModel getRunKcalArrayWithMonth:month year:year weigth:65];
     };
     
-    _calendar.calendarBlock = ^(NSDate* date){
+    _calendar.selectDate = ^(NSDate* date){
         StrongObj(selfWeak)
-        NSArray* runArr = [selfWeakStrong.viewModel getRunRecordWithDate:date];
-        if (runArr) {
-            DetailViewController* vc = [selfWeakStrong.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-            vc.runDataArray = runArr;
-            [selfWeakStrong presentViewController:vc animated:YES completion:nil];
-        }
+        DetailViewController* vc = [selfWeakStrong.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+        vc.viewModel = [selfWeakStrong.viewModel getRunRecordWithDate:date];
+        [selfWeakStrong presentViewController:vc animated:YES completion:nil];
+
     };
 }
 
@@ -78,14 +77,16 @@
 }
 
 - (void)KVOHandler {
-    [self.KVOController observe:self.viewModel keyPath:@"walkAndRunKcalArray" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
-        _showView.normalRecords = self.viewModel.walkAndRunKcalArray;
-    }];
-    
-    [self.KVOController observe:self.viewModel keyPath:@"runKcalArray" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+    [self.KVOController observe:self.viewModel keyPath:@"runKcalArray" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         _showView.specialRecords    = self.viewModel.runKcalArray;
         _calendar.specialDataArr    = self.viewModel.runKcalArray;
     }];
+    
+    [self.KVOController observe:self.viewModel keyPath:@"walkAndRunKcalArray" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        _showView.normalRecords = self.viewModel.walkAndRunKcalArray;
+    }];
+    
+
 }
 
 #pragma mark - getter and setter

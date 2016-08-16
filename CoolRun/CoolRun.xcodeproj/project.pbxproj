@@ -21,6 +21,8 @@
 		4EC28EA11CDB93720048759D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC28E9F1CDB93720048759D /* LaunchScreen.storyboard */; };
 		4EDF40AE1D4CEBFA00819445 /* RankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EDF40711D4CEBFA00819445 /* RankTableViewCell.xib */; };
 		4EDF40B01D4CEBFA00819445 /* RankTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EDF40751D4CEBFA00819445 /* RankTableHeaderView.xib */; };
+		4EE237341D63066000DBD31C /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE237331D63066000DBD31C /* CoreDataManager.m */; };
+		4EE237371D630FD700DBD31C /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE237361D630FD700DBD31C /* DetailViewModel.m */; };
 		4EE982871D60B7A600753934 /* XDRefresh_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE982811D60B7A600753934 /* XDRefresh_arrow@2x.png */; };
 		4EE9828B1D60C0C900753934 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC608B31CFF1E55004BE874 /* Config.m */; };
 		4EE9828C1D60C0C900753934 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40BB1D4CEC0500819445 /* AppDelegate.m */; };
@@ -38,7 +40,6 @@
 		4EE982981D60C0C900753934 /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40521D4CEBFA00819445 /* NewRunViewController.m */; };
 		4EE982991D60C0C900753934 /* RankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40541D4CEBFA00819445 /* RankViewController.m */; };
 		4EE9829A1D60C0C900753934 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40561D4CEBFA00819445 /* ResultViewController.m */; };
-		4EE9829B1D60C0C900753934 /* BaseDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF405E1D4CEBFA00819445 /* BaseDataManager.m */; };
 		4EE9829C1D60C0C900753934 /* LocationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40601D4CEBFA00819445 /* LocationDataManager.m */; };
 		4EE9829D1D60C0C900753934 /* RecordManager+Kcal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40621D4CEBFA00819445 /* RecordManager+Kcal.m */; };
 		4EE9829E1D60C0C900753934 /* RecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF40641D4CEBFA00819445 /* RecordManager.m */; };
@@ -229,8 +230,6 @@
 		4EDF40591D4CEBFA00819445 /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataProperties.m"; sourceTree = "<group>"; };
 		4EDF405A1D4CEBFA00819445 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		4EDF405B1D4CEBFA00819445 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		4EDF405D1D4CEBFA00819445 /* BaseDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataManager.h; sourceTree = "<group>"; };
-		4EDF405E1D4CEBFA00819445 /* BaseDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataManager.m; sourceTree = "<group>"; };
 		4EDF405F1D4CEBFA00819445 /* LocationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDataManager.h; sourceTree = "<group>"; };
 		4EDF40601D4CEBFA00819445 /* LocationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataManager.m; sourceTree = "<group>"; };
 		4EDF40611D4CEBFA00819445 /* RecordManager+Kcal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RecordManager+Kcal.h"; sourceTree = "<group>"; };
@@ -271,6 +270,10 @@
 		4EDF40C11D4CEC0500819445 /* AppUIInitProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUIInitProcess.m; sourceTree = "<group>"; };
 		4EDF40C51D4CEDE800819445 /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		4EDF40C61D4CEDE800819445 /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
+		4EE237321D63066000DBD31C /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		4EE237331D63066000DBD31C /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		4EE237351D630FD700DBD31C /* DetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewModel.h; sourceTree = "<group>"; };
+		4EE237361D630FD700DBD31C /* DetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewModel.m; sourceTree = "<group>"; };
 		4EE9823B1D60B79100753934 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		4EE9823C1D60B79100753934 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		4EE9823D1D60B79100753934 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -511,6 +514,8 @@
 			children = (
 				4E7A76451D4E4B08008AF3DA /* MyRecordViewModel.h */,
 				4E7A76461D4E4B08008AF3DA /* MyRecordViewModel.m */,
+				4EE237351D630FD700DBD31C /* DetailViewModel.h */,
+				4EE237361D630FD700DBD31C /* DetailViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -581,6 +586,7 @@
 		4EDF400C1D4CEBEE00819445 /* BaseKit */ = {
 			isa = PBXGroup;
 			children = (
+				4EE237311D63064400DBD31C /* CoreDataManager */,
 				4EE982381D60B79100753934 /* XDNetworking */,
 			);
 			path = BaseKit;
@@ -798,8 +804,6 @@
 		4EDF405C1D4CEBFA00819445 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				4EDF405D1D4CEBFA00819445 /* BaseDataManager.h */,
-				4EDF405E1D4CEBFA00819445 /* BaseDataManager.m */,
 				4EDF405F1D4CEBFA00819445 /* LocationDataManager.h */,
 				4EDF40601D4CEBFA00819445 /* LocationDataManager.m */,
 				4EDF40611D4CEBFA00819445 /* RecordManager+Kcal.h */,
@@ -1009,6 +1013,15 @@
 				4EDF40C11D4CEC0500819445 /* AppUIInitProcess.m */,
 			);
 			path = UIInit;
+			sourceTree = "<group>";
+		};
+		4EE237311D63064400DBD31C /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				4EE237321D63066000DBD31C /* CoreDataManager.h */,
+				4EE237331D63066000DBD31C /* CoreDataManager.m */,
+			);
+			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
 		4EE982381D60B79100753934 /* XDNetworking */ = {
@@ -1296,6 +1309,7 @@
 				4EE982DC1D60C13800753934 /* SDWebImageDownloader.m in Sources */,
 				4EE982DD1D60C13800753934 /* SDWebImageDownloaderOperation.m in Sources */,
 				4EE982DE1D60C13800753934 /* SDWebImageManager.m in Sources */,
+				4EE237341D63066000DBD31C /* CoreDataManager.m in Sources */,
 				4EE982DF1D60C13800753934 /* SDWebImagePrefetcher.m in Sources */,
 				4EE982E01D60C13800753934 /* UIButton+WebCache.m in Sources */,
 				4EE982E11D60C13800753934 /* UIImage+GIF.m in Sources */,
@@ -1322,7 +1336,6 @@
 				4EE982981D60C0C900753934 /* NewRunViewController.m in Sources */,
 				4EE982991D60C0C900753934 /* RankViewController.m in Sources */,
 				4EE9829A1D60C0C900753934 /* ResultViewController.m in Sources */,
-				4EE9829B1D60C0C900753934 /* BaseDataManager.m in Sources */,
 				4EE9829C1D60C0C900753934 /* LocationDataManager.m in Sources */,
 				4EE9829D1D60C0C900753934 /* RecordManager+Kcal.m in Sources */,
 				4EE9829E1D60C0C900753934 /* RecordManager.m in Sources */,
@@ -1347,6 +1360,7 @@
 				4EE982B11D60C0C900753934 /* ChangePwdViewController.m in Sources */,
 				4EE982B21D60C0C900753934 /* SettingViewController.m in Sources */,
 				4EE982B31D60C0C900753934 /* SettingViewModel.m in Sources */,
+				4EE237371D630FD700DBD31C /* DetailViewModel.m in Sources */,
 				4EE982B41D60C0C900753934 /* UserSettingViewController.m in Sources */,
 				4EE982B51D60C0C900753934 /* NameEditViewController.m in Sources */,
 				4EE982B61D60C0C900753934 /* UserSettingViewModel.m in Sources */,

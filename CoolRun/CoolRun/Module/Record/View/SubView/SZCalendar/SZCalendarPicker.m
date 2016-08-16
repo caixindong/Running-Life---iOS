@@ -240,8 +240,8 @@ NSString *const SZCalendarCellIdentifier = @"cell";
     NSDate* date2 = [[NSCalendar currentCalendar] dateFromComponents:comp2];
     
     
-    if (self.calendarBlock) {
-        self.calendarBlock(date2);
+    if (self.selectDate) {
+        self.selectDate(date2);
     }
     
 }

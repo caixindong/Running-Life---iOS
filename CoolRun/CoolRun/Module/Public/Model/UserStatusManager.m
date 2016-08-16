@@ -8,6 +8,13 @@
 
 #import "UserStatusManager.h"
 #import "UserModel.h"
+
+@interface UserStatusManager(){
+    NSNumber *_isLogin;
+}
+@end
+
+
 @implementation UserStatusManager
 
 + (UserStatusManager *)shareManager {
@@ -39,7 +46,9 @@
 }
 
 - (void)setIsLogin:(NSNumber *)isLogin {
+    _isLogin = isLogin;
     [[NSUserDefaults standardUserDefaults] setObject:isLogin forKey:ISLOGIN];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DetailViewModel.h"
 
 @interface MyRecordViewModel : NSObject
 
@@ -44,12 +45,12 @@
                             weigth:(float)weight;
 
 /**
- *  获取某天的跑步记录
+ *  获取具体某天的跑步记录
  *
  *  @param date 日期
  *
- *  @return 
+ *  @return 记录详情页的viewModel
  */
-- (NSArray *)getRunRecordWithDate:(NSDate *)date;
+- (DetailViewModel *)getRunRecordWithDate:(NSDate *)date;
 
 @end
