@@ -55,30 +55,6 @@
 #pragma mark - private
 
 - (void)KVOHandler {
-    UserStatusManager *manager = [UserStatusManager shareManager];
-    [self.KVOController observe:manager keyPath:@"isLogin"  options:NSKeyValueObservingOptionNew   block:^(id observer, id object, NSDictionary *change) {
-        NSLog(@"%@",change);
-        if (manager.isLogin.boolValue) {
-            
-            [self.headPic sd_setImageWithURL:[NSURL URLWithString:manager.userModel.avatar] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
-            
-            self.nameLabel.text = manager.userModel.realname;
-            
-            _loginBtn.enabled = NO;
-            
-            [self getRank];
-        } else {
-            
-            [self.headPic setImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
-            
-            self.nameLabel.text = @"未登录";
-            
-            _loginBtn.enabled = YES;
-        }
-    }];
-    
-    //manager.isLogin = @YES;
-    
     [self.KVOController observe:self.viewModel keyPath:@"rank" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         if (self.viewModel.rank) {
             _rankLabel.text = self.viewModel.rank;
@@ -94,16 +70,6 @@
     }];
 }
 
-- (void)getRank {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-        if (self.hideNav) {
-            [self.viewModel getRank];
-        }else{
-            [self.viewModel postRunRecordToServerAndGetRank];
-        }
-}
-
 -(void)configureView {
     if (self.hideNav) {
         self.navView.hidden = self.hideNav;
@@ -111,7 +77,6 @@
         self.navView.hidden = NO;
         
     }
-    
     self.distanceLabel.text = self.viewModel.distanceLabelText;
     
     self.timeLabel.text     = self.viewModel.timeLabelText;
@@ -123,6 +88,32 @@
     self.countLabel.text    = self.viewModel.countLabelText;
     
     [self loadMap];
+    
+    UserStatusManager *manager = [UserStatusManager shareManager];
+    if (manager.isLogin.boolValue) {
+        
+        [self.headPic sd_setImageWithURL:[NSURL URLWithString:manager.userModel.avatar] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
+        
+        self.nameLabel.text = manager.userModel.realname;
+        
+        _loginBtn.enabled = NO;
+        
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        if (self.hideNav) {
+           [self.viewModel getRankData];
+        }else{
+            [self.viewModel postRunRecordToServerAndGetRank];
+        }
+    } else {
+        
+        [self.headPic setImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
+        
+        self.nameLabel.text = @"未登录";
+        
+        _loginBtn.enabled = YES;
+    }
 }
 
 - (void)loadMap {

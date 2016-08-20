@@ -294,12 +294,9 @@ static NSString * const detailSegueName = @"RunDetails";
 -(void)saveRun{
     NSMutableArray *locationArray = [NSMutableArray array];
     
-    RecordManager* manager = [[RecordManager alloc]init];
-    
-    LocationDataManager* locationManager = [[LocationDataManager alloc]init];
     
     for (CLLocation *location in self.locations) {
-        Location* locationObject =  [locationManager
+        Location* locationObject =  [[LocationDataManager shareManager]
                                      addLoactionWithLatitude:[NSNumber
                                                               numberWithDouble:location.coordinate.latitude] longtitude:[NSNumber numberWithDouble:location.coordinate.longitude] timestamp:location.timestamp];
         
@@ -307,7 +304,7 @@ static NSString * const detailSegueName = @"RunDetails";
         
     }
     
-    Run* runObject =  [manager addRunRecordWithDis:[NSNumber
+    Run* runObject =  [[RecordManager shareManager] addRunRecordWithDis:[NSNumber
                                                     numberWithFloat:_distance]
                                            withDur:[NSNumber
                                                     numberWithInt:_seconds]

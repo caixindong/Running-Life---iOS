@@ -40,7 +40,14 @@ static NSString* FIRSTVC = @"HomeViewController";
     backView.backgroundColor = [UIColor blackColor];
     backView.alpha = 0.5;
     [self.drawController.view insertSubview:backView atIndex:1];
-   
+    
+    UserStatusManager *userManager = [UserStatusManager shareManager];
+    
+    if ([userManager.isLogin boolValue]) {
+        [[CoreDataManager shareManager] switchToDatabase:[Utils md5:userManager.userModel.username]];
+    }else {
+        [[CoreDataManager shareManager] switchToTempDatabase];
+    }
     
     [application.delegate.window makeKeyAndVisible];
 }

@@ -13,13 +13,23 @@
 /**
  *压缩图片
  **/
-+(UIImage*)imageWithImage:(UIImage*)image scaleToSize:(CGSize)newSize;
++ (UIImage*)imageWithImage:(UIImage*)image scaleToSize:(CGSize)newSize;
 
 /**
  * 获取设备型号
  **/
-+(NSString*)getDeviceName;
++ (NSString*)getDeviceName;
 
-+(void)showTextHUDWithText:(NSString*)text addToView:(UIView*)view;
+
++ (void)showTextHUDWithText:(NSString*)text addToView:(UIView*)view;
+
+/**
+ *  获取散列值
+ *
+ *  @param string 字符串
+ *
+ *  @return 散列值
+ */
++ (NSString *)md5:(NSString *)string;
 
 @end

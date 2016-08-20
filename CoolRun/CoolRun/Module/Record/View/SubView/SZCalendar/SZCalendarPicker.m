@@ -167,7 +167,6 @@ NSString *const SZCalendarCellIdentifier = @"cell";
             [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#6f6f6f"]];
             
             if (i < self.specialDataArr.count) {
-                NSLog(@"%d",[self.specialDataArr[day-1] intValue]);
                 if ([self.specialDataArr[day-1] intValue] > 0) {
                     cell.typeView.hidden = NO;
                     

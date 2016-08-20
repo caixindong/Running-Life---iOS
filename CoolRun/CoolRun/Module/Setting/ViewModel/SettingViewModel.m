@@ -10,7 +10,7 @@
 
 @implementation SettingViewModel
 
--(void)PostOldPwd:(NSString *)oldPwd
+- (void)PostOldPwd:(NSString *)oldPwd
            newPwd:(NSString *)pwd
  withSuccessBlock:(ReturnValueBlock)successBlock
     failWithError:(ErrorCodeBlock)errorBlock
@@ -34,9 +34,14 @@ failWithNetworkWithBlock:(FailureBlock)failBlock{
     }
 }
 
--(void)logout{
+- (void)logout{
+    [[CoreDataManager shareManager] switchToTempDatabase];
+    
     UserStatusManager *manager = [UserStatusManager shareManager];
-    [[MyUserDefault shareUserDefault] removeObjectWithKey:USER];
+    
+    manager.userModel = nil;
+    
     manager.isLogin = @NO;
 }
+
 @end

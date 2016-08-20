@@ -64,16 +64,16 @@ static float weight = 65;
 
 }
 
-- (void)getRank {
-    NSLog(@"获取名词");
-    NSString* uid   = [[NSUserDefaults standardUserDefaults]valueForKey:UID];
-    NSString* token = [[NSUserDefaults standardUserDefaults]valueForKey:TOKEN];
-    int runID       = [self.run.runid intValue];
+- (void)getRankData {
+    NSLog(@"获取名词 IS %@",self);
+    NSString *uid   = [[NSUserDefaults standardUserDefaults]valueForKey:UID];
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:TOKEN];
+    NSString *runID = [NSString stringWithFormat:@"%d",[self.run.runid intValue]];
     
     if (uid && token && runID) {
         NSDictionary *params = @{@"id":uid,
                                  @"token":token,
-                                 @"running_result_id":[NSString stringWithFormat:@"%d",runID],
+                                 @"running_result_id":runID,
                                  @"page":@"1",
                                  @"interval":@"5"
                                  };

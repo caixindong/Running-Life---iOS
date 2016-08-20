@@ -32,7 +32,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.manager                = [[HealthKitManager alloc]init];
-        self.recordManager          = [[RecordManager alloc]init];
+        self.recordManager          = [RecordManager shareManager];
         self.walkAndRunKcalArray    = [NSArray array];
         self.runKcalArray           = [NSArray array];
     }

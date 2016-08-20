@@ -10,6 +10,14 @@
 
 @interface LocationDataManager : NSObject
 
+
+/**
+ *  全局管理器
+ *
+ *  @return
+ */
++ (LocationDataManager *)shareManager;
+
 /**
  *  插入位置循序
  *
@@ -22,4 +30,16 @@
 - (Location*)addLoactionWithLatitude:(NSNumber*) latitude
                           longtitude:(NSNumber*) longtitude
                            timestamp:(NSDate*) timestamp;
+
+/**
+ *  合并临时数据
+ */
+- (void)mergeTheTempData;
+
+/**
+ *  删除临时数据
+ */
+- (void)deleteAllTempLocations;
+
+
 @end

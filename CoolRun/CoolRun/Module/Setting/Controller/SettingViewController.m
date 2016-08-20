@@ -49,10 +49,11 @@
     
 }
 
--(SettingViewModel *)viewModel{
+- (SettingViewModel *)viewModel{
     if (!_viewModel) {
         _viewModel = [[SettingViewModel alloc]init];
     }
     return _viewModel;
 }
+
 @end

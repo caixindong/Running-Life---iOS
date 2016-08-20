@@ -10,6 +10,7 @@
 #import "FastCoder.h"
 @implementation MyUserDefault
 static MyUserDefault* myUserdefault = nil;
+
 +(MyUserDefault *)shareUserDefault{
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{

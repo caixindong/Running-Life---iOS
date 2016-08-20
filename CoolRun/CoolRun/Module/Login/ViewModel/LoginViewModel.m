@@ -38,13 +38,13 @@
             }else {
                 UserModel* user = [[UserModel alloc]initWithDictionary:response];
                 
+                [[CoreDataManager shareManager] switchToDatabase:[Utils md5:user.username]];
+                
                 [[NSUserDefaults standardUserDefaults] setValue:user.uid forKey:UID];
                 [[NSUserDefaults standardUserDefaults] setValue:response[@"token"] forKey:TOKEN];
-                [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:ISLOGIN];
-                
-                [[MyUserDefault shareUserDefault] storeValue:user withKey:USER];
                 
                 UserStatusManager *manager = [UserStatusManager shareManager];
+                manager.userModel = user;
                 manager.isLogin = @YES;
                 
                 self.loginSuccessOrFail = @YES;

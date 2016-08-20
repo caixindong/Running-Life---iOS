@@ -74,7 +74,7 @@
 /**
  *  仅仅获取获取跑步排名
  */
-- (void)getRank;
+- (void)getRankData;
 
 
 @end

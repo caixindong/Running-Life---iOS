@@ -11,6 +11,7 @@
 
 @interface UserStatusManager(){
     NSNumber *_isLogin;
+    UserModel* _user;
 }
 @end
 
@@ -30,19 +31,27 @@
 }
 
 - (UserModel *)userModel {
-    UserModel* user = (UserModel*)[[MyUserDefault shareUserDefault] valueWithKey:USER];
-    if (user) {
-        return user;
+    if (!_user) {
+        _user = (UserModel*)[[MyUserDefault shareUserDefault] valueWithKey:USER];
     }
-    return nil;
+    return _user;
+}
+
+- (void)setUserModel:(UserModel *)userModel {
+    if (userModel) {
+        _user = userModel;
+        [[MyUserDefault shareUserDefault] storeValue:_user withKey:USER];
+    }else {
+        [[MyUserDefault shareUserDefault] removeObjectWithKey:USER];
+    }
 }
 
 - (NSNumber *)isLogin {
-    NSNumber* status = [[NSUserDefaults standardUserDefaults]valueForKey:ISLOGIN];
-    if (status) {
-        return status;
+    if (!_isLogin) {
+        _isLogin = [[NSUserDefaults standardUserDefaults]valueForKey:ISLOGIN]?[[NSUserDefaults standardUserDefaults]valueForKey:ISLOGIN]:@NO;
+
     }
-    return @NO;
+    return _isLogin;    
 }
 
 - (void)setIsLogin:(NSNumber *)isLogin {
