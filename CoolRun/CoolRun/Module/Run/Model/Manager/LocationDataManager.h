@@ -31,15 +31,6 @@
                           longtitude:(NSNumber*) longtitude
                            timestamp:(NSDate*) timestamp;
 
-/**
- *  合并临时数据
- */
-- (void)mergeTheTempData;
-
-/**
- *  删除临时数据
- */
-- (void)deleteAllTempLocations;
 
 
 @end

@@ -36,5 +36,9 @@
 @property (nonatomic, copy, readonly) NSString *kcalText;
 
 
+/**
+ *  如果有临时数据则合并数据
+ */
+- (void)merge;
 
 @end

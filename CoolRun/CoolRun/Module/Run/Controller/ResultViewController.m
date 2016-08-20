@@ -186,6 +186,7 @@
 
 - (ResultViewModel *)viewModel {
     if (!_viewModel) {
+        NSLog(@"count is %ld",self.run.locations.count);
         _viewModel = [[ResultViewModel alloc] initWithRunModel:self.run];
     }
     return _viewModel;

@@ -61,6 +61,7 @@
     
     self.rewardBgView.layer.borderWidth = 1;
     
+    [self KVOhandler];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -77,6 +78,22 @@
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
+}
+
+
+#pragma mark - private
+
+- (void)KVOhandler {
+    UserStatusManager *manager = [UserStatusManager shareManager];
+    [self.KVOController observe:manager keyPath:@"isLogin" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        if ([manager.isLogin boolValue]) {
+            [self.viewModel merge];
+        }
+    }];
+    
+    NSNumber *isLogin = manager.isLogin;
+    
+    manager.isLogin = isLogin;
 }
 
 #pragma mark - event reponse

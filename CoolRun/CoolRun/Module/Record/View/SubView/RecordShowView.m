@@ -52,7 +52,7 @@
     [frameworkPath addLineToPoint:CGPointMake(20, H-20)];
     [frameworkPath moveToPoint:CGPointMake(20, H-20)];
     [frameworkPath addLineToPoint:CGPointMake(W-20, H-20)];
-    
+
     CGFloat bigPathAlign = (W-40)/5;
     CGFloat bigPathLineH = 5;
     for (int i = 1; i<=4; i++) {
@@ -77,6 +77,10 @@
     _textLayer.contentsScale = [UIScreen mainScreen].scale;
     _textLayer.position = CGPointMake(20+10+55,60);
     [self.layer addSublayer:_textLayer];
+    
+    
+    
+    
 }
 
 -(CAShapeLayer *)drawRecordValue:(NSArray *)values inLayer:(CAShapeLayer *)layer{

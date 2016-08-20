@@ -58,6 +58,7 @@
 
 - (DetailViewModel *)getRunRecordWithDate:(NSDate *)date {
     NSArray *dataArray = [_recordManager getRunInfoInDate:date];
+    if (dataArray.count ==0 ) return nil;
     DetailViewModel *viewModel = [[DetailViewModel alloc] initWithRunDatas:[dataArray copy]];
     return viewModel;
 }

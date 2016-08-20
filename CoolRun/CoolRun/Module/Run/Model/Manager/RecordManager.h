@@ -117,12 +117,6 @@
  */
 - (void)touchRun:(Run *)run WithID:(int) runid;
 
-/**
- *  是否有临时数据
- *
- *  @return 是/否
- */
-- (BOOL)haveTempRecords;
 
 /**
  *  合并临时数据

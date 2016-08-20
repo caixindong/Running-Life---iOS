@@ -171,22 +171,6 @@ static RecordManager *manager;
     [[CoreDataManager shareManager] saveContext];
 }
 
-- (BOOL)haveTempRecords {
-    NSFetchRequest* request = [[NSFetchRequest alloc]initWithEntityName:@"Run"];
-    NSError* error = nil;
-    NSArray* data = [[CoreDataManager shareManager].tempManagedObjectContext  executeFetchRequest:request error:&error
-                     ];
-    if (error) {
-        NSLog(@"获取临时跑步数据发送错误：%@",error);
-        return NO;
-    }
-    
-    if (data.count > 0) {
-        return YES;
-    }else {
-        return NO;
-    }
-}
 
 - (void)mergeTheTempData {
     NSFetchRequest* request = [[NSFetchRequest alloc]initWithEntityName:@"Run"];
@@ -198,19 +182,33 @@ static RecordManager *manager;
         return;
     }
     
+    if (data.count == 0) {
+        return;
+    }
+    
     [data enumerateObjectsUsingBlock:^(Run *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         Run* newRecord = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:[CoreDataManager shareManager].managedObjectContext];
         newRecord.distance  = obj.distance;
         newRecord.duration  = obj.duration;
         newRecord.timestamp = obj.timestamp;
         newRecord.flag      = obj.flag;
-        newRecord.locations = obj.locations;
         newRecord.runid     = obj.runid;
+        
+        NSMutableOrderedSet *mutaLocations = [NSMutableOrderedSet orderedSet];
+        [obj.locations enumerateObjectsUsingBlock:^(Location *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            Location* location = [NSEntityDescription
+                                  insertNewObjectForEntityForName:@"Location" inManagedObjectContext:[CoreDataManager shareManager].managedObjectContext];
+            
+            location.latitude = obj.latitude;
+            location.longtitude = obj.longtitude;
+            location.timestamp = obj.timestamp;
+            [mutaLocations addObject:location];
+        }];
+        
+        newRecord.locations = [mutaLocations copy];
     }];
     
     [[CoreDataManager shareManager] saveContext];
-    
-    [self deleteAllTempRecords];
 }
 
 - (void)deleteAllTempRecords {

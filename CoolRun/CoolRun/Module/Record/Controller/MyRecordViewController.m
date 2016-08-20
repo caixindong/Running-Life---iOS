@@ -56,9 +56,15 @@
     
     _calendar.selectDate = ^(NSDate* date){
         StrongObj(selfWeak)
-        DetailViewController* vc = [selfWeakStrong.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-        vc.viewModel = [selfWeakStrong.viewModel getRunRecordWithDate:date];
-        [selfWeakStrong presentViewController:vc animated:YES completion:nil];
+        DetailViewModel *detaiViewModel = [selfWeakStrong.viewModel getRunRecordWithDate:date];
+        if (!detaiViewModel) {
+            [Utils showTextHUDWithText:@"无跑步数据" addToView:selfWeakStrong.view];
+        } else {
+            DetailViewController* vc = [selfWeakStrong.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+            vc.viewModel = detaiViewModel;
+            [selfWeakStrong presentViewController:vc animated:YES completion:nil];
+        }
+
 
     };
 }

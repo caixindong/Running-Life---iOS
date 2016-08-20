@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewModel.h"
+#import "LocationDataManager.h"
 
 #define weight 60
 
@@ -16,6 +17,8 @@
  *  记录管理
  */
 @property (nonatomic, strong, readwrite) RecordManager* manager;
+
+@property (nonatomic, strong, readwrite) LocationDataManager *locationDataManager;
 
 /**
  *  总距离
@@ -34,8 +37,18 @@
 - (instancetype)init {
     if ([super init]) {
         _manager = [RecordManager shareManager];
+        _locationDataManager = [LocationDataManager shareManager];
     }
     return self;
+}
+
+- (void)merge {
+    //记得得先合并位置数据，再合并记录数据
+//    [_locationDataManager mergeTheTempData];
+    [_manager mergeTheTempData];
+    
+    [_manager deleteAllTempRecords];
+//    [_locationDataManager deleteAllTempLocations];
 }
 
 - (NSString *)distanceLabelText {
@@ -67,5 +80,8 @@
 - (float)totalDistance {
     return [_manager totalDistance];
 }
+
+
+
 
 @end
