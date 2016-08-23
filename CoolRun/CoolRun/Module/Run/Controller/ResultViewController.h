@@ -19,9 +19,5 @@
  */
 @property (strong, nonatomic) Run *run;
 
-/**
- *  是否隐藏navigationBar
- */
-@property(nonatomic,assign)BOOL hideNav;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 #import "ResultViewController.h"
+#import "RecordCardView.h"
+
 @interface DetailViewController ()
 
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *nameLabel;
@@ -40,9 +42,9 @@
 #pragma mark - private
 
 - (void)initScrollView {
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,40, WIDTH, HEIGHT-40)];
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,80, WIDTH, HEIGHT-100)];
     
-    _scrollView.contentSize = CGSizeMake(WIDTH*_viewModel.runDatas.count, 0);
+    _scrollView.contentSize = CGSizeMake(WIDTH*_viewModel.recordViewModels.count, 0);
     
     _scrollView.pagingEnabled = YES;
     
@@ -52,16 +54,15 @@
 }
 
 - (void)initContentView {
-    [_viewModel.runDatas enumerateObjectsUsingBlock:^(Run* obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        ResultViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-        vc.run = obj;
-        vc.hideNav = YES;
-        UIView* cardView = vc.view;
-        [self.scrollView addSubview: cardView];
-        [cardView setFrame:CGRectMake(WIDTH*idx, 0, WIDTH, HEIGHT-60)];
-    }];
     
-    if (_viewModel.runDatas.count>0) self.nameLabel.text = [NSString stringWithFormat:@"1/%ld",(unsigned long)_viewModel.runDatas.count];
+    if (_viewModel.recordViewModels.count>0) self.nameLabel.text = [NSString stringWithFormat:@"1/%ld",(unsigned long)_viewModel.recordViewModels.count];
+    
+    [_viewModel.recordViewModels enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        RecordCardView *cardView = [[RecordCardView alloc] init];
+        [cardView configureViewWithViewModel:obj];
+        [self.scrollView addSubview: cardView];
+        [cardView setFrame:CGRectMake(WIDTH*idx + 20 , 0, WIDTH - 40, HEIGHT - 100)];
+    }];
 
 }
 
@@ -69,7 +70,7 @@
     [self.KVOController observe:self.scrollView keyPath:@"contentOffset" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         CGFloat x = self.scrollView.contentOffset.x;
         NSInteger page = x/WIDTH;
-        self.nameLabel.text = [NSString stringWithFormat:@"%ld/%ld",page+1,(unsigned long)_viewModel.runDatas.count];
+        self.nameLabel.text = [NSString stringWithFormat:@"%ld/%ld",page+1,(unsigned long)_viewModel.recordViewModels.count];
     }];
 }
 

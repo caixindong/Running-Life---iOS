@@ -6,36 +6,14 @@
 //  Copyright © 2016年 蔡欣东. All rights reserved.
 //
 #import "ResultViewController.h"
-#import "Run.h"
-#import "Location.h"
-#import "MultiColorPolyline.h"
 #import "ResultViewModel.h"
-#import "RecordManager.h"
-#import "UserModel.h"
+#import "RecordCardView.h"
 
-@interface ResultViewController ()<MKMapViewDelegate>
-
-@property (nonatomic, weak) IBOutlet MKMapView* mapView;
-
-@property (nonatomic, weak) IBOutlet UILabel* distanceLabel;
-
-@property (nonatomic, weak) IBOutlet UILabel* timeLabel;
-
-@property (nonatomic, weak) IBOutlet UILabel *paceLabel;
+@interface ResultViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *navView;
 
-@property (weak, nonatomic) IBOutlet UILabel *kllLable;
-
-@property (weak, nonatomic) IBOutlet UILabel *rankLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *countLabel;
-
-@property (weak, nonatomic) IBOutlet UIImageView *headPic;
-
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (nonatomic, strong) RecordCardView *recordCardView;
 
 @property (nonatomic,strong)ResultViewModel* viewModel;
 
@@ -46,10 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self KVOHandler];
-    
     [self configureView];
-
+    
+    [self KVOHandler];
 }
 
 #pragma mark - private
@@ -57,7 +34,7 @@
 - (void)KVOHandler {
     [self.KVOController observe:self.viewModel keyPath:@"rank" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         if (self.viewModel.rank) {
-            _rankLabel.text = self.viewModel.rank;
+            self.recordCardView.rankLabel.text = self.viewModel.rank;
             
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         }
@@ -71,75 +48,20 @@
 }
 
 -(void)configureView {
-    if (self.hideNav) {
-        self.navView.hidden = self.hideNav;
-    }else{
-        self.navView.hidden = NO;
-        
-    }
-    self.distanceLabel.text = self.viewModel.distanceLabelText;
     
-    self.timeLabel.text     = self.viewModel.timeLabelText;
+
+    [self.recordCardView configureViewWithViewModel:self.viewModel];
+    [self.view addSubview:self.recordCardView];
     
-    self.paceLabel.text     = self.viewModel.paceLabelText;
-    
-    self.kllLable.text      = self.viewModel.kcalLableText;
-    
-    self.countLabel.text    = self.viewModel.countLabelText;
-    
-    [self loadMap];
     
     UserStatusManager *manager = [UserStatusManager shareManager];
     if (manager.isLogin.boolValue) {
-        
-        [self.headPic sd_setImageWithURL:[NSURL URLWithString:manager.userModel.avatar] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
-        
-        self.nameLabel.text = manager.userModel.realname;
-        
-        _loginBtn.enabled = NO;
-        
-        
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
-        if (self.hideNav) {
-           [self.viewModel getRankData];
-        }else{
-            [self.viewModel postRunRecordToServerAndGetRank];
-        }
-    } else {
-        
-        [self.headPic setImage:[UIImage imageNamed:@"defaultHeadPic.png"]];
-        
-        self.nameLabel.text = @"未登录";
-        
-        _loginBtn.enabled = YES;
+
+        [self.viewModel postRunRecordToServerAndGetRank];
+
     }
-}
-
-- (void)loadMap {
-    if (self.run.locations.count > 0) {
-        
-        self.mapView.hidden = NO;
-
-        [self.mapView setRegion:self.viewModel.region];
-        
-        [self.mapView addOverlays:self.viewModel.colorSegmentArray];
-        
-    }
-}
-
-
-#pragma mark - MKMapViewDelegate
--(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
-    if ([overlay isKindOfClass:[MultiColorPolyline class]]) {
-        MultiColorPolyline * polyLine = (MultiColorPolyline *)overlay;
-        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
-        aRenderer.strokeColor = polyLine.color;
-        aRenderer.lineWidth = 3;
-        return aRenderer;
-    }
-    
-    return nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -175,13 +97,6 @@
     }
 }
 
-- (IBAction)loginBtnClick:(UIButton *)sender {
-    UIViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    [self presentViewController:loginVC
-                       animated:YES
-                     completion:nil];
-}
-
 #pragma mark - getter and setter
 
 - (ResultViewModel *)viewModel {
@@ -191,5 +106,14 @@
     }
     return _viewModel;
 }
+
+- (RecordCardView *)recordCardView {
+    if (!_recordCardView) {
+        _recordCardView = [[RecordCardView alloc] init];
+        _recordCardView.frame = CGRectMake(20, 84, WIDTH - 20 * 2, HEIGHT - 84 - 20);
+    }
+    return _recordCardView;
+}
+
 
 @end

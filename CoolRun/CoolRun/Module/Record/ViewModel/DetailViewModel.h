@@ -11,9 +11,9 @@
 @interface DetailViewModel : NSObject
 
 /**
- *  某一天全部的跑步数据
+ *  所有跑步记录viewModel
  */
-@property(nonatomic, copy, readonly) NSArray* runDatas;
+@property (nonatomic, copy, readonly) NSArray *recordViewModels;
 
 - (instancetype)initWithRunDatas:(NSArray *)runDatas;
 

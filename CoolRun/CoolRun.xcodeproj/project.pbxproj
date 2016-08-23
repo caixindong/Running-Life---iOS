@@ -116,6 +116,8 @@
 		4EE982EE1D60C74D00753934 /* FastCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE982EA1D60C74D00753934 /* FastCoder.m */; };
 		4EE982EF1D60C74D00753934 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE982ED1D60C74D00753934 /* MBProgressHUD.m */; };
 		4EE982F21D60C76000753934 /* MyUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE982F11D60C76000753934 /* MyUserDefault.m */; };
+		4EFFD8641D6C97EB00B1071B /* RecordCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFFD8631D6C97EB00B1071B /* RecordCardView.m */; };
+		4EFFD8681D6C980D00B1071B /* RecordCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFFD8671D6C980D00B1071B /* RecordCardView.xib */; };
 		96F4FBDDDE0AC86C435B44E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9733B592835253081B58B33 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -340,6 +342,9 @@
 		4EF150CF1CF062BE00DAA01F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		4EF150D11CF062C800DAA01F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		4EF150D31CF062D100DAA01F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4EFFD8621D6C97EB00B1071B /* RecordCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCardView.h; sourceTree = "<group>"; };
+		4EFFD8631D6C97EB00B1071B /* RecordCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordCardView.m; sourceTree = "<group>"; };
+		4EFFD8671D6C980D00B1071B /* RecordCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordCardView.xib; sourceTree = "<group>"; };
 		E9733B592835253081B58B33 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -934,6 +939,9 @@
 				4EDF40731D4CEBFA00819445 /* RankTableHeaderView.h */,
 				4EDF40741D4CEBFA00819445 /* RankTableHeaderView.m */,
 				4EDF40751D4CEBFA00819445 /* RankTableHeaderView.xib */,
+				4EFFD8621D6C97EB00B1071B /* RecordCardView.h */,
+				4EFFD8631D6C97EB00B1071B /* RecordCardView.m */,
+				4EFFD8671D6C980D00B1071B /* RecordCardView.xib */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -1237,6 +1245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E4978361CF1A733007E1EE5 /* Knockout-HTF67-FullBantamwt.otf in Resources */,
+				4EFFD8681D6C980D00B1071B /* RecordCardView.xib in Resources */,
 				4EC28EA11CDB93720048759D /* LaunchScreen.storyboard in Resources */,
 				4EC28E991CDB93720048759D /* Main.storyboard in Resources */,
 				4E4978371CF1A733007E1EE5 /* LHF Old Block CondMed.ttf in Resources */,
@@ -1314,6 +1323,7 @@
 				4E3474891D6721A100A50628 /* CoreDataManager.m in Sources */,
 				4EE982E21D60C13800753934 /* UIImage+MultiFormat.m in Sources */,
 				4EE982E31D60C13800753934 /* UIImage+WebP.m in Sources */,
+				4EFFD8641D6C97EB00B1071B /* RecordCardView.m in Sources */,
 				4EE982E41D60C13800753934 /* UIImageView+HighlightedWebCache.m in Sources */,
 				4EE982E51D60C13800753934 /* UIImageView+WebCache.m in Sources */,
 				4EE982E61D60C13800753934 /* UIView+WebCacheOperation.m in Sources */,

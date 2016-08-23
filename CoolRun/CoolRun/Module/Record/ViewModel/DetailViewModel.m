@@ -7,12 +7,18 @@
 //
 
 #import "DetailViewModel.h"
+#import "ResultViewModel.h"
 
 @implementation DetailViewModel
 
 - (instancetype)initWithRunDatas:(NSArray *)runDatas {
     if (self = [super init]) {
-        _runDatas = runDatas;
+        NSMutableArray *mutlArray = [NSMutableArray array];
+        [runDatas enumerateObjectsUsingBlock:^(Run *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            ResultViewModel *viewModel = [[ResultViewModel alloc] initWithRunModel:obj];
+            [mutlArray addObject:viewModel];
+        }];
+        _recordViewModels = [mutlArray copy];
     }
     return self;
 }
