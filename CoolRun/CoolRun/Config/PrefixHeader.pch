@@ -25,12 +25,11 @@
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "RecordManager.h"
 #import <CoreMotion/CoreMotion.h>
-#import "SZCalendarPicker.h"
 #import <HealthKit/HealthKit.h>
 #import "HealthKitManager.h"
 #import "ActionSheetDatePicker.h"
 #import "ActionSheetStringPicker.h"
-#import "UMSocial.h" 
+#import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "XDNetworking.h"
 #import "MBProgressHUD.h"
@@ -45,4 +44,5 @@
 #import "CoreDataManager.h"
 #import "Macros.h"
 #import "UserModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #endif /* PrefixHeader_pch */

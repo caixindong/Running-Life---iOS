@@ -48,8 +48,6 @@
 }
 
 -(void)configureView {
-    
-
     [self.recordCardView configureViewWithViewModel:self.viewModel];
     [self.view addSubview:self.recordCardView];
     
@@ -57,8 +55,6 @@
     UserStatusManager *manager = [UserStatusManager shareManager];
     if (manager.isLogin.boolValue) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        
-
         [self.viewModel postRunRecordToServerAndGetRank];
 
     }
@@ -101,7 +97,6 @@
 
 - (ResultViewModel *)viewModel {
     if (!_viewModel) {
-        NSLog(@"count is %ld",self.run.locations.count);
         _viewModel = [[ResultViewModel alloc] initWithRunModel:self.run];
     }
     return _viewModel;

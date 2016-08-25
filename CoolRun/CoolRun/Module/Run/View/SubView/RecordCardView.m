@@ -32,6 +32,8 @@
     
     self.spendCountLabel.text   = viewModel.countLabelText;
     
+    self.mapView.delegate = self;
+    
     [self.mapView setRegion: viewModel.region];
     
     [self.mapView addOverlays: viewModel.colorSegmentArray];

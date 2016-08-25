@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "RecordShowView.h"
 #import "MyRecordViewModel.h"
+#import "SZCalendarPicker.h"
 
 /**
  *  记录界面

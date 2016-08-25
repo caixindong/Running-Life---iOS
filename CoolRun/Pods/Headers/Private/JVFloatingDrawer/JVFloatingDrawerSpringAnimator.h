@@ -1,1 +1,0 @@
-../../../JVFloatingDrawer/Pod/Classes/JVFloatingDrawerSpringAnimator.h

@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ActionSheetPicker-3.0.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>JVFloatingDrawer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,42 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D1D6653B121A4DA2CA57602DDAAD613</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6EAE36E20DF056C8DEB91432AC7F0350</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>71A30763753701761542E851D7673201</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7B27D36B9F78C10A5AF9361DCDC9564A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7CDFD8795B5390C2DB52483527585E04</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C6B017DE59D0BF2511EA9BA02CF3409B</key>
+		<key>B32DF4A3AF44927A20BB02B303A25775</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>D02E08439589872996252F4061652195</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E981F578E6DE1B78B01C3ED9F476068D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
