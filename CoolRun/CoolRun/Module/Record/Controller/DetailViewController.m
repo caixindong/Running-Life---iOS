@@ -9,12 +9,13 @@
 #import "DetailViewController.h"
 #import "ResultViewController.h"
 #import "RecordCardView.h"
+#import "XDPageView.h"
 
 @interface DetailViewController ()
 
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *nameLabel;
 
-@property(nonatomic, strong, readwrite) UIScrollView* scrollView;
+@property (nonatomic, strong, readwrite) XDPageView *pageView;
 
 @end
 
@@ -22,8 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initScrollView];
     
     [self initContentView];
     
@@ -41,36 +40,42 @@
 
 #pragma mark - private
 
-- (void)initScrollView {
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,80, WIDTH, HEIGHT-100)];
-    
-    _scrollView.contentSize = CGSizeMake(WIDTH*_viewModel.recordViewModels.count, 0);
-    
-    _scrollView.pagingEnabled = YES;
-    
-    [self.view addSubview:_scrollView];
-    
-    [self.view sendSubviewToBack:_scrollView];
-}
-
 - (void)initContentView {
     
     if (_viewModel.recordViewModels.count>0) self.nameLabel.text = [NSString stringWithFormat:@"1/%ld",(unsigned long)_viewModel.recordViewModels.count];
     
-    [_viewModel.recordViewModels enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        RecordCardView *cardView = [[RecordCardView alloc] init];
-        [cardView configureViewWithViewModel:obj];
-        [self.scrollView addSubview: cardView];
-        [cardView setFrame:CGRectMake(WIDTH*idx + 20 , 0, WIDTH - 40, HEIGHT - 100)];
-    }];
+    @weakify(self)
+    _pageView = [[XDPageView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT-64)];
 
+    _pageView.pagesCount = ^NSInteger(){
+        return self_weak_.viewModel.recordViewModels.count;
+    };
+    
+    _pageView.loadViewAtIndexBlock = ^UIView *(NSInteger pageIndex,UIView *dequeueView) {
+        RecordCardView *cardView = nil;
+        if (dequeueView == nil) {
+            dequeueView = [[UIView alloc] initWithFrame:self_weak_.pageView.bounds];
+            cardView = [[RecordCardView alloc] init];
+            cardView.tag = 1;
+            [cardView setFrame:CGRectMake(20 , 0, WIDTH - 40, HEIGHT - 100 - 40)];
+            [dequeueView addSubview:cardView];
+        }else {
+            cardView = (RecordCardView *)[dequeueView viewWithTag:1];
+        }
+
+        [cardView configureViewWithViewModel:self_weak_.viewModel.recordViewModels[pageIndex]];
+
+        return dequeueView;
+    };
+    
+    [self.view addSubview:_pageView];
+    [self.view sendSubviewToBack:_pageView];
+    
 }
 
 - (void)KVOHandler {
-    [self.KVOController observe:self.scrollView keyPath:@"contentOffset" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
-        CGFloat x = self.scrollView.contentOffset.x;
-        NSInteger page = x/WIDTH;
-        self.nameLabel.text = [NSString stringWithFormat:@"%ld/%ld",page+1,(unsigned long)_viewModel.recordViewModels.count];
+    [self.KVOController observe:_pageView keyPath:@"currentPageIndex" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        self.nameLabel.text = [NSString stringWithFormat:@"%ld/%ld",_pageView.currentPageIndex+1,(unsigned long)_viewModel.recordViewModels.count];
     }];
 }
 

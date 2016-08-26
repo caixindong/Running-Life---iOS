@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2912D872E46B0093427EC7CC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74905CBBCC1B6AAE400C5670 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4E29EBD11D7035A00076F7A3 /* XDPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E29EBD01D7035A00076F7A3 /* XDPageView.m */; };
 		4E4DE94B1D6ED9CD00B8D699 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE94A1D6ED9CD00B8D699 /* main.m */; };
 		4E4DE9541D6ED9CD00B8D699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4DE9521D6ED9CD00B8D699 /* Main.storyboard */; };
 		4E4DE9591D6ED9CD00B8D699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4DE9571D6ED9CD00B8D699 /* LaunchScreen.storyboard */; };
@@ -134,6 +135,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E29EBCF1D7035A00076F7A3 /* XDPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDPageView.h; sourceTree = "<group>"; };
+		4E29EBD01D7035A00076F7A3 /* XDPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDPageView.m; sourceTree = "<group>"; };
 		4E4DE9461D6ED9CD00B8D699 /* CoolRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4DE94A1D6ED9CD00B8D699 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E4DE9531D6ED9CD00B8D699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -392,6 +395,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E29EBCE1D7035A00076F7A3 /* XDPageView */ = {
+			isa = PBXGroup;
+			children = (
+				4E29EBCF1D7035A00076F7A3 /* XDPageView.h */,
+				4E29EBD01D7035A00076F7A3 /* XDPageView.m */,
+			);
+			path = XDPageView;
+			sourceTree = "<group>";
+		};
 		4E4DE93D1D6ED9CD00B8D699 = {
 			isa = PBXGroup;
 			children = (
@@ -1091,6 +1103,7 @@
 		4E4DEA411D6EDAD400B8D699 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				4E29EBCE1D7035A00076F7A3 /* XDPageView */,
 				4E4DEA421D6EDAD400B8D699 /* ActionSheetPicker */,
 				4E4DEA571D6EDAD400B8D699 /* FastCoder */,
 				4E4DEA5A1D6EDAD400B8D699 /* FBKVOController */,
@@ -1406,6 +1419,7 @@
 				4E4DEADE1D6EDAD400B8D699 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4E4DEAD61D6EDAD400B8D699 /* AFURLSessionManager.m in Sources */,
 				4E4DEAB21D6EDAD400B8D699 /* RecordManager.m in Sources */,
+				4E29EBD11D7035A00076F7A3 /* XDPageView.m in Sources */,
 				4E4DEAE41D6EDAD400B8D699 /* XDNetworking+requestManager.m in Sources */,
 				4E4DEAD71D6EDAD400B8D699 /* AFAutoPurgingImageCache.m in Sources */,
 				4E4DEB011D6EDAD400B8D699 /* UIImage+WebP.m in Sources */,
