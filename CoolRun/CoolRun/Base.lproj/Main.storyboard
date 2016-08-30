@@ -1574,7 +1574,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oy-Aq-gLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="3498"/>
+            <point key="canvasLocation" x="1047" y="2978"/>
         </scene>
         <!--Name Edit View Controller-->
         <scene sceneID="Mxk-eq-8Ib">
@@ -1932,15 +1932,6 @@
                                 <color key="textColor" red="0.96684044599533081" green="0.064315482974052429" blue="0.047081738710403442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZg-fv-S2w">
-                                <rect key="frame" x="0.0" y="60" width="600" height="92"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="92" id="3Eg-ra-gBK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="120"/>
-                                <color key="textColor" red="0.98431372549999996" green="0.17254901959999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hG2-QE-BIw">
                                 <rect key="frame" x="250" y="440" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.98922836780548096" green="0.4153139591217041" blue="0.031820401549339294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2033,6 +2024,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUY-Rs-95M">
                                 <rect key="frame" x="243" y="161.5" width="114.5" height="277.5"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="250"/>
+                                <color key="textColor" red="0.98431372549999996" green="0.17254901959999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZg-fv-S2w">
+                                <rect key="frame" x="0.0" y="60" width="600" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="3Eg-ra-gBK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="120"/>
                                 <color key="textColor" red="0.98431372549999996" green="0.17254901959999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
