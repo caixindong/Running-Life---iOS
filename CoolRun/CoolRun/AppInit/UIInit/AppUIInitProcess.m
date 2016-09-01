@@ -9,16 +9,20 @@
 #import "AppUIInitProcess.h"
 
 static NSString* SELECTVC = @"SelectViewController";
+
 static NSString* FIRSTVC = @"HomeViewController";
 
 @interface AppUIInitProcess()
-@property(nonatomic,strong)UIViewController* selectViewController;
-@property(nonatomic,strong)UIViewController* firstViewController;
+
+@property(nonatomic, strong)UIViewController* selectViewController;
+
+@property(nonatomic, strong)UIViewController* firstViewController;
+
 @end
 
 @implementation AppUIInitProcess
 
--(instancetype)initWithApplication:(UIApplication *)application andLaunchOption:(NSDictionary *)option{
+- (instancetype)initWithApplication:(UIApplication *)application andLaunchOption:(NSDictionary *)option{
     if (self = [super init]) {
         [self initUIWithApplication:application];
     }
@@ -26,7 +30,7 @@ static NSString* FIRSTVC = @"HomeViewController";
 }
 
 
--(void)initUIWithApplication:(UIApplication*)application{
+- (void)initUIWithApplication:(UIApplication*)application{
     [AMapLocationServices sharedServices].apiKey =@"1ad2f773b7d4c6dfeab95f79b9242811";
     application.delegate.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     application.delegate.window.rootViewController = self.drawController;
@@ -57,35 +61,35 @@ static NSString* FIRSTVC = @"HomeViewController";
 }
 
 #pragma mark - getter and setter
--(JVFloatingDrawerViewController *)drawController{
+- (JVFloatingDrawerViewController *)drawController{
     if (!_drawController) {
         _drawController = [[JVFloatingDrawerViewController alloc]init];
     }
     return _drawController;
 }
 
--(JVFloatingDrawerSpringAnimator *)drawerAnimator{
+- (JVFloatingDrawerSpringAnimator *)drawerAnimator{
     if (!_drawerAnimator) {
         _drawerAnimator = [[JVFloatingDrawerSpringAnimator alloc]init];
     }
     return _drawerAnimator;
 }
 
--(UIStoryboard *)mainStroyboard{
+- (UIStoryboard *)mainStroyboard{
     if (!_mainStroyboard) {
         _mainStroyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     }
     return _mainStroyboard;
 }
 
--(UIViewController *)selectViewController{
+- (UIViewController *)selectViewController{
     if (!_selectViewController) {
         _selectViewController = [self.mainStroyboard instantiateViewControllerWithIdentifier:SELECTVC];
     }
     return _selectViewController;
 }
 
--(UIViewController *)firstViewController{
+- (UIViewController *)firstViewController{
     if (!_firstViewController) {
         _firstViewController = [self.mainStroyboard instantiateViewControllerWithIdentifier:FIRSTVC];
     }

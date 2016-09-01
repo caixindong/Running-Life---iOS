@@ -11,8 +11,6 @@
 
 @interface ResultViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *navView;
-
 @property (nonatomic, strong) RecordCardView *recordCardView;
 
 @property (nonatomic,strong)ResultViewModel* viewModel;
@@ -27,6 +25,12 @@
     [self configureView];
     
     [self KVOHandler];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    self.KVOController = nil;
 }
 
 #pragma mark - private
@@ -91,6 +95,10 @@
                                            delegate:nil];
         
     }
+}
+
+- (void)dealloc {
+    NSLog(@"ResultViewController dealloc");
 }
 
 #pragma mark - getter and setter

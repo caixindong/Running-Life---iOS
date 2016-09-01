@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class JVFloatingDrawerSpringAnimator;
+
 @interface AppUIInitProcess : NSObject
+
 @property(nonatomic,strong)JVFloatingDrawerViewController* drawController;
+
 @property (nonatomic, strong) JVFloatingDrawerSpringAnimator *drawerAnimator;
+
 @property(nonatomic,strong)UIStoryboard* mainStroyboard;
 
 -(instancetype)initWithApplication:(UIApplication*)application andLaunchOption:(NSDictionary*) option;

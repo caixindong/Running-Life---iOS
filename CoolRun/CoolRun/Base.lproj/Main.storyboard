@@ -2168,9 +2168,6 @@
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <connections>
-                        <outlet property="navView" destination="yQX-7H-7Oo" id="VtB-Tv-kad"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8i-3t-52J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

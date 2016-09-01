@@ -162,6 +162,8 @@ static NSString * const detailSegueName = @"RunDetails";
                                                     selector:@selector(eachSecond:)
                                                     userInfo:nil
                                                      repeats:YES];
+        
+    
     }
     
 }
@@ -350,7 +352,7 @@ static NSString * const detailSegueName = @"RunDetails";
             
             NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
             
-            if (fabs(howRecent) < 2.0 && location.horizontalAccuracy < 30) {
+            if (fabs(howRecent) < 2.0 ) {
                 if (self.locations.count > 0) {
                     _distance += [location distanceFromLocation:self.locations.lastObject];
                 }
@@ -504,6 +506,10 @@ static NSString * const detailSegueName = @"RunDetails";
         self.speedImg.hidden = YES;
 
     }
+}
+
+- (void)dealloc {
+    NSLog(@"NewRunViewController dealloc");
 }
 
 - (void)didReceiveMemoryWarning {
