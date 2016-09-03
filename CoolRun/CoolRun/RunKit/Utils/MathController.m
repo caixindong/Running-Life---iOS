@@ -112,6 +112,7 @@ static float const metersInMile = 1609.344;
     double slowestSpeed = DBL_MAX;
     double fastestSpeed = 0.0;
     
+    //获取最慢速度和最快速度
     for (int i = 1; i < locations.count; i++) {
         Location *firstLoc = [locations objectAtIndex:(i-1)];
         Location *secondLoc = [locations objectAtIndex:i];
@@ -130,22 +131,22 @@ static float const metersInMile = 1609.344;
         
     }
     
-    double meanSpeed = (slowestSpeed + fastestSpeed)/2;
+    double midSpeed = (slowestSpeed + fastestSpeed)/2;
     
     // 慢的用红色
-    CGFloat r_red = 139/255.0f;
-    CGFloat r_green = 254/255.0f;
-    CGFloat r_blue = 132/255.0f;
+    CGFloat s_red = 139/255.0f;
+    CGFloat s_green = 254/255.0f;
+    CGFloat s_blue = 132/255.0f;
     
     // 不快不慢的用黄色
-    CGFloat y_red = 101/255.0f;
-    CGFloat y_green = 254/255.0f;
-    CGFloat y_blue = 249/255.0f;
+    CGFloat m_red = 101/255.0f;
+    CGFloat m_green = 254/255.0f;
+    CGFloat m_blue = 249/255.0f;
     
     // 快的用绿色
-    CGFloat g_red = 67/255.0f;
-    CGFloat g_green = 181/255.0f;
-    CGFloat g_blue = 254/255.0f;
+    CGFloat f_red = 67/255.0f;
+    CGFloat f_green = 181/255.0f;
+    CGFloat f_blue = 254/255.0f;
     
     NSMutableArray *colorSegments = [NSMutableArray array];
     
@@ -163,20 +164,20 @@ static float const metersInMile = 1609.344;
         NSNumber * speed = [speeds objectAtIndex:(i-1)];
         UIColor * color = [UIColor blackColor];
         
-        // between red and yellow
-        if (speed.doubleValue < meanSpeed) {
-            double ratio = (speed.doubleValue - slowestSpeed) / (meanSpeed - slowestSpeed);
-            CGFloat red = r_red + ratio * (y_red - r_red);
-            CGFloat green = r_green + ratio * (y_green - r_green);
-            CGFloat blue = r_blue + ratio * (y_blue - r_blue);
+
+        if (speed.doubleValue < midSpeed) {
+            double ratio = (speed.doubleValue - slowestSpeed) / (midSpeed - slowestSpeed);
+            CGFloat red = s_red + ratio * (m_red - s_red);
+            CGFloat green = s_green + ratio * (m_green - s_green);
+            CGFloat blue = s_blue + ratio * (m_blue - s_blue);
             color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
             
-            // between yellow and green
+
         } else {
-            double ratio = (speed.doubleValue - meanSpeed) / (fastestSpeed - meanSpeed);
-            CGFloat red = y_red + ratio * (g_red - y_red);
-            CGFloat green = y_green + ratio * (g_green - y_green);
-            CGFloat blue = y_blue + ratio * (g_blue - y_blue);
+            double ratio = (speed.doubleValue - midSpeed) / (fastestSpeed - midSpeed);
+            CGFloat red = m_red + ratio * (f_red - m_red);
+            CGFloat green = m_green + ratio * (f_green - m_green);
+            CGFloat blue = m_blue + ratio * (f_blue - m_blue);
             color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
         }
         

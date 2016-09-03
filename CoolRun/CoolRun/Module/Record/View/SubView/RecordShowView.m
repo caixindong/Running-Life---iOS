@@ -83,7 +83,7 @@
     
 }
 
--(CAShapeLayer *)drawRecordValue:(NSArray *)values inLayer:(CAShapeLayer *)layer{
+-(CAShapeLayer *)drawRecordValue:(NSArray *)values inLayer:(CAShapeLayer *)layer lineColor:(UIColor *)lineColor{
     CGFloat W = self.frame.size.width;
     CGFloat H = self.frame.size.height;
     
@@ -99,7 +99,7 @@
         [recordPath addLineToPoint:CGPointMake(20+aliginW*i, H-20-recordH)];
     }
     layer.path = recordPath.CGPath;
-    layer.strokeColor =  UIColorFromRGB(0x43B5FE).CGColor;
+    layer.strokeColor =  lineColor.CGColor;
     layer.lineWidth = 4;
     layer.lineCap = kCALineCapRound;
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
@@ -119,7 +119,7 @@
         [_normalLayer removeFromSuperlayer];
     }
     _normalRecords = [normalRecords copy];
-    _normalLayer = [self drawRecordValue:normalRecords inLayer:_normalLayer];
+    _normalLayer = [self drawRecordValue:normalRecords inLayer:_normalLayer lineColor:UIColorFromRGB(0x43B5FE)];
 }
 
 - (void)setSpecialRecords:(NSArray *)specialRecords {
@@ -127,7 +127,7 @@
         [_specialLayer removeFromSuperlayer];
     }
     _specialRecords = [specialRecords copy];
-    _specialLayer = [self drawRecordValue:specialRecords inLayer:_specialLayer];
+    _specialLayer = [self drawRecordValue:specialRecords inLayer:_specialLayer lineColor:UIColorFromRGB(0X2E38AD)];
 }
 
 - (void)setLimmitValue:(NSString *)limmitValue {

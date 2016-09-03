@@ -45,52 +45,6 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicken" translatesAutoresizingMaskIntoConstraints="NO" id="CCa-LN-ETn">
                             <rect key="frame" x="516" y="155" width="50" height="50"/>
                         </imageView>
-                        <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKm-rJ-cxR">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lu2-Sl-IB3">
-                                    <rect key="frame" x="282" y="70" width="35" height="20"/>
-                                    <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="18"/>
-                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15公里" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bv9-FJ-qV4">
-                                    <rect key="frame" x="8" y="70" width="49.5" height="20"/>
-                                    <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="18"/>
-                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000卡路里" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Pc8-m8-3ZL">
-                                    <rect key="frame" x="8" y="8" width="139" height="32.5"/>
-                                    <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="29"/>
-                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="DE3-yF-yIh">
-                                    <rect key="frame" x="560" y="70" width="31.5" height="20"/>
-                                    <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="18"/>
-                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" red="0.98431372549999996" green="0.17254901959999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="128" id="0hH-1p-1MI"/>
-                                <constraint firstItem="Pc8-m8-3ZL" firstAttribute="top" secondItem="eKm-rJ-cxR" secondAttribute="top" constant="8" id="CTK-4j-jYS"/>
-                                <constraint firstAttribute="bottom" secondItem="DE3-yF-yIh" secondAttribute="bottom" constant="10" id="bce-Fe-cup"/>
-                                <constraint firstItem="Lu2-Sl-IB3" firstAttribute="centerX" secondItem="eKm-rJ-cxR" secondAttribute="centerX" id="cYM-2d-Rnd"/>
-                                <constraint firstAttribute="bottom" secondItem="Bv9-FJ-qV4" secondAttribute="bottom" constant="10" id="hHd-QX-cCr"/>
-                                <constraint firstItem="Bv9-FJ-qV4" firstAttribute="leading" secondItem="eKm-rJ-cxR" secondAttribute="leading" constant="8" id="hcH-Qn-oTL"/>
-                                <constraint firstItem="Pc8-m8-3ZL" firstAttribute="leading" secondItem="eKm-rJ-cxR" secondAttribute="leading" constant="8" id="m7i-o8-aG4"/>
-                                <constraint firstAttribute="bottom" secondItem="Lu2-Sl-IB3" secondAttribute="bottom" constant="10" id="tUN-OQ-ef7"/>
-                                <constraint firstAttribute="trailing" secondItem="DE3-yF-yIh" secondAttribute="trailing" constant="8" id="uld-8Z-AVy"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="0hH-1p-1MI"/>
-                                </mask>
-                            </variation>
-                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="— —" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-wX-fue">
                             <rect key="frame" x="556" y="125.5" width="35.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -141,6 +95,52 @@
                             <color key="textColor" red="0.98431372549999996" green="0.17254901959999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKm-rJ-cxR">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lu2-Sl-IB3">
+                                    <rect key="frame" x="282" y="70" width="35" height="20"/>
+                                    <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="18"/>
+                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15公里" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bv9-FJ-qV4">
+                                    <rect key="frame" x="8" y="70" width="49.5" height="20"/>
+                                    <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="18"/>
+                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000卡路里" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Pc8-m8-3ZL">
+                                    <rect key="frame" x="8" y="8" width="139" height="32.5"/>
+                                    <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="29"/>
+                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="DE3-yF-yIh">
+                                    <rect key="frame" x="560" y="70" width="31.5" height="20"/>
+                                    <fontDescription key="fontDescription" name="Knockout-HTF30-JuniorWelterwt" family="Knockout" pointSize="18"/>
+                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.98431372549999996" green="0.17254901959999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="0hH-1p-1MI"/>
+                                <constraint firstItem="Pc8-m8-3ZL" firstAttribute="top" secondItem="eKm-rJ-cxR" secondAttribute="top" constant="8" id="CTK-4j-jYS"/>
+                                <constraint firstAttribute="bottom" secondItem="DE3-yF-yIh" secondAttribute="bottom" constant="10" id="bce-Fe-cup"/>
+                                <constraint firstItem="Lu2-Sl-IB3" firstAttribute="centerX" secondItem="eKm-rJ-cxR" secondAttribute="centerX" id="cYM-2d-Rnd"/>
+                                <constraint firstAttribute="bottom" secondItem="Bv9-FJ-qV4" secondAttribute="bottom" constant="10" id="hHd-QX-cCr"/>
+                                <constraint firstItem="Bv9-FJ-qV4" firstAttribute="leading" secondItem="eKm-rJ-cxR" secondAttribute="leading" constant="8" id="hcH-Qn-oTL"/>
+                                <constraint firstItem="Pc8-m8-3ZL" firstAttribute="leading" secondItem="eKm-rJ-cxR" secondAttribute="leading" constant="8" id="m7i-o8-aG4"/>
+                                <constraint firstAttribute="bottom" secondItem="Lu2-Sl-IB3" secondAttribute="bottom" constant="10" id="tUN-OQ-ef7"/>
+                                <constraint firstAttribute="trailing" secondItem="DE3-yF-yIh" secondAttribute="trailing" constant="8" id="uld-8Z-AVy"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="0hH-1p-1MI"/>
+                                </mask>
+                            </variation>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>

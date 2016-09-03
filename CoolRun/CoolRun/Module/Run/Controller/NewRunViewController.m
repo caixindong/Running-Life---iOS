@@ -437,7 +437,7 @@ static NSString * const detailSegueName = @"RunDetails";
         NSOperationQueue* queue = [[NSOperationQueue alloc]init];
         
         /**
-         *  重力感应是否可用
+         *  陀螺仪是否可用
          */
         if (self.motionManger.gyroAvailable) {
             
@@ -480,7 +480,7 @@ static NSString * const detailSegueName = @"RunDetails";
                 }
             }];
         }else{
-            NSLog(@"重力感应不可用");
+            NSLog(@"陀螺仪不可用");
         }
     }else{
         self.promptLabel.hidden = NO;

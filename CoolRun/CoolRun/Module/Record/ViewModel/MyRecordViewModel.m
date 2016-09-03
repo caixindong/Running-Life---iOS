@@ -31,10 +31,11 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.manager                = [[HealthKitManager alloc]init];
-        self.recordManager          = [RecordManager shareManager];
-        self.walkAndRunKcalArray    = [NSArray array];
-        self.runKcalArray           = [NSArray array];
+        _manager                = [[HealthKitManager alloc]init];
+        _recordManager          = [RecordManager shareManager];
+        _walkAndRunKcalArray    = [NSArray array];
+        _runKcalArray           = [NSArray array];
+        
     }
     return self;
 }

@@ -43,12 +43,9 @@
 }
 
 - (void)merge {
-    //记得得先合并位置数据，再合并记录数据
-//    [_locationDataManager mergeTheTempData];
     [_manager mergeTheTempData];
     
     [_manager deleteAllTempRecords];
-//    [_locationDataManager deleteAllTempLocations];
 }
 
 - (NSString *)distanceLabelText {

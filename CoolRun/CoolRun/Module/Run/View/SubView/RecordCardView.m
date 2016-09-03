@@ -55,6 +55,7 @@
 }
 
 #pragma mark - MKMapViewDelegate
+
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     if ([overlay isKindOfClass:[MultiColorPolyline class]]) {
         MultiColorPolyline * polyLine = (MultiColorPolyline *)overlay;

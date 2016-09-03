@@ -22,6 +22,10 @@
  */
 @property (nonatomic, copy, readonly) NSArray *runKcalArray;
 
+@property (nonatomic,strong, readonly)RACCommand *getWalkAndRunKcalCommand;
+
+@property (nonatomic,strong, readonly)RACCommand *getRunKcalCommand;
+
 /**
  *  获取某月跑步+走路卡路里数据
  *

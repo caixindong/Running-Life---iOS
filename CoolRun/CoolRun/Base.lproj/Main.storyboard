@@ -1681,7 +1681,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kL6-hU-8jE">
                                 <rect key="frame" x="510" y="377.5" width="40" height="5"/>
-                                <color key="backgroundColor" red="0.18196818232536316" green="0.21806374192237854" blue="0.67699730396270752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.2196078431372549" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Cu9-3e-tLW"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="ZOg-qY-tOK"/>

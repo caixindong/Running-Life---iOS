@@ -14,7 +14,6 @@
 
 @implementation HealthKitManager
 
-
 -(instancetype)init{
     if (self = [super init]) {
         _healthStore = [AppDelegate globalDelegate].SDKProcess.healthStore;
