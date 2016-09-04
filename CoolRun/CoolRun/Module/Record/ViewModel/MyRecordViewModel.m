@@ -31,7 +31,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _manager                = [[HealthKitManager alloc]init];
+        _manager                = [HealthKitManager shareManager];
         _recordManager          = [RecordManager shareManager];
         _walkAndRunKcalArray    = [NSArray array];
         _runKcalArray           = [NSArray array];
@@ -44,17 +44,12 @@
     [_manager getKcalWithWeight:weight
                             year:year
                             month:month
-                            day:1
                        complete:^(id arr) {
                            self.walkAndRunKcalArray     = arr;
-                           
+                           self.runKcalArray            = [_recordManager getKcalDataWithMonth:month year:year weight:weight];
                 } failWithError:^(NSError * error) {
                             NSLog(@"get kcal error is %@",error);
     }];
-}
-
-- (void)getRunKcalArrayWithMonth:(NSInteger)month year:(NSInteger)year weigth:(float)weight {
-     self.runKcalArray  = [_recordManager getKcalDataWithMonth:month year:year weight:weight];
 }
 
 - (DetailViewModel *)getRunRecordWithDate:(NSDate *)date {

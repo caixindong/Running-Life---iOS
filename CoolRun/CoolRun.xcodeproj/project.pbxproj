@@ -755,11 +755,11 @@
 		4E4DE9B71D6EDAD400B8D699 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4E4DE9BC1D6EDAD400B8D699 /* Manager */,
 				4E4DE9B81D6EDAD400B8D699 /* Location+CoreDataProperties.h */,
 				4E4DE9B91D6EDAD400B8D699 /* Location+CoreDataProperties.m */,
 				4E4DE9BA1D6EDAD400B8D699 /* Location.h */,
 				4E4DE9BB1D6EDAD400B8D699 /* Location.m */,
-				4E4DE9BC1D6EDAD400B8D699 /* Manager */,
 				4E4DE9C31D6EDAD400B8D699 /* MultiColorPolyline.h */,
 				4E4DE9C41D6EDAD400B8D699 /* MultiColorPolyline.m */,
 				4E4DE9C51D6EDAD400B8D699 /* RankingUserModel.h */,

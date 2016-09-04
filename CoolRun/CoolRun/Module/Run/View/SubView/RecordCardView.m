@@ -36,7 +36,11 @@
     
     [self.mapView setRegion: viewModel.region];
     
-    [self.mapView addOverlays: viewModel.colorSegmentArray];
+    //地图异步加载轨迹
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.mapView addOverlays: viewModel.colorSegmentArray];
+    });
+
     
     UserStatusManager *manager = [UserStatusManager shareManager];
     if (manager.isLogin.boolValue) {

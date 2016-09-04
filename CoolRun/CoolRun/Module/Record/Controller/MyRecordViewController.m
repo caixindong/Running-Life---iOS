@@ -52,7 +52,6 @@
     _calendar.changeMonthBlock = ^(NSInteger year,NSInteger month){
         StrongObj(selfWeak)
         [selfWeakStrong.viewModel getWalkAndRunKcalArrayWithMonth:month year:year weigth:65];
-        [selfWeakStrong.viewModel getRunKcalArrayWithMonth:month year:year weigth:65];
     };
     
     _calendar.selectDate = ^(NSDate* date){
@@ -79,21 +78,18 @@
     NSDateComponents *comp = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear| NSCalendarUnitMonth| NSCalendarUnitDay) fromDate:[NSDate date]];
     
     [self.viewModel getWalkAndRunKcalArrayWithMonth:comp.month year:comp.year weigth:65];
-    
-    [self.viewModel getRunKcalArrayWithMonth:comp.month year:comp.year weigth:65];
 }
 
 - (void)KVOHandler {
-    [self.KVOController observe:self.viewModel keyPath:@"runKcalArray" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
-        _showView.specialRecords    = self.viewModel.runKcalArray;
-        _calendar.specialDataArr    = self.viewModel.runKcalArray;
-    }];
     
     [self.KVOController observe:self.viewModel keyPath:@"walkAndRunKcalArray" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         _showView.normalRecords = self.viewModel.walkAndRunKcalArray;
     }];
     
-
+    [self.KVOController observe:self.viewModel keyPath:@"runKcalArray" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        _showView.specialRecords    = self.viewModel.runKcalArray;
+        _calendar.specialDataArr    = self.viewModel.runKcalArray;
+    }];
 }
 
 #pragma mark - getter and setter

@@ -77,13 +77,18 @@
     _textLayer.contentsScale = [UIScreen mainScreen].scale;
     _textLayer.position = CGPointMake(20+10+55,60);
     [self.layer addSublayer:_textLayer];
-    
-    
-    
-    
+
 }
 
--(CAShapeLayer *)drawRecordValue:(NSArray *)values inLayer:(CAShapeLayer *)layer lineColor:(UIColor *)lineColor{
+/**
+ *  绘画柱状图
+ *
+ *  @param values    数值数组
+ *  @param lineColor 柱状图颜色
+ *
+ *  @return 柱状图layer
+ */
+-(CAShapeLayer *)drawRecordValue:(NSArray *)values lineColor:(UIColor *)lineColor{
     CGFloat W = self.frame.size.width;
     CGFloat H = self.frame.size.height;
     
@@ -91,9 +96,9 @@
     CGFloat lineWidth = W- 40;
     CGFloat aliginW = lineWidth/(5*7);
     UIBezierPath* recordPath = [UIBezierPath bezierPath];
-    layer = [CAShapeLayer layer];
+    CAShapeLayer *layer = [CAShapeLayer layer];
     for (int i = 1; i<values.count; i++) {
-        CGFloat recordH = [values[i] intValue]*lineHight/1200;
+        CGFloat recordH = [values[i] intValue]*lineHight/1200 > self.frame.size.height -20? self.frame.size.height - 20:[values[i] intValue]*lineHight/1200;
         
         [recordPath moveToPoint:CGPointMake(20+aliginW*i, H-20)];
         [recordPath addLineToPoint:CGPointMake(20+aliginW*i, H-20-recordH)];
@@ -102,6 +107,8 @@
     layer.strokeColor =  lineColor.CGColor;
     layer.lineWidth = 4;
     layer.lineCap = kCALineCapRound;
+    
+    //设置帧动画
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     animation.fromValue = @(0.0);
     animation.toValue = @(1.0);
@@ -109,25 +116,36 @@
     animation.duration = 0.8;
     
     [layer addAnimation:animation forKey:nil];
-    [self.layer addSublayer:layer];
     
     return layer;
 }
 
+/**
+ *  走路+跑步卡路里数据
+ *
+ *  @param normalRecords
+ */
 - (void)setNormalRecords:(NSArray *)normalRecords {
     if (_normalLayer) {
         [_normalLayer removeFromSuperlayer];
     }
     _normalRecords = [normalRecords copy];
-    _normalLayer = [self drawRecordValue:normalRecords inLayer:_normalLayer lineColor:UIColorFromRGB(0x43B5FE)];
+    _normalLayer = [self drawRecordValue:normalRecords lineColor:UIColorFromRGB(0x43B5FE)];
+    [self.layer addSublayer:_normalLayer];
 }
 
+/**
+ *  跑步卡路里数据
+ *
+ *  @param specialRecords
+ */
 - (void)setSpecialRecords:(NSArray *)specialRecords {
     if (_specialLayer) {
         [_specialLayer removeFromSuperlayer];
     }
     _specialRecords = [specialRecords copy];
-    _specialLayer = [self drawRecordValue:specialRecords inLayer:_specialLayer lineColor:UIColorFromRGB(0X2E38AD)];
+    _specialLayer = [self drawRecordValue:specialRecords lineColor:UIColorFromRGB(0X2E38AD)];
+    [self.layer addSublayer:_specialLayer];
 }
 
 - (void)setLimmitValue:(NSString *)limmitValue {

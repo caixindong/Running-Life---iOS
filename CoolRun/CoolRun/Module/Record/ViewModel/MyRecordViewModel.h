@@ -26,6 +26,8 @@
 
 @property (nonatomic,strong, readonly)RACCommand *getRunKcalCommand;
 
+
+
 /**
  *  获取某月跑步+走路卡路里数据
  *
@@ -34,17 +36,6 @@
  *  @param weight 体重
  */
 - (void)getWalkAndRunKcalArrayWithMonth:(NSInteger)month
-                              year:(NSInteger)year
-                            weigth:(float)weight;
-
-/**
- *  获取某个月跑步卡路里数据
- *
- *  @param month  月份
- *  @param year   年份
- *  @param weight 体重
- */
-- (void)getRunKcalArrayWithMonth:(NSInteger)month
                               year:(NSInteger)year
                             weigth:(float)weight;
 

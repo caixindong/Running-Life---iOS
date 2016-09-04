@@ -17,38 +17,39 @@ typedef void(^errorBlock)(NSError*);
  */
 @interface HealthKitManager : NSObject
 
-@property(nonatomic,strong)HKHealthStore* healthStore;
+/**
+ *  全局管理类
+ *
+ *  @return 
+ */
++ (HealthKitManager *)shareManager;
 
 /**
- *  获取健康数据中路程数据
+ *  获取某年某月的健康数据中路程数据(原生数据)
  *
  *  @param year       年份
  *  @param month      月份
- *  @param day        日
  *  @param block      成功回调
  *  @param errorBlock 失败回调
  */
 - (void)getDistancesWithYear:(NSInteger)year
                        month:(NSInteger)month
-                         day:(NSInteger)day
                     complete:(completeBlock) block
                failWithError:(errorBlock)errorBlock;
 
 
 /**
- *  获取健康数据中卡路里数据
+ *  获取某年某月的卡路里数据（计算数据）
  *
  *  @param weight     体重
  *  @param year       年份
  *  @param month      月份
- *  @param day        日
  *  @param block      成功回调
  *  @param errorBlock 失败回调
  */
 - (void)getKcalWithWeight:(float)weight
                      year:(NSInteger)year
                     month:(NSInteger)month
-                      day:(NSInteger)day
                  complete:(completeBlock) block
             failWithError:(errorBlock)errorBlock;
 
