@@ -8,15 +8,13 @@
 
 #import "NewRunViewController.h"
 #import "ResultViewController.h"
-#import "AppDelegate.h"
-#import "Run.h"
 #import "MapViewController.h"
-#import "Location.h"
-#import "LocationDataManager.h"
+#import "NewRunViewModel.h"
+#import "RunningBoardViewModel.h"
+#import "RunningBoardView.h"
 
-static NSString * const detailSegueName = @"RunDetails";
 
-@interface NewRunViewController ()<AMapLocationManagerDelegate,MKMapViewDelegate>{
+@interface NewRunViewController ()<AMapLocationManagerDelegate>{
     /**
      *  开始倒计时
      */
@@ -25,33 +23,11 @@ static NSString * const detailSegueName = @"RunDetails";
      *  运动时间
      */
     int     _seconds;
-    /**
-     *  运动距离
-     */
-    float   _distance;
-    /**
-     *  是否准备
-     */
-    BOOL    _isReady;
-    /**
-     *  暂停计数
-     */
-    int     _stopCount;
 }
-
-@property (nonatomic, strong, readwrite) Run *run;
 
 @property (nonatomic, weak, readwrite) IBOutlet UILabel* promptLabel;
 
-@property (nonatomic, weak, readwrite) IBOutlet UILabel* timeLabel;
-
-@property (nonatomic, weak, readwrite) IBOutlet UILabel* distLabel;
-
-@property (nonatomic, weak, readwrite) IBOutlet UILabel* paceLabel;
-
 @property (nonatomic, weak, readwrite) IBOutlet UIButton* stopButton;
-
-@property (weak, nonatomic, readwrite) IBOutlet UILabel *kmLabel;
 
 @property (weak, nonatomic, readwrite) IBOutlet UIButton *pauseBtn;
 
@@ -59,19 +35,7 @@ static NSString * const detailSegueName = @"RunDetails";
 
 @property (weak, nonatomic, readwrite) IBOutlet UIButton *showMapBtn;
 
-@property (weak, nonatomic, readwrite) IBOutlet UIImageView *timeImg;
-
-@property (weak, nonatomic, readwrite) IBOutlet UIImageView *speedImg;
-
-/**
- *  定位管理
- */
-@property (nonatomic, strong) AMapLocationManager* locationManager;
-
-/**
- *  运动位置数组
- */
-@property (nonatomic, strong) NSMutableArray* locations;
+@property (nonatomic, strong, readwrite) RunningBoardView *boardView;
 
 /**
  *  运动计时器
@@ -83,15 +47,13 @@ static NSString * const detailSegueName = @"RunDetails";
  */
 @property(nonatomic,strong)NSTimer* downTimer;
 
-/**
- *  运动管理
- */
-@property(nonatomic,strong)CMMotionManager* motionManger;
 
 /**
  *  地图
  */
 @property(nonatomic,strong)MapViewController* mapViewController;
+
+@property(nonatomic, strong, readwrite)NewRunViewModel *viewModel;
 
 @end
 
@@ -101,16 +63,12 @@ static NSString * const detailSegueName = @"RunDetails";
     [super viewDidLoad];
     
     _downCount = 3;
-    
-    _stopCount = 0;
-    
+
     _seconds = 0.00;
     
-    _distance = 0.00;
+    [self KVOHandler];
     
-    [self.locationManager startUpdatingLocation];
-    
-    [self.view addSubview:self.mapViewController.view];
+    [self configureView];
     
     //开启倒计时
     self.downTimer = [NSTimer
@@ -121,24 +79,109 @@ static NSString * const detailSegueName = @"RunDetails";
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.mapViewController.view.hidden = YES;
-    
-    self.isReady = NO;
-    
-    [self mapBtnAnimation];
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
+    self.KVOController = nil;
+    
     [self.timer invalidate];
+}
+
+-(void)configureView {
+    [self.view addSubview:self.mapViewController.view];
     
-    [self.locationManager stopUpdatingLocation];
+    self.mapViewController.view.hidden = YES;
     
-    self.locationManager = nil;
+    self.boardView.readyRunning = NO;
+    
+    self.showMapBtn.hidden  = YES;
+    
+    self.pauseBtn.hidden = YES;
+    
+    self.startBtn.hidden = YES;
+    
+    self.stopButton.hidden = YES;
+    
+    [self mapBtnAnimation];
+    
+    _boardView = [[RunningBoardView alloc] init];
+    
+    _boardView.frame = self.view.bounds;
+    
+    _boardView.readyRunning = NO;
+    
+    [self.view addSubview:_boardView];
+    
+    [self.view sendSubviewToBack:_boardView];
+}
+
+- (void)KVOHandler {
+    [self.KVOController observe:self.viewModel keyPath:@"isRunning" options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([self.viewModel.isRunning boolValue]) {
+                self.promptLabel.hidden = YES;
+                
+                self.showMapBtn.hidden  = NO;
+                
+                self.pauseBtn.hidden = NO;
+                
+                self.startBtn.hidden = YES;
+                
+                self.stopButton.hidden = YES;
+                
+                self.boardView.readyRunning = YES;
+                
+                self.boardView.backgroundColor = [UIColor whiteColor];
+                
+                self.timer.fireDate = [NSDate distantPast];
+                
+                self.mapViewController.locateEnable = YES;
+                
+                [self mapBtnAnimation];
+            }else {
+                self.pauseBtn.hidden = YES;
+                
+                self.startBtn.hidden = NO;
+                
+                self.stopButton.hidden = NO;
+                
+                self.boardView.backgroundColor = [UIColor blackColor];
+                
+                self.timer.fireDate = [NSDate distantFuture];
+                
+                self.mapViewController.locateEnable = NO;
+                
+                [self.showMapBtn.layer removeAllAnimations];
+                
+                //系统震动
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+                
+                AudioServicesRemoveSystemSoundCompletion(kSystemSoundID_Vibrate);
+            }
+        });
+
+    }];
+    
+    [self.KVOController observe:self.viewModel keyPath:@"runDataChange" options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+        if ([self.viewModel.runDataChange boolValue]) {
+            [_boardView configureViewWithViewModel:self.viewModel.currentRunData];
+        }
+    }];
+    
+    [self.KVOController observe:self.viewModel keyPath:@"isValid" options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+        AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc]init];
+        
+        AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Stop running"];
+        
+        [av speakUtterance:utterance];
+        if ([self.viewModel.isValid boolValue]) {
+            ResultViewController *resultVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+            resultVC.viewModel = self.viewModel.resultViewModel;
+            [self presentViewController:resultVC animated:YES completion:nil];
+        }else {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
 }
 
 #pragma mark - event response
@@ -155,14 +198,19 @@ static NSString * const detailSegueName = @"RunDetails";
     if (_downCount==0) {
         [self.downTimer invalidate];
         
-        self.isReady  = YES;
-        
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
                                                       target:self
                                                     selector:@selector(eachSecond:)
                                                     userInfo:nil
                                                      repeats:YES];
         
+        AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc]init];
+        
+        AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Start running"];
+        
+        [av speakUtterance:utterance];
+        
+        [self.viewModel beginRunning];
     
     }
     
@@ -176,41 +224,16 @@ static NSString * const detailSegueName = @"RunDetails";
 - (void)eachSecond:(NSTimer*)timer {
     _seconds++;
     
-    //刷新UI
-    self.timeLabel.text = [NSString stringWithFormat:@"%@",[MathController stringifySecondCount:_seconds usingLongFormat:NO]];
-    
-    self.distLabel.text = [NSString stringWithFormat:@"%.2f",_distance/1000];
-    
-    self.paceLabel.text = [NSString stringWithFormat:@"%@",[MathController stringifyAvgPaceFromDist:_distance overTime:_seconds]];
+    self.viewModel.duration = _seconds;
 }
 
 /**
- *  结束按钮（有语音）
+ *  结束按钮
  *
  *  @param sender
  */
 - (IBAction)stopPressed:(UIButton*)sender {
-    AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc]init];
-    
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Stop running"];
-    
-    [av speakUtterance:utterance];
-    
-    if (_distance/1000>0.01) {
-        [self saveRun];
-        
-        [self performSegueWithIdentifier:detailSegueName sender:nil];
-        
-    }else{
-        
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
-    }
-    
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    [[segue destinationViewController] setRun:self.run];
+    [self.viewModel stopRunning];
 }
 
 /**
@@ -238,26 +261,7 @@ static NSString * const detailSegueName = @"RunDetails";
  *  @param sender
  */
 - (IBAction)pauseBtnClick:(UIButton *)sender {
-    sender.hidden = YES;
-    
-    self.view.backgroundColor = [UIColor blackColor];
-    
-    self.startBtn.hidden = NO;
-    
-    self.stopButton.hidden = NO;
-    
-    [self.timer invalidate];
-    
-    [self.locationManager stopUpdatingLocation];
-    
-    self.mapViewController.locateEnable = NO;
-    
-    [self.showMapBtn.layer removeAllAnimations];
-    
-    //系统震动
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    
-    AudioServicesRemoveSystemSoundCompletion(kSystemSoundID_Vibrate);
+    [self.viewModel pauseRunning];
 }
 
 /**
@@ -266,56 +270,11 @@ static NSString * const detailSegueName = @"RunDetails";
  *  @param sender
  */
 - (IBAction)startClick:(UIButton *)sender {
-    sender.hidden = YES;
-    
-    _stopCount = 0;
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    self.stopButton.hidden = YES;
-    
-    self.pauseBtn.hidden = NO;
-    
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
-                                                  target:self
-                                                selector:@selector(eachSecond:)
-                                                userInfo:nil
-                                                 repeats:YES];
-    
-    [self.locationManager startUpdatingLocation];
-    
-    self.mapViewController.locateEnable = YES;
-    
-    [self mapBtnAnimation];
+    [self.viewModel resumeRunning];
 }
 
 #pragma mark - private
-/**
- *  保存跑步记录
- */
--(void)saveRun{
-    NSMutableArray *locationArray = [NSMutableArray array];
-    
-    
-    for (CLLocation *location in self.locations) {
-        Location* locationObject =  [[LocationDataManager shareManager]
-                                     addLoactionWithLatitude:[NSNumber
-                                                              numberWithDouble:location.coordinate.latitude] longtitude:[NSNumber numberWithDouble:location.coordinate.longitude] timestamp:location.timestamp];
-        
-        [locationArray addObject:locationObject];
-        
-    }
-    
-    Run* runObject =  [[RecordManager shareManager] addRunRecordWithDis:[NSNumber
-                                                    numberWithFloat:_distance]
-                                           withDur:[NSNumber
-                                                    numberWithInt:_seconds]
-                                          withTime:[NSDate date]
-                                     withLocations:[NSOrderedSet
-                                                    orderedSetWithArray:locationArray]];
-    
-    self.run = runObject;
-}
+
 
 /**
  *  地图旋转动画
@@ -341,175 +300,20 @@ static NSString * const detailSegueName = @"RunDetails";
     
 }
 
-#pragma mark - AMapLocationManagerDelegate
-- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error {
-    [_locationManager stopUpdatingLocation];
-}
-
-- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location {
-        if (location.horizontalAccuracy < 30) {
-            NSDate *eventDate = location.timestamp;
-            
-            NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-            
-            if (fabs(howRecent) < 2.0 ) {
-                if (self.locations.count > 0) {
-                    _distance += [location distanceFromLocation:self.locations.lastObject];
-                }
-                
-                [self.locations addObject:location];
-            }
-        }
-}
-
-
 #pragma mark - getter and setter
 
--(AMapLocationManager *)locationManager{
-    if (!_locationManager) {
-        _locationManager = [[AMapLocationManager alloc] init];
-        
-        _locationManager.delegate = self;
-        
-        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        
-        _locationManager.distanceFilter = kCLDistanceFilterNone;
-        
-        //设置允许后台定位参数，保持不会被系统挂起
-        [_locationManager setPausesLocationUpdatesAutomatically:NO];
-        
-        if([[[UIDevice currentDevice] systemVersion] floatValue]>9.0){
-            [_locationManager setAllowsBackgroundLocationUpdates:YES];//iOS9(含)以上系统需设置    
-        }
-        
-    }
-    return _locationManager;
-}
-
--(MapViewController *)mapViewController{
+- (MapViewController *)mapViewController{
     if (!_mapViewController) {
         _mapViewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     }
     return _mapViewController;
 }
 
--(NSMutableArray *)locations{
-    if (!_locations) {
-        _locations = [NSMutableArray arrayWithCapacity:10];
+- (NewRunViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[NewRunViewModel alloc] init];
     }
-    return _locations;
-}
-
--(CMMotionManager *)motionManger{
-    if (!_motionManger) {
-        _motionManger = [[CMMotionManager alloc]init];
-        _motionManger.gyroUpdateInterval = 1.0;
-    }
-    return _motionManger;
-}
-
--(void)setIsReady:(BOOL)isReady{
-    if (isReady) {
-        self.promptLabel.hidden = YES;
-        
-        self.timeLabel.hidden = NO;
-        
-        self.distLabel.hidden = NO;
-        
-        self.paceLabel.hidden = NO;
-        
-        self.kmLabel.hidden = NO;
-        
-        self.pauseBtn.hidden = NO;
-        
-        self.showMapBtn.hidden  = NO;
-        
-        self.speedImg.hidden = NO;
-        
-        self.timeImg.hidden = NO;
-        
-        AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc]init];
-        
-        AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Start running"];
-        
-        [av speakUtterance:utterance];
-        
-        NSOperationQueue* queue = [[NSOperationQueue alloc]init];
-        
-        /**
-         *  陀螺仪是否可用
-         */
-        if (self.motionManger.gyroAvailable) {
-            
-            [self.motionManger startGyroUpdatesToQueue:queue withHandler:^(CMGyroData * _Nullable gyroData, NSError * _Nullable error) {
-                
-                CGFloat y = gyroData.rotationRate.y;
-                
-                CGFloat z = gyroData.rotationRate.z;
-                
-                if (fabs(y)>2||fabs(z)>2) {
-                    
-                    _stopCount = 0;
-                    
-                    if (!self.startBtn.hidden) {
-                        
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            
-                            if ([self respondsToSelector:@selector(startClick:)]) {
-                                
-                                [self startClick:self.startBtn];
-                                
-                            }
-                        });
-                    }
-                }else{
-                    
-                    _stopCount++;
-                    
-                    if (_stopCount>8&&self.startBtn.hidden) {
-                        
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            
-                            if ([self respondsToSelector:@selector(pauseBtnClick:)]) {
-                                
-                                [self pauseBtnClick:self.pauseBtn];
-                            }
-                        });
-                        
-                    }
-                }
-            }];
-        }else{
-            NSLog(@"陀螺仪不可用");
-        }
-    }else{
-        self.promptLabel.hidden = NO;
-        
-        self.timeLabel.hidden = YES;
-        
-        self.distLabel.hidden = YES;
-        
-        self.paceLabel.hidden = YES;
-        
-        self.stopButton.hidden = YES;
-        
-        self.kmLabel.hidden = YES;
-        
-        self.pauseBtn.hidden = YES;
-        
-        self.startBtn.hidden = YES;
-        
-        self.showMapBtn.hidden = YES;
-        
-        self.timeImg.hidden = YES;
-        
-        self.speedImg.hidden = YES;
-
-    }
-}
-
-- (void)dealloc {
-    NSLog(@"NewRunViewController dealloc");
+    return _viewModel;
 }
 
 - (void)didReceiveMemoryWarning {

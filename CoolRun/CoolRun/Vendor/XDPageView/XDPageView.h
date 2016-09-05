@@ -10,10 +10,19 @@
 
 @interface XDPageView : UIView
 
+/**
+ *  当前页下标
+ */
 @property (nonatomic, assign, readwrite) NSInteger currentPageIndex;
 
+/**
+ *  自定义page视图
+ */
 @property (nonatomic, copy, readwrite) UIView *(^loadViewAtIndexBlock)(NSInteger pageIndex,UIView *dequeueView);
 
+/**
+ *  page的数量
+ */
 @property (nonatomic, copy, readwrite) NSInteger(^pagesCount)();
 
 

@@ -19,7 +19,7 @@
     NSMutableArray* dataArr = [NSMutableArray arrayWithCapacity:30];
     
     for (NSInteger i = 1; i<=31; i++) {
-        NSString* dateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",(long)year,month,i];
+        NSString* dateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",(long)year,(long)month,i];
         NSDate* date = [formatter dateFromString:dateStr];
         
         NSArray* dayRuns = [self getRunInfoInDate:date];

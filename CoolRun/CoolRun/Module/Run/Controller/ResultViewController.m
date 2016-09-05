@@ -13,8 +13,6 @@
 
 @property (nonatomic, strong) RecordCardView *recordCardView;
 
-@property (nonatomic,strong)ResultViewModel* viewModel;
-
 @end
 
 @implementation ResultViewController
@@ -52,8 +50,10 @@
 }
 
 -(void)configureView {
-    [self.recordCardView configureViewWithViewModel:self.viewModel];
-    [self.view addSubview:self.recordCardView];
+    _recordCardView = [[RecordCardView alloc] init];
+    _recordCardView.frame = CGRectMake(20, 84, WIDTH - 20 * 2, HEIGHT - 84 - 20);
+    [_recordCardView configureViewWithViewModel:self.viewModel];
+    [self.view addSubview:_recordCardView];
     
     
     UserStatusManager *manager = [UserStatusManager shareManager];
@@ -96,27 +96,5 @@
         
     }
 }
-
-- (void)dealloc {
-    NSLog(@"ResultViewController dealloc");
-}
-
-#pragma mark - getter and setter
-
-- (ResultViewModel *)viewModel {
-    if (!_viewModel) {
-        _viewModel = [[ResultViewModel alloc] initWithRunModel:self.run];
-    }
-    return _viewModel;
-}
-
-- (RecordCardView *)recordCardView {
-    if (!_recordCardView) {
-        _recordCardView = [[RecordCardView alloc] init];
-        _recordCardView.frame = CGRectMake(20, 84, WIDTH - 20 * 2, HEIGHT - 84 - 20);
-    }
-    return _recordCardView;
-}
-
 
 @end

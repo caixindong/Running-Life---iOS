@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Run.h"
 
+
+@class ResultViewModel;
 /**
  *  跑步结果界面
  */
@@ -19,5 +21,7 @@
  */
 @property (strong, nonatomic) Run *run;
 
+
+@property (nonatomic, strong, readwrite)ResultViewModel *viewModel;
 
 @end

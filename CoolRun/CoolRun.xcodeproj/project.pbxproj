@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2912D872E46B0093427EC7CC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74905CBBCC1B6AAE400C5670 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4E0C761E1D7D4D3D00937D8A /* RunningBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C761D1D7D4D3D00937D8A /* RunningBoardView.m */; };
+		4E0C76211D7D4D5300937D8A /* RunningBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0C76201D7D4D5300937D8A /* RunningBoardView.xib */; };
+		4E0C76241D7D50C000937D8A /* NewRunViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C76231D7D50C000937D8A /* NewRunViewModel.m */; };
+		4E0C76271D7D59BC00937D8A /* RunningBoardViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C76261D7D59BC00937D8A /* RunningBoardViewModel.m */; };
 		4E29EBD11D7035A00076F7A3 /* XDPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E29EBD01D7035A00076F7A3 /* XDPageView.m */; };
 		4E4DE94B1D6ED9CD00B8D699 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE94A1D6ED9CD00B8D699 /* main.m */; };
 		4E4DE9541D6ED9CD00B8D699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4DE9521D6ED9CD00B8D699 /* Main.storyboard */; };
@@ -135,6 +139,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E0C761C1D7D4D3D00937D8A /* RunningBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningBoardView.h; sourceTree = "<group>"; };
+		4E0C761D1D7D4D3D00937D8A /* RunningBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningBoardView.m; sourceTree = "<group>"; };
+		4E0C76201D7D4D5300937D8A /* RunningBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunningBoardView.xib; sourceTree = "<group>"; };
+		4E0C76221D7D50C000937D8A /* NewRunViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRunViewModel.h; sourceTree = "<group>"; };
+		4E0C76231D7D50C000937D8A /* NewRunViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunViewModel.m; sourceTree = "<group>"; };
+		4E0C76251D7D59BC00937D8A /* RunningBoardViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningBoardViewModel.h; sourceTree = "<group>"; };
+		4E0C76261D7D59BC00937D8A /* RunningBoardViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningBoardViewModel.m; sourceTree = "<group>"; };
 		4E29EBCF1D7035A00076F7A3 /* XDPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDPageView.h; sourceTree = "<group>"; };
 		4E29EBD01D7035A00076F7A3 /* XDPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDPageView.m; sourceTree = "<group>"; };
 		4E4DE9461D6ED9CD00B8D699 /* CoolRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -813,6 +824,9 @@
 				4E4DE9D41D6EDAD400B8D699 /* RecordCardView.h */,
 				4E4DE9D51D6EDAD400B8D699 /* RecordCardView.m */,
 				4E4DE9D61D6EDAD400B8D699 /* RecordCardView.xib */,
+				4E0C761C1D7D4D3D00937D8A /* RunningBoardView.h */,
+				4E0C761D1D7D4D3D00937D8A /* RunningBoardView.m */,
+				4E0C76201D7D4D5300937D8A /* RunningBoardView.xib */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -826,6 +840,10 @@
 				4E4DE9DB1D6EDAD400B8D699 /* RankViewModel.m */,
 				4E4DE9DC1D6EDAD400B8D699 /* ResultViewModel.h */,
 				4E4DE9DD1D6EDAD400B8D699 /* ResultViewModel.m */,
+				4E0C76221D7D50C000937D8A /* NewRunViewModel.h */,
+				4E0C76231D7D50C000937D8A /* NewRunViewModel.m */,
+				4E0C76251D7D59BC00937D8A /* RunningBoardViewModel.h */,
+				4E0C76261D7D59BC00937D8A /* RunningBoardViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1332,6 +1350,7 @@
 				4E4DEA951D6EDAD400B8D699 /* CoolRun.entitlements in Resources */,
 				4E4DEAC71D6EDAD400B8D699 /* Braggadocio.ttf in Resources */,
 				4E4DEAB81D6EDAD400B8D699 /* RankTableViewCell.xib in Resources */,
+				4E0C76211D7D4D5300937D8A /* RunningBoardView.xib in Resources */,
 				4E4DEAA51D6EDAD400B8D699 /* SZCalendarPicker.xib in Resources */,
 				4E4DEAC91D6EDAD400B8D699 /* Knockout-HTF67-FullBantamwt.otf in Resources */,
 				4E4DEABC1D6EDAD400B8D699 /* RecordCardView.xib in Resources */,
@@ -1449,6 +1468,7 @@
 				4E4DEAD81D6EDAD400B8D699 /* AFImageDownloader.m in Sources */,
 				4E4DEAF11D6EDAD400B8D699 /* JVFloatingDrawerSpringAnimator.m in Sources */,
 				4E4DEAC41D6EDAD400B8D699 /* UserSettingViewController.m in Sources */,
+				4E0C76241D7D50C000937D8A /* NewRunViewModel.m in Sources */,
 				4E4DEAAC1D6EDAD400B8D699 /* RankViewController.m in Sources */,
 				4E4DEB041D6EDAD400B8D699 /* UIView+WebCacheOperation.m in Sources */,
 				4E4DEA9D1D6EDAD400B8D699 /* UserStatusManager.m in Sources */,
@@ -1456,6 +1476,7 @@
 				4E4DEA9A1D6EDAD400B8D699 /* RegisterViewModel.m in Sources */,
 				4E4DEAD31D6EDAD400B8D699 /* AFSecurityPolicy.m in Sources */,
 				4E4DEA961D6EDAD400B8D699 /* CoolRun.xcdatamodeld in Sources */,
+				4E0C761E1D7D4D3D00937D8A /* RunningBoardView.m in Sources */,
 				4E4DEAEB1D6EDAD400B8D699 /* ActionSheetMultipleStringPicker.m in Sources */,
 				4E4DEAB11D6EDAD400B8D699 /* RecordManager+Kcal.m in Sources */,
 				4E4DEAC31D6EDAD400B8D699 /* NameEditViewController.m in Sources */,
@@ -1495,6 +1516,7 @@
 				4E4DEAD51D6EDAD400B8D699 /* AFURLResponseSerialization.m in Sources */,
 				4E4DEAF61D6EDAD400B8D699 /* NSData+ImageContentType.m in Sources */,
 				4E4DEAA91D6EDAD400B8D699 /* HomeViewController.m in Sources */,
+				4E0C76271D7D59BC00937D8A /* RunningBoardViewModel.m in Sources */,
 				4E4DEAFC1D6EDAD400B8D699 /* SDWebImageManager.m in Sources */,
 				4E4DEAAF1D6EDAD400B8D699 /* Location.m in Sources */,
 				4E4DEA9F1D6EDAD400B8D699 /* MyRecordViewController.m in Sources */,
@@ -1620,7 +1642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CoolRun/Config/CoolRun.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: man Quanta (445WB6HJ3A)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Config/PrefixHeader.pch";
@@ -1639,7 +1661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CoolRun/Config/CoolRun.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: man Quanta (445WB6HJ3A)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Config/PrefixHeader.pch";

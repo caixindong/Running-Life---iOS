@@ -22,11 +22,6 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-/**
- *  是否响应scrollview的回调
- */
-@property (nonatomic, assign) BOOL responseScrollEvent;
-
 @property (nonatomic, assign) CGSize pageSize;
 
 @property (nonatomic, assign) NSInteger numberOfPages;
@@ -94,7 +89,6 @@
 
 #pragma mark - load item view,主要逻辑
 
-
 - (void)loadViewsForNeed {
     CGFloat itemW = _pageSize.width;
     if (itemW) {
@@ -155,7 +149,6 @@
     center.x = (index + 0.5f) * _pageSize.width;
     view.center = center;
 }
-
 
 #pragma mark - 可视
 

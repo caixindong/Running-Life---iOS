@@ -16,7 +16,7 @@
     NSInteger month = component.month;
     NSInteger day = component.day;
     NSInteger weak = day/30 + 1;
-    NSString *str = [NSString stringWithFormat:@"%ld年%ld月第%ld周",(long)year,month,weak];
+    NSString *str = [NSString stringWithFormat:@"%ld年%ld月第%ld周",(long)year,(long)month,weak];
     return str;
 }
 
