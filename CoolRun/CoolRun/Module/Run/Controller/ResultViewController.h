@@ -16,12 +16,6 @@
  */
 @interface ResultViewController : UIViewController
 
-/**
- *  跑步记录
- */
-@property (strong, nonatomic) Run *run;
-
-
 @property (nonatomic, strong, readwrite)ResultViewModel *viewModel;
 
 @end

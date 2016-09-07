@@ -11,6 +11,6 @@
 /**
  *  跑步界面
  */
-@interface NewRunViewController : UIViewController
+@interface NewRunViewController : XDBaseViewController
 
 @end

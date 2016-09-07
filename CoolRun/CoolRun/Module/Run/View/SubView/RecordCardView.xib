@@ -46,7 +46,7 @@
                             <rect key="frame" x="516" y="155" width="50" height="50"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="— —" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-wX-fue">
-                            <rect key="frame" x="556" y="125.5" width="35.5" height="19.5"/>
+                            <rect key="frame" x="556" y="125" width="35.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <color key="textColor" red="0.98431372549999996" green="0.17254901959999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -176,27 +176,40 @@
                         </mask>
                     </variation>
                 </view>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2lA-4x-ooN">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avw-gV-hU9">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
-                </mapView>
+                    <subviews>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TH6-k8-Abn">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                        </mapView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="TH6-k8-Abn" secondAttribute="bottom" id="9RJ-V0-b55"/>
+                        <constraint firstAttribute="trailing" secondItem="TH6-k8-Abn" secondAttribute="trailing" id="LwK-7H-O6g"/>
+                        <constraint firstItem="TH6-k8-Abn" firstAttribute="top" secondItem="avw-gV-hU9" secondAttribute="top" id="neY-9C-LoD"/>
+                        <constraint firstItem="TH6-k8-Abn" firstAttribute="leading" secondItem="avw-gV-hU9" secondAttribute="leading" id="p7m-ol-lh1"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="avw-gV-hU9" secondAttribute="trailing" id="23J-kr-QcD"/>
+                <constraint firstItem="avw-gV-hU9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BfQ-zj-PTG"/>
+                <constraint firstItem="avw-gV-hU9" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1/3" id="CE5-mj-u5t"/>
                 <constraint firstAttribute="trailing" secondItem="SP2-51-ea5" secondAttribute="trailing" id="CZ2-DC-ggb"/>
-                <constraint firstItem="SP2-51-ea5" firstAttribute="top" secondItem="2lA-4x-ooN" secondAttribute="bottom" id="S5F-nY-hRq"/>
                 <constraint firstItem="eKm-rJ-cxR" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="100/600" id="cof-mm-KIf"/>
                 <constraint firstAttribute="bottom" secondItem="SP2-51-ea5" secondAttribute="bottom" id="e3t-yR-OV2"/>
-                <constraint firstAttribute="trailing" secondItem="2lA-4x-ooN" secondAttribute="trailing" id="eK6-X4-JC7"/>
+                <constraint firstItem="avw-gV-hU9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oPc-DL-gdW"/>
+                <constraint firstItem="SP2-51-ea5" firstAttribute="top" secondItem="avw-gV-hU9" secondAttribute="bottom" id="rgy-my-4oK"/>
                 <constraint firstItem="SP2-51-ea5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="t8P-xv-vRT"/>
                 <constraint firstItem="FJi-F3-ZrH" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="50/600" id="uvZ-vx-tFG"/>
-                <constraint firstItem="2lA-4x-ooN" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1/3" id="wFf-Va-7k3"/>
-                <constraint firstItem="2lA-4x-ooN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="z7R-XR-zRu"/>
-                <constraint firstItem="2lA-4x-ooN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zoD-mY-sfq"/>
             </constraints>
             <connections>
                 <outlet property="distanceLabel" destination="Bv9-FJ-qV4" id="Par-mO-I6V"/>
                 <outlet property="kcalLabel" destination="Pc8-m8-3ZL" id="BLj-VU-fEC"/>
-                <outlet property="mapView" destination="2lA-4x-ooN" id="cxl-jv-Izz"/>
+                <outlet property="mapBgView" destination="avw-gV-hU9" id="j1m-MF-Ot5"/>
+                <outlet property="mapView" destination="TH6-k8-Abn" id="PAC-Cs-xSt"/>
                 <outlet property="nameLable" destination="h36-Jm-aHH" id="dL6-oG-CRD"/>
                 <outlet property="pageLabel" destination="DE3-yF-yIh" id="5pE-Dp-d4C"/>
                 <outlet property="rankLabel" destination="JvD-wX-fue" id="i4S-tr-gGH"/>

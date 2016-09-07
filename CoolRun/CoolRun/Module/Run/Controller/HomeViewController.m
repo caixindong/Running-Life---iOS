@@ -56,15 +56,9 @@
             [_locationManager requestAlwaysAuthorization];
         }
     }
-    
-    self.rewardBgView.layer.borderColor = UIColorFromRGB(0xE8E9E8).CGColor;
-    
-    self.rewardBgView.layer.borderWidth = 1;
-    
-    [self KVOhandler];
 }
 
--(void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
     _distanceLabel.text = self.viewModel.distanceLabelText;
@@ -76,12 +70,15 @@
     _rankTimeLabel.text = self.viewModel.rankTimeLabelText;
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle{
+- (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
-
-#pragma mark - private
+- (void)configureView {
+    self.rewardBgView.layer.borderColor = UIColorFromRGB(0xE8E9E8).CGColor;
+    
+    self.rewardBgView.layer.borderWidth = 1;
+}
 
 - (void)KVOhandler {
     UserStatusManager *manager = [UserStatusManager shareManager];

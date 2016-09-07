@@ -45,4 +45,5 @@
 #import "Macros.h"
 #import "UserModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "XDBaseViewController.h"
 #endif /* PrefixHeader_pch */

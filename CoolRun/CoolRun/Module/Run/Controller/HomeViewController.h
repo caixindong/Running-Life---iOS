@@ -11,6 +11,6 @@
 /**
  *  主页
  */
-@interface HomeViewController : UIViewController
+@interface HomeViewController : XDBaseViewController
 
 @end

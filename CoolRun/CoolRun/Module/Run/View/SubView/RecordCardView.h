@@ -11,6 +11,8 @@
 
 @interface RecordCardView : UIView
 
+@property (weak, nonatomic) IBOutlet UIView *mapBgView;
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (weak, nonatomic) IBOutlet UILabel *kcalLabel;

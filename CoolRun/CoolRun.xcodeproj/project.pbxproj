@@ -12,6 +12,8 @@
 		4E0C76211D7D4D5300937D8A /* RunningBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0C76201D7D4D5300937D8A /* RunningBoardView.xib */; };
 		4E0C76241D7D50C000937D8A /* NewRunViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C76231D7D50C000937D8A /* NewRunViewModel.m */; };
 		4E0C76271D7D59BC00937D8A /* RunningBoardViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C76261D7D59BC00937D8A /* RunningBoardViewModel.m */; };
+		4E0C762A1D7DBD8000937D8A /* XDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C76291D7DBD8000937D8A /* XDBaseViewController.m */; };
+		4E0C762D1D7EB93400937D8A /* ShareMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C762C1D7EB93400937D8A /* ShareMapView.m */; };
 		4E29EBD11D7035A00076F7A3 /* XDPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E29EBD01D7035A00076F7A3 /* XDPageView.m */; };
 		4E4DE94B1D6ED9CD00B8D699 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE94A1D6ED9CD00B8D699 /* main.m */; };
 		4E4DE9541D6ED9CD00B8D699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4DE9521D6ED9CD00B8D699 /* Main.storyboard */; };
@@ -146,6 +148,10 @@
 		4E0C76231D7D50C000937D8A /* NewRunViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunViewModel.m; sourceTree = "<group>"; };
 		4E0C76251D7D59BC00937D8A /* RunningBoardViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningBoardViewModel.h; sourceTree = "<group>"; };
 		4E0C76261D7D59BC00937D8A /* RunningBoardViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningBoardViewModel.m; sourceTree = "<group>"; };
+		4E0C76281D7DBD8000937D8A /* XDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDBaseViewController.h; sourceTree = "<group>"; };
+		4E0C76291D7DBD8000937D8A /* XDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDBaseViewController.m; sourceTree = "<group>"; };
+		4E0C762B1D7EB93400937D8A /* ShareMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMapView.h; sourceTree = "<group>"; };
+		4E0C762C1D7EB93400937D8A /* ShareMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMapView.m; sourceTree = "<group>"; };
 		4E29EBCF1D7035A00076F7A3 /* XDPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDPageView.h; sourceTree = "<group>"; };
 		4E29EBD01D7035A00076F7A3 /* XDPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDPageView.m; sourceTree = "<group>"; };
 		4E4DE9461D6ED9CD00B8D699 /* CoolRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -600,6 +606,8 @@
 			children = (
 				4E4DE9841D6EDAD400B8D699 /* SelectViewController.h */,
 				4E4DE9851D6EDAD400B8D699 /* SelectViewController.m */,
+				4E0C76281D7DBD8000937D8A /* XDBaseViewController.h */,
+				4E0C76291D7DBD8000937D8A /* XDBaseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -634,6 +642,8 @@
 		4E4DE98D1D6EDAD400B8D699 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				4E0C762B1D7EB93400937D8A /* ShareMapView.h */,
+				4E0C762C1D7EB93400937D8A /* ShareMapView.m */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -1451,6 +1461,7 @@
 				4E4DEA9B1D6EDAD400B8D699 /* SelectViewController.m in Sources */,
 				4E4DEAA01D6EDAD400B8D699 /* RecordShowView.m in Sources */,
 				4E4DEAF81D6EDAD400B8D699 /* SDWebImageCompat.m in Sources */,
+				4E0C762D1D7EB93400937D8A /* ShareMapView.m in Sources */,
 				4E4DEAAB1D6EDAD400B8D699 /* NewRunViewController.m in Sources */,
 				4E4DEAB51D6EDAD400B8D699 /* Run+CoreDataProperties.m in Sources */,
 				4E4DEAF01D6EDAD400B8D699 /* FBKVOController.m in Sources */,
@@ -1470,6 +1481,7 @@
 				4E4DEAC41D6EDAD400B8D699 /* UserSettingViewController.m in Sources */,
 				4E0C76241D7D50C000937D8A /* NewRunViewModel.m in Sources */,
 				4E4DEAAC1D6EDAD400B8D699 /* RankViewController.m in Sources */,
+				4E0C762A1D7DBD8000937D8A /* XDBaseViewController.m in Sources */,
 				4E4DEB041D6EDAD400B8D699 /* UIView+WebCacheOperation.m in Sources */,
 				4E4DEA9D1D6EDAD400B8D699 /* UserStatusManager.m in Sources */,
 				4E4DEAC01D6EDAD400B8D699 /* ChangePwdViewController.m in Sources */,

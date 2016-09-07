@@ -25,17 +25,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    [self initView];
-    
+}
+
+- (void)KVOHandler {
     UserStatusManager* manager = [UserStatusManager shareManager];
     
     [self.KVOController observe:manager
                         keyPath:@"isLogin"
                         options:NSKeyValueObservingOptionNew
                           block:^(id observer, id object, NSDictionary *change) {
-                              [self initView];
+                              [self configureView];
                           }];
     
     [self.KVOController observe:manager
@@ -43,14 +42,12 @@
                         options:NSKeyValueObservingOptionNew
                           block:^(id observer, id object, NSDictionary *change) {
                               if (manager.haveChangeInfo.boolValue) {
-                                  [self initView];
+                                  [self configureView];
                               }
                           }];
-    
 }
 
-
--(void)initView{
+- (void)configureView {
     UserModel* user = (UserModel*)[[MyUserDefault shareUserDefault] valueWithKey:USER];
     if (user) {
         [_headPic sd_setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"defaultHeadPic.png"] options:SDWebImageRefreshCached];
@@ -63,7 +60,6 @@
         _nameLabel.text = @"未登录";
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

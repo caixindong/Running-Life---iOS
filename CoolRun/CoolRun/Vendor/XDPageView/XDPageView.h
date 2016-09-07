@@ -16,7 +16,7 @@
 @property (nonatomic, assign, readwrite) NSInteger currentPageIndex;
 
 /**
- *  自定义page视图
+ *  自定义page视图，使用的时候判断是否有dequeueView，如果有就直接dequeueView，没有再实例化一个新视图，可以参考tableView cell 复用机制的使用
  */
 @property (nonatomic, copy, readwrite) UIView *(^loadViewAtIndexBlock)(NSInteger pageIndex,UIView *dequeueView);
 

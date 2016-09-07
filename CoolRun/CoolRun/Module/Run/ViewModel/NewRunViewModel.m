@@ -175,7 +175,7 @@
 
 #pragma mark - getter and setter
 
--(AMapLocationManager *)locationManager{
+- (AMapLocationManager *)locationManager{
     if (!_locationManager) {
         _locationManager = [[AMapLocationManager alloc] init];
         

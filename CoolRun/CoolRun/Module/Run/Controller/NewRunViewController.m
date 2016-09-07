@@ -66,10 +66,6 @@
 
     _seconds = 0.00;
     
-    [self KVOHandler];
-    
-    [self configureView];
-    
     //开启倒计时
     self.downTimer = [NSTimer
                       scheduledTimerWithTimeInterval:1.0f
@@ -87,7 +83,7 @@
     [self.timer invalidate];
 }
 
--(void)configureView {
+- (void)configureView {
     [self.view addSubview:self.mapViewController.view];
     
     self.mapViewController.view.hidden = YES;
