@@ -14,7 +14,7 @@
 /**
  *  跑步结果界面
  */
-@interface ResultViewController : UIViewController
+@interface ResultViewController : XDBaseViewController
 
 @property (nonatomic, strong, readwrite)ResultViewModel *viewModel;
 

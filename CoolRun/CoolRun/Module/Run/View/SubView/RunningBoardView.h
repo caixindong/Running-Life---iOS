@@ -14,6 +14,6 @@
 
 @property(nonatomic, assign, readwrite)BOOL readyRunning;
 
-- (void)configureViewWithViewModel:(RunningBoardViewModel *)viewModel;
+@property(nonatomic, strong, readwrite)RunningBoardViewModel *viewModel;
 
 @end

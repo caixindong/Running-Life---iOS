@@ -8,11 +8,10 @@
 
 #import "NewRunViewController.h"
 #import "ResultViewController.h"
-#import "MapViewController.h"
 #import "NewRunViewModel.h"
 #import "RunningBoardViewModel.h"
 #import "RunningBoardView.h"
-
+#import "RunnungMapView.h"
 
 @interface NewRunViewController ()<AMapLocationManagerDelegate>{
     /**
@@ -22,7 +21,7 @@
     /**
      *  运动时间
      */
-    int     _seconds;
+    int     _duration;
 }
 
 @property (nonatomic, weak, readwrite) IBOutlet UILabel* promptLabel;
@@ -35,23 +34,19 @@
 
 @property (weak, nonatomic, readwrite) IBOutlet UIButton *showMapBtn;
 
-@property (nonatomic, strong, readwrite) RunningBoardView *boardView;
+@property (nonatomic, strong, readwrite) RunningBoardView *runningBoardView;
+
+@property (nonatomic, strong, readwrite) RunnungMapView *runningMapView;
 
 /**
  *  运动计时器
  */
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong, readwrite) NSTimer *timer;
 
 /**
  *  倒计时
  */
-@property(nonatomic,strong)NSTimer* downTimer;
-
-
-/**
- *  地图
- */
-@property(nonatomic,strong)MapViewController* mapViewController;
+@property(nonatomic, strong, readwrite)NSTimer* downTimer;
 
 @property(nonatomic, strong, readwrite)NewRunViewModel *viewModel;
 
@@ -64,7 +59,7 @@
     
     _downCount = 3;
 
-    _seconds = 0.00;
+    _duration = 0.00;
     
     //开启倒计时
     self.downTimer = [NSTimer
@@ -81,15 +76,11 @@
     self.KVOController = nil;
     
     [self.timer invalidate];
+    
+    self.view.alpha = 0.2;
 }
 
 - (void)configureView {
-    [self.view addSubview:self.mapViewController.view];
-    
-    self.mapViewController.view.hidden = YES;
-    
-    self.boardView.readyRunning = NO;
-    
     self.showMapBtn.hidden  = YES;
     
     self.pauseBtn.hidden = YES;
@@ -98,21 +89,18 @@
     
     self.stopButton.hidden = YES;
     
-    [self mapBtnAnimation];
+    [self.view addSubview:self.runningBoardView];
     
-    _boardView = [[RunningBoardView alloc] init];
+    [self.view sendSubviewToBack:self.runningBoardView];
     
-    _boardView.frame = self.view.bounds;
+    [self.view addSubview:self.runningMapView];
     
-    _boardView.readyRunning = NO;
+    [self.view bringSubviewToFront:self.runningMapView];
     
-    [self.view addSubview:_boardView];
-    
-    [self.view sendSubviewToBack:_boardView];
 }
 
 - (void)KVOHandler {
-    [self.KVOController observe:self.viewModel keyPath:@"isRunning" options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+    [self.KVOController observe:self.viewModel keyPath:@"isRunning" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if ([self.viewModel.isRunning boolValue]) {
                 self.promptLabel.hidden = YES;
@@ -125,13 +113,11 @@
                 
                 self.stopButton.hidden = YES;
                 
-                self.boardView.readyRunning = YES;
+                self.runningBoardView.readyRunning = YES;
                 
-                self.boardView.backgroundColor = [UIColor whiteColor];
+                self.runningBoardView.backgroundColor = [UIColor whiteColor];
                 
                 self.timer.fireDate = [NSDate distantPast];
-                
-                self.mapViewController.locateEnable = YES;
                 
                 [self mapBtnAnimation];
             }else {
@@ -141,14 +127,11 @@
                 
                 self.stopButton.hidden = NO;
                 
-                self.boardView.backgroundColor = [UIColor blackColor];
+                self.runningBoardView.backgroundColor = [UIColor blackColor];
                 
                 self.timer.fireDate = [NSDate distantFuture];
                 
-                self.mapViewController.locateEnable = NO;
-                
                 [self.showMapBtn.layer removeAllAnimations];
-                
                 //系统震动
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                 
@@ -158,18 +141,21 @@
 
     }];
     
-    [self.KVOController observe:self.viewModel keyPath:@"runDataChange" options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
-        if ([self.viewModel.runDataChange boolValue]) {
-            [_boardView configureViewWithViewModel:self.viewModel.currentRunData];
-        }
+    [self.KVOController observe:self.viewModel keyPath:@"runDataChange" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        if ([self.viewModel.runDataChange boolValue]) self.runningBoardView.viewModel = self.viewModel.currentRunData;
     }];
     
-    [self.KVOController observe:self.viewModel keyPath:@"isValid" options:NSKeyValueObservingOptionOld block:^(id observer, id object, NSDictionary *change) {
+    [self.KVOController observe:self.viewModel keyPath:@"mapDataChange" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        if ([self.viewModel.mapDataChange boolValue]) self.runningMapView.viewModel = self.viewModel.mapViewModel;
+    }];
+    
+    [self.KVOController observe:self.viewModel keyPath:@"isValid" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc]init];
         
         AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Stop running"];
         
         [av speakUtterance:utterance];
+        
         if ([self.viewModel.isValid boolValue]) {
             ResultViewController *resultVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
             resultVC.viewModel = self.viewModel.resultViewModel;
@@ -218,9 +204,9 @@
  *  @param timer
  */
 - (void)eachSecond:(NSTimer*)timer {
-    _seconds++;
+    _duration++;
     
-    self.viewModel.duration = _seconds;
+    self.viewModel.duration = _duration;
 }
 
 /**
@@ -232,24 +218,6 @@
     [self.viewModel stopRunning];
 }
 
-/**
- *  显示地图
- *
- *  @param sender
- */
-- (IBAction)showMap:(UIButton *)sender {
-    self.mapViewController.view.transform= CGAffineTransformMakeScale(0.01, 0.01);
-    
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        
-        self.mapViewController.view.transform = CGAffineTransformIdentity;
-        
-        self.mapViewController.view.hidden = NO;
-        
-    } completion:^(BOOL finished) {
-        
-    }];
-}
 
 /**
  *  暂停按钮
@@ -269,9 +237,11 @@
     [self.viewModel resumeRunning];
 }
 
+- (IBAction)showMapViewBtnClick:(UIButton *)sender {
+    [self.runningMapView showMapView];
+}
+
 #pragma mark - private
-
-
 /**
  *  地图旋转动画
  */
@@ -298,11 +268,22 @@
 
 #pragma mark - getter and setter
 
-- (MapViewController *)mapViewController{
-    if (!_mapViewController) {
-        _mapViewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+- (RunningBoardView *)runningBoardView {
+    if (!_runningBoardView) {
+        _runningBoardView = [[RunningBoardView alloc] init];
+        _runningBoardView.frame = self.view.bounds;
+        _runningBoardView.readyRunning = NO;
     }
-    return _mapViewController;
+    return _runningBoardView;
+}
+
+- (RunnungMapView *)runningMapView {
+    if (!_runningMapView) {
+        _runningMapView = [[RunnungMapView alloc] init];
+        _runningMapView.frame = self.view.bounds;
+        _runningMapView.hidden = YES;
+    }
+    return _runningMapView;
 }
 
 - (NewRunViewModel *)viewModel {

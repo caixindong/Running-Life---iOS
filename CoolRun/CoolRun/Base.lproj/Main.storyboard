@@ -449,60 +449,6 @@
             </objects>
             <point key="canvasLocation" x="-529" y="-457"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="owa-Ch-FQE">
-            <objects>
-                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6dA-L2-W4r" customClass="MapViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FQV-lt-G4Z"/>
-                        <viewControllerLayoutGuide type="bottom" id="nzi-zN-vpo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BOG-My-xgM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2uG-1a-QfN">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <outlet property="delegate" destination="6dA-L2-W4r" id="UwD-Cq-lRz"/>
-                                </connections>
-                            </mapView>
-                            <button opaque="NO" alpha="0.80000000000000004" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3D-O5-2uZ">
-                                <rect key="frame" x="270" y="500" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.60271793603897095" green="0.602699875831604" blue="0.60271012783050537" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="U4O-6M-k8w"/>
-                                    <constraint firstAttribute="height" constant="60" id="YEm-8J-8LS"/>
-                                </constraints>
-                                <state key="normal" image="close"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="closeBtn:" destination="6dA-L2-W4r" eventType="touchUpInside" id="VAH-2d-j09"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="2uG-1a-QfN" firstAttribute="top" secondItem="BOG-My-xgM" secondAttribute="top" id="MpX-uY-xBA"/>
-                            <constraint firstItem="2uG-1a-QfN" firstAttribute="leading" secondItem="BOG-My-xgM" secondAttribute="leading" id="YDz-Wd-Tav"/>
-                            <constraint firstAttribute="bottom" secondItem="2uG-1a-QfN" secondAttribute="bottom" id="jrB-V7-VXm"/>
-                            <constraint firstAttribute="trailing" secondItem="2uG-1a-QfN" secondAttribute="trailing" id="ntz-PK-KS9"/>
-                            <constraint firstItem="h3D-O5-2uZ" firstAttribute="centerX" secondItem="2uG-1a-QfN" secondAttribute="centerX" id="u7b-K8-ytS"/>
-                            <constraint firstItem="nzi-zN-vpo" firstAttribute="top" secondItem="h3D-O5-2uZ" secondAttribute="bottom" constant="40" id="wVO-k5-MCc"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="myMapView" destination="2uG-1a-QfN" id="avi-JW-UpX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qus-Ah-DdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2048" y="332"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="vZz-sn-leD">
             <objects>
@@ -1957,7 +1903,7 @@
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <state key="normal" image="orangeearth"/>
                                 <connections>
-                                    <action selector="showMap:" destination="D7d-yw-cIV" eventType="touchUpInside" id="Bvj-o5-y2Q"/>
+                                    <action selector="showMapViewBtnClick:" destination="D7d-yw-cIV" eventType="touchUpInside" id="VEO-ur-WWP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqZ-87-spL">

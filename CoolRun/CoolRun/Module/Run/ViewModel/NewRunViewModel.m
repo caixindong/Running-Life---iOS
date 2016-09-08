@@ -11,6 +11,7 @@
 #import "ResultViewModel.h"
 #import "Location.h"
 #import "LocationDataManager.h"
+#import "RunningMapViewModel.h"
 
 @interface NewRunViewModel()<AMapLocationManagerDelegate>{
     /**
@@ -27,11 +28,12 @@
 
 @property (nonatomic, strong, readwrite)NSNumber *runDataChange;
 
-@property (nonatomic, strong, readwrite)RunningBoardViewModel *currentRunData;
-
 @property (nonatomic, strong, readwrite)NSNumber *isRunning;
 
 @property (nonatomic, strong, readwrite)NSNumber *isValid;
+
+@property (nonatomic, strong, readwrite)NSNumber *mapDataChange;
+
 
 
 /**
@@ -61,6 +63,7 @@
         _currentRunData.distance = @"";
         _currentRunData.duration = @"";
         _currentRunData.speed    = @"";
+        _mapViewModel = [[RunningMapViewModel alloc] init];
     }
     return self;
 }
@@ -105,17 +108,20 @@
 }
 
 - (void)pauseRunning {
+    [self.locationManager stopUpdatingLocation];
     self.isRunning = @NO;
 }
 
 - (void)resumeRunning {
     _stopCount = 0;
-    
+    [self.locationManager startUpdatingLocation];
     self.isRunning = @YES;
 }
 
 - (void)stopRunning {
     [self.locationManager stopUpdatingLocation];
+    
+    self.locationManager = nil;
     
     if (_distance/1000>0.01) {
         [self saveRun];
@@ -166,6 +172,18 @@
         if (fabs(howRecent) < 2.0 ) {
             if (self.locations.count > 0) {
                 _distance += [location distanceFromLocation:self.locations.lastObject];
+                CLLocationCoordinate2D coords[2];
+                coords[0] = ((CLLocation *)self.locations.lastObject).coordinate;
+                coords[1] = location.coordinate;
+                
+                MKCoordinateRegion region =
+                MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500);
+                MKPolyline *polyline =  [MKPolyline polylineWithCoordinates:coords count:2];
+                
+                _mapViewModel.region = region;
+                _mapViewModel.polyline = polyline;
+                
+                self.mapDataChange = @YES;
             }
             
             [self.locations addObject:location];

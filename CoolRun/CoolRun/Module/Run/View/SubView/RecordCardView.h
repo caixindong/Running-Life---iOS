@@ -31,6 +31,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLable;
 
-- (void)configureViewWithViewModel:(ResultViewModel *)viewModel;
+@property (nonatomic, strong, readwrite)ResultViewModel *viewModel;
 
 @end

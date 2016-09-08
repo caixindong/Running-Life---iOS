@@ -18,6 +18,6 @@
  *
  *  @return 
  */
-+(CGFloat)heightOfRankTableHeaderView;
++ (CGFloat)heightOfRankTableHeaderView;
 
 @end

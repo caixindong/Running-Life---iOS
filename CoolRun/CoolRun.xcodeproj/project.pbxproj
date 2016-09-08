@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2912D872E46B0093427EC7CC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74905CBBCC1B6AAE400C5670 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4E04FA351D81875B00ED32A6 /* RunnungMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E04FA341D81875B00ED32A6 /* RunnungMapView.m */; };
+		4E04FA371D81877700ED32A6 /* RunnungMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E04FA361D81877700ED32A6 /* RunnungMapView.xib */; };
+		4E04FA3A1D818E1900ED32A6 /* RunningMapViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E04FA391D818E1900ED32A6 /* RunningMapViewModel.m */; };
 		4E0C761E1D7D4D3D00937D8A /* RunningBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C761D1D7D4D3D00937D8A /* RunningBoardView.m */; };
 		4E0C76211D7D4D5300937D8A /* RunningBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0C76201D7D4D5300937D8A /* RunningBoardView.xib */; };
 		4E0C76241D7D50C000937D8A /* NewRunViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C76231D7D50C000937D8A /* NewRunViewModel.m */; };
@@ -43,7 +46,6 @@
 		4E4DEAA71D6EDAD400B8D699 /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE9A81D6EDAD400B8D699 /* DetailViewModel.m */; };
 		4E4DEAA81D6EDAD400B8D699 /* MyRecordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE9AA1D6EDAD400B8D699 /* MyRecordViewModel.m */; };
 		4E4DEAA91D6EDAD400B8D699 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE9AE1D6EDAD400B8D699 /* HomeViewController.m */; };
-		4E4DEAAA1D6EDAD400B8D699 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE9B01D6EDAD400B8D699 /* MapViewController.m */; };
 		4E4DEAAB1D6EDAD400B8D699 /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE9B21D6EDAD400B8D699 /* NewRunViewController.m */; };
 		4E4DEAAC1D6EDAD400B8D699 /* RankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE9B41D6EDAD400B8D699 /* RankViewController.m */; };
 		4E4DEAAD1D6EDAD400B8D699 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DE9B61D6EDAD400B8D699 /* ResultViewController.m */; };
@@ -141,6 +143,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E04FA331D81875B00ED32A6 /* RunnungMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunnungMapView.h; sourceTree = "<group>"; };
+		4E04FA341D81875B00ED32A6 /* RunnungMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunnungMapView.m; sourceTree = "<group>"; };
+		4E04FA361D81877700ED32A6 /* RunnungMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunnungMapView.xib; sourceTree = "<group>"; };
+		4E04FA381D818E1900ED32A6 /* RunningMapViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningMapViewModel.h; sourceTree = "<group>"; };
+		4E04FA391D818E1900ED32A6 /* RunningMapViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningMapViewModel.m; sourceTree = "<group>"; };
 		4E0C761C1D7D4D3D00937D8A /* RunningBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningBoardView.h; sourceTree = "<group>"; };
 		4E0C761D1D7D4D3D00937D8A /* RunningBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningBoardView.m; sourceTree = "<group>"; };
 		4E0C76201D7D4D5300937D8A /* RunningBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunningBoardView.xib; sourceTree = "<group>"; };
@@ -206,8 +213,6 @@
 		4E4DE9AA1D6EDAD400B8D699 /* MyRecordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewModel.m; sourceTree = "<group>"; };
 		4E4DE9AD1D6EDAD400B8D699 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		4E4DE9AE1D6EDAD400B8D699 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		4E4DE9AF1D6EDAD400B8D699 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		4E4DE9B01D6EDAD400B8D699 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		4E4DE9B11D6EDAD400B8D699 /* NewRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRunViewController.h; sourceTree = "<group>"; };
 		4E4DE9B21D6EDAD400B8D699 /* NewRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunViewController.m; sourceTree = "<group>"; };
 		4E4DE9B31D6EDAD400B8D699 /* RankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankViewController.h; sourceTree = "<group>"; };
@@ -761,8 +766,6 @@
 			children = (
 				4E4DE9AD1D6EDAD400B8D699 /* HomeViewController.h */,
 				4E4DE9AE1D6EDAD400B8D699 /* HomeViewController.m */,
-				4E4DE9AF1D6EDAD400B8D699 /* MapViewController.h */,
-				4E4DE9B01D6EDAD400B8D699 /* MapViewController.m */,
 				4E4DE9B11D6EDAD400B8D699 /* NewRunViewController.h */,
 				4E4DE9B21D6EDAD400B8D699 /* NewRunViewController.m */,
 				4E4DE9B31D6EDAD400B8D699 /* RankViewController.h */,
@@ -837,6 +840,9 @@
 				4E0C761C1D7D4D3D00937D8A /* RunningBoardView.h */,
 				4E0C761D1D7D4D3D00937D8A /* RunningBoardView.m */,
 				4E0C76201D7D4D5300937D8A /* RunningBoardView.xib */,
+				4E04FA331D81875B00ED32A6 /* RunnungMapView.h */,
+				4E04FA341D81875B00ED32A6 /* RunnungMapView.m */,
+				4E04FA361D81877700ED32A6 /* RunnungMapView.xib */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -854,6 +860,8 @@
 				4E0C76231D7D50C000937D8A /* NewRunViewModel.m */,
 				4E0C76251D7D59BC00937D8A /* RunningBoardViewModel.h */,
 				4E0C76261D7D59BC00937D8A /* RunningBoardViewModel.m */,
+				4E04FA381D818E1900ED32A6 /* RunningMapViewModel.h */,
+				4E04FA391D818E1900ED32A6 /* RunningMapViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1358,6 +1366,7 @@
 				4E4DE9541D6ED9CD00B8D699 /* Main.storyboard in Resources */,
 				4E4DEAC61D6EDAD400B8D699 /* Assets.xcassets in Resources */,
 				4E4DEA951D6EDAD400B8D699 /* CoolRun.entitlements in Resources */,
+				4E04FA371D81877700ED32A6 /* RunnungMapView.xib in Resources */,
 				4E4DEAC71D6EDAD400B8D699 /* Braggadocio.ttf in Resources */,
 				4E4DEAB81D6EDAD400B8D699 /* RankTableViewCell.xib in Resources */,
 				4E0C76211D7D4D5300937D8A /* RunningBoardView.xib in Resources */,
@@ -1434,6 +1443,7 @@
 				4E4DEA911D6EDAD400B8D699 /* AppDelegate.m in Sources */,
 				4E4DEABE1D6EDAD400B8D699 /* RankViewModel.m in Sources */,
 				4E4DEAB61D6EDAD400B8D699 /* Run.m in Sources */,
+				4E04FA351D81875B00ED32A6 /* RunnungMapView.m in Sources */,
 				4E4DEA9C1D6EDAD400B8D699 /* UserModel.m in Sources */,
 				4E4DEADA1D6EDAD400B8D699 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4E4DEAAE1D6EDAD400B8D699 /* Location+CoreDataProperties.m in Sources */,
@@ -1513,7 +1523,6 @@
 				4E4DEADD1D6EDAD400B8D699 /* UIProgressView+AFNetworking.m in Sources */,
 				4E4DEACF1D6EDAD400B8D699 /* MyUserDefault.m in Sources */,
 				4E4DEA981D6EDAD400B8D699 /* RegisterViewController.m in Sources */,
-				4E4DEAAA1D6EDAD400B8D699 /* MapViewController.m in Sources */,
 				4E4DEAEE1D6EDAD400B8D699 /* SWActionSheet.m in Sources */,
 				4E4DEAF71D6EDAD400B8D699 /* SDImageCache.m in Sources */,
 				4E4DEAA61D6EDAD400B8D699 /* UIColor+ZXLazy.m in Sources */,
@@ -1529,6 +1538,7 @@
 				4E4DEAF61D6EDAD400B8D699 /* NSData+ImageContentType.m in Sources */,
 				4E4DEAA91D6EDAD400B8D699 /* HomeViewController.m in Sources */,
 				4E0C76271D7D59BC00937D8A /* RunningBoardViewModel.m in Sources */,
+				4E04FA3A1D818E1900ED32A6 /* RunningMapViewModel.m in Sources */,
 				4E4DEAFC1D6EDAD400B8D699 /* SDWebImageManager.m in Sources */,
 				4E4DEAAF1D6EDAD400B8D699 /* Location.m in Sources */,
 				4E4DEA9F1D6EDAD400B8D699 /* MyRecordViewController.m in Sources */,

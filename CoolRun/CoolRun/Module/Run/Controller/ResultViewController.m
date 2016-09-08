@@ -19,15 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self configureView];
-    
-    [self KVOHandler];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    
     self.KVOController = nil;
 }
 
@@ -50,11 +45,9 @@
 }
 
 -(void)configureView {
-    _recordCardView = [[RecordCardView alloc] init];
-    _recordCardView.frame = CGRectMake(20, 84, WIDTH - 20 * 2, HEIGHT - 84 - 20);
-    [_recordCardView configureViewWithViewModel:self.viewModel];
-    [self.view addSubview:_recordCardView];
+    self.recordCardView.viewModel = self.viewModel;
     
+    [self.view addSubview:self.recordCardView];
     
     UserStatusManager *manager = [UserStatusManager shareManager];
     if (manager.isLogin.boolValue) {
@@ -95,6 +88,16 @@
                                            delegate:nil];
         
     }
+}
+
+#pragma mark - getter and setter
+
+- (RecordCardView *)recordCardView {
+    if (!_recordCardView) {
+        _recordCardView = [[RecordCardView alloc] init];
+        _recordCardView.frame = CGRectMake(20, 84, WIDTH - 20 * 2, HEIGHT - 84 - 20);
+    }
+    return _recordCardView;
 }
 
 @end

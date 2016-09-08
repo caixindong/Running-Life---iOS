@@ -35,7 +35,8 @@
     return self;
 }
 
-- (void)configureViewWithViewModel:(RunningBoardViewModel *)viewModel {
+- (void)setViewModel:(RunningBoardViewModel *)viewModel {
+    _viewModel          = viewModel;
     _distanceLabel.text = viewModel.distance;
     _speedLabel.text    = viewModel.speed;
     _timeLabel.text     = viewModel.duration;

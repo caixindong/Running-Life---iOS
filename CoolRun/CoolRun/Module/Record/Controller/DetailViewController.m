@@ -63,7 +63,7 @@
             cardView = (RecordCardView *)[dequeueView viewWithTag:1];
         }
 
-        [cardView configureViewWithViewModel:self_weak_.viewModel.recordViewModels[pageIndex]];
+        cardView.viewModel = self_weak_.viewModel.recordViewModels[pageIndex];
 
         return dequeueView;
     };

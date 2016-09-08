@@ -10,6 +10,8 @@
 
 @class RunningBoardViewModel;
 
+@class RunningMapViewModel;
+
 @class ResultViewModel;
 
 @interface NewRunViewModel : NSObject
@@ -20,7 +22,7 @@
 @property (nonatomic, assign , readwrite)int duration;
 
 /**
- *  跑步数据是否改变
+ *  跑步数据是否改变(一秒刷新一次)
  */
 @property (nonatomic, strong, readonly)NSNumber *runDataChange;
 
@@ -43,6 +45,16 @@
  *  跑步结果viewModel
  */
 @property (nonatomic, strong, readonly)ResultViewModel *resultViewModel;
+
+/**
+ *  地图轨迹viewModel
+ */
+@property (nonatomic, strong, readonly)RunningMapViewModel *mapViewModel;
+
+/**
+ *  轨迹是否改变
+ */
+@property (nonatomic, strong, readonly)NSNumber *mapDataChange;
 
 /**
  *  开始跑步

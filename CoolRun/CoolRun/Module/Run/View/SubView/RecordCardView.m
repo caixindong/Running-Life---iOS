@@ -21,7 +21,24 @@
     return self;
 }
 
-- (void)configureViewWithViewModel:(ResultViewModel *)viewModel {
+
+#pragma mark - MKMapViewDelegate
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    if ([overlay isKindOfClass:[MultiColorPolyline class]]) {
+        MultiColorPolyline * polyLine = (MultiColorPolyline *)overlay;
+        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
+        aRenderer.strokeColor = polyLine.color;
+        aRenderer.lineWidth = 3;
+        return aRenderer;
+    }
+    
+    return nil;
+}
+
+- (void)setViewModel:(ResultViewModel *)viewModel {
+    _viewModel = viewModel;
+    
     self.distanceLabel.text     = viewModel.distanceLabelText;
     
     self.timeLabel.text         = viewModel.timeLabelText;
@@ -40,7 +57,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.mapView addOverlays: viewModel.colorSegmentArray];
     });
-
+    
     
     UserStatusManager *manager = [UserStatusManager shareManager];
     if (manager.isLogin.boolValue) {
@@ -56,21 +73,7 @@
         self.nameLable.text = @"未登录";
     }
 
-}
-
-
-#pragma mark - MKMapViewDelegate
-
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
-    if ([overlay isKindOfClass:[MultiColorPolyline class]]) {
-        MultiColorPolyline * polyLine = (MultiColorPolyline *)overlay;
-        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
-        aRenderer.strokeColor = polyLine.color;
-        aRenderer.lineWidth = 3;
-        return aRenderer;
-    }
     
-    return nil;
 }
 
 @end
