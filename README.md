@@ -1,5 +1,5 @@
 # Running-Life---iOS
-[中文]()|[English]()
+[中文]()|[English]()     
 Running Life(Open Source),a runens GPS social running app,based on 	AMAP and HealthKit。
 
 #Effect
@@ -15,9 +15,9 @@ Running Life(Open Source),a runens GPS social running app,based on 	AMAP and Hea
 `. ` MVVM architecture (now temporarily using KVOController to solve the problem of Communication between View and ViewModel, the next version will be switched to ReactiveCocoa)      
 `. ` Draw running path dynamicly on AMAP    
 `. ` Judge running status by CMMotionManager        
-`. ` Elegant record page made by Bessel curve and frame animation
-`. ` CoreData    
-`. ` HealthKit         
+`. ` Elegant record page made by Bessel curve and frame animation    
+`. ` CoreData        
+`. ` HealthKit             
 `. ` Implementate a view multiplexing mechanism to solve the problem of OOM    
 #Present
 Project reconstruction is continuing. 80% of functions have been completed(less functions about interaction with the server).Server source code is open source
