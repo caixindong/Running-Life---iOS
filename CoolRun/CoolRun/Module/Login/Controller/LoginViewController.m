@@ -25,8 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self KVOHandler];
-    
     [self addTapGesture];
 }
 

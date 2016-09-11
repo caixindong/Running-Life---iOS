@@ -766,10 +766,10 @@
 			children = (
 				4E4DE9AD1D6EDAD400B8D699 /* HomeViewController.h */,
 				4E4DE9AE1D6EDAD400B8D699 /* HomeViewController.m */,
-				4E4DE9B11D6EDAD400B8D699 /* NewRunViewController.h */,
-				4E4DE9B21D6EDAD400B8D699 /* NewRunViewController.m */,
 				4E4DE9B31D6EDAD400B8D699 /* RankViewController.h */,
 				4E4DE9B41D6EDAD400B8D699 /* RankViewController.m */,
+				4E4DE9B11D6EDAD400B8D699 /* NewRunViewController.h */,
+				4E4DE9B21D6EDAD400B8D699 /* NewRunViewController.m */,
 				4E4DE9B51D6EDAD400B8D699 /* ResultViewController.h */,
 				4E4DE9B61D6EDAD400B8D699 /* ResultViewController.m */,
 			);

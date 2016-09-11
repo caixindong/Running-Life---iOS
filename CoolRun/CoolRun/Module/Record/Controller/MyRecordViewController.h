@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyRecordViewController : UIViewController
+@interface MyRecordViewController : XDBaseViewController
 
 @end

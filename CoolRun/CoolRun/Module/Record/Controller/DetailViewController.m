@@ -23,10 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initContentView];
-    
-    [self KVOHandler];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -34,42 +30,13 @@
     self.KVOController = nil;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - private
 
-- (void)initContentView {
-    
+- (void)configureView {
     if (_viewModel.recordViewModels.count>0) self.nameLabel.text = [NSString stringWithFormat:@"1/%ld",(unsigned long)_viewModel.recordViewModels.count];
     
-    @weakify(self)
-    _pageView = [[XDPageView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT-64)];
-
-    _pageView.pagesCount = ^NSInteger(){
-        return self_weak_.viewModel.recordViewModels.count;
-    };
-    
-    _pageView.loadViewAtIndexBlock = ^UIView *(NSInteger pageIndex,UIView *dequeueView) {
-        RecordCardView *cardView = nil;
-        if (dequeueView == nil) {
-            dequeueView = [[UIView alloc] initWithFrame:self_weak_.pageView.bounds];
-            cardView = [[RecordCardView alloc] init];
-            cardView.tag = 1;
-            [cardView setFrame:CGRectMake(20 , 0, WIDTH - 40, HEIGHT - 100 - 40)];
-            [dequeueView addSubview:cardView];
-        }else {
-            cardView = (RecordCardView *)[dequeueView viewWithTag:1];
-        }
-
-        cardView.viewModel = self_weak_.viewModel.recordViewModels[pageIndex];
-
-        return dequeueView;
-    };
-    
-    [self.view addSubview:_pageView];
-    [self.view sendSubviewToBack:_pageView];
+    [self.view addSubview:self.pageView];
+    [self.view sendSubviewToBack:self.pageView];
     
 }
 
@@ -108,6 +75,40 @@
     }
 }
 
+#pragma mark - getter and setter
+
+- (XDPageView *)pageView {
+    if (!_pageView) {
+        @weakify(self)
+        _pageView = [[XDPageView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT-64)];
+        
+        _pageView.pagesCount = ^NSInteger(){
+            return self_weak_.viewModel.recordViewModels.count;
+        };
+        
+        _pageView.loadViewAtIndexBlock = ^UIView *(NSInteger pageIndex,UIView *dequeueView) {
+            RecordCardView *cardView = nil;
+            if (dequeueView == nil) {
+                dequeueView = [[UIView alloc] initWithFrame:self_weak_.pageView.bounds];
+                cardView = [[RecordCardView alloc] init];
+                cardView.tag = 1;
+                [cardView setFrame:CGRectMake(20 , 0, WIDTH - 40, HEIGHT - 100 - 40)];
+                [dequeueView addSubview:cardView];
+            }else {
+                cardView = (RecordCardView *)[dequeueView viewWithTag:1];
+            }
+            
+            cardView.viewModel = self_weak_.viewModel.recordViewModels[pageIndex];
+            
+            return dequeueView;
+        };
+    }
+    return _pageView;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
 
 
 @end

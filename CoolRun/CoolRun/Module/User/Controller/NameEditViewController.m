@@ -20,12 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _viewModel.userModel        = [UserStatusManager shareManager].userModel;
-    
-    _nameTextField.text         = self.viewModel.realnameLabelText;
-    
-    [self KVOHandler];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +28,12 @@
 }
 
 #pragma mark - private
+
+- (void)configureView {
+    _viewModel.userModel        = [UserStatusManager shareManager].userModel;
+    
+    _nameTextField.text         = self.viewModel.realnameLabelText;
+}
 
 - (void)KVOHandler {
     [self.KVOController observe:_viewModel keyPath:@"invalid" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {

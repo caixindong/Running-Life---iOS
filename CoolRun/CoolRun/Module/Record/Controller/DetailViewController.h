@@ -12,7 +12,7 @@
 /**
  *  跑步记录详情页
  */
-@interface DetailViewController : UIViewController
+@interface DetailViewController : XDBaseViewController
 
 @property (nonatomic, readwrite, strong)DetailViewModel *viewModel;
 

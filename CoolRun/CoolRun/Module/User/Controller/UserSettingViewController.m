@@ -35,21 +35,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self KVOHandler];
-    
     self.viewModel.infoRefresh = @YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
-
 #pragma mark - private
+
 - (void)KVOHandler {
     [self.KVOController observe:self.viewModel keyPath:@"infoRefresh" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         self.viewModel.userModel    = [UserStatusManager shareManager].userModel;
@@ -183,6 +173,11 @@
         _viewModel = [[UserSettingViewModel alloc]init];
     }
     return _viewModel;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    
 }
 
 @end

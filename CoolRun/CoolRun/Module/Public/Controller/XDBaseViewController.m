@@ -17,10 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self KVOHandler];
-    
     [self configureView];
-
+    
+    [self KVOHandler];
 }
 
 - (void)KVOHandler{};

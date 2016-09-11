@@ -35,8 +35,6 @@
     [super viewDidLoad];
     
     [self addTapGesture];
-    
-    [self KVOHandler];
 }
 
 - (void)didReceiveMemoryWarning {

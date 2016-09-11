@@ -33,9 +33,10 @@ static NSString *const CELLID = @"RankTableViewCell";
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    [self initTableView];
-    
-    
+    [self.header beginRefreshing];
+}
+
+- (void)KVOHandler {
     [self.KVOController observe:self.viewModel
                         keyPath:@"haveRefresh"
                         options:NSKeyValueObservingOptionNew
@@ -60,13 +61,9 @@ static NSString *const CELLID = @"RankTableViewCell";
                                   [_footer endRefreshing];
                               }
                           }];
-    
-    [self.header beginRefreshing];
 }
 
-#pragma mark - private
-
-- (void)initTableView {
+- (void)configureView {
     _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
     
     [_myTableView registerNib:[UINib nibWithNibName:CELLID bundle:nil] forCellReuseIdentifier:CELLID];

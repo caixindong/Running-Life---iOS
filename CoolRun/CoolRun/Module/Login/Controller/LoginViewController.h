@@ -11,6 +11,6 @@
 /**
  *  登陆界面
  */
-@interface LoginViewController : UIViewController
+@interface LoginViewController : XDBaseViewController
 
 @end

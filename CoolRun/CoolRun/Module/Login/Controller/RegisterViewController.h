@@ -11,6 +11,6 @@
 /**
  *  注册页面
  */
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : XDBaseViewController
 
 @end

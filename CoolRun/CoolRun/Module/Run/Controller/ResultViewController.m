@@ -64,7 +64,7 @@
 
 #pragma mark - event response
 - (IBAction)toHomeVC:(UIButton *)sender {
-    [[[self presentingViewController] presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    [[self navigationController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)shareBtnClick:(UIButton *)sender {

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserSettingViewController : UIViewController
+@interface UserSettingViewController : XDBaseViewController
 
 @end

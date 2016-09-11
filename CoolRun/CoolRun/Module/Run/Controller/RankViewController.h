@@ -11,6 +11,6 @@
 /**
  *  排名界面
  */
-@interface RankViewController : UIViewController
+@interface RankViewController : XDBaseViewController
 
 @end

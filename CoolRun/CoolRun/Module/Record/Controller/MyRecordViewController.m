@@ -30,19 +30,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initCalendar];
+    NSDateComponents *comp = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear| NSCalendarUnitMonth| NSCalendarUnitDay) fromDate:[NSDate date]];
     
-    [self initShowView];
-    
-    [self KVOHandler];
-    
-    [self getKcalData];
-    
+    [self.viewModel getWalkAndRunKcalArrayWithMonth:comp.month year:comp.year weigth:65];
 }
 
 #pragma mark - private
 
-- (void)initCalendar {
+- (void)configureView {
+    _showView = [[RecordShowView alloc] initWithFrame:CGRectMake(0, HEIGHT/2 + 64, WIDTH, HEIGHT/2 - 64)];
+    [self.view addSubview:_showView];
+    
     _calendar = [SZCalendarPicker showOnView:self.view];
     _calendar.today = [NSDate date];
     _calendar.date = _calendar.today;
@@ -64,20 +62,9 @@
             vc.viewModel = detaiViewModel;
             [selfWeakStrong presentViewController:vc animated:YES completion:nil];
         }
-
-
+        
+        
     };
-}
-
-- (void)initShowView {
-    _showView = [[RecordShowView alloc] initWithFrame:CGRectMake(0, HEIGHT/2 + 64, WIDTH, HEIGHT/2 - 64)];
-    [self.view addSubview:_showView];
-}
-
-- (void)getKcalData {
-    NSDateComponents *comp = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear| NSCalendarUnitMonth| NSCalendarUnitDay) fromDate:[NSDate date]];
-    
-    [self.viewModel getWalkAndRunKcalArrayWithMonth:comp.month year:comp.year weigth:65];
 }
 
 - (void)KVOHandler {

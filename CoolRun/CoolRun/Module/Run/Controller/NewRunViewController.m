@@ -67,6 +67,7 @@
                       target:self selector:@selector(countDown:)
                       userInfo:nil
                       repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.downTimer forMode:NSRunLoopCommonModes];
     
 }
 
@@ -76,8 +77,6 @@
     self.KVOController = nil;
     
     [self.timer invalidate];
-    
-    self.view.alpha = 0.2;
 }
 
 - (void)configureView {
@@ -159,7 +158,7 @@
         if ([self.viewModel.isValid boolValue]) {
             ResultViewController *resultVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
             resultVC.viewModel = self.viewModel.resultViewModel;
-            [self presentViewController:resultVC animated:YES completion:nil];
+            [self.navigationController pushViewController:resultVC animated:YES];
         }else {
             [self dismissViewControllerAnimated:YES completion:nil];
         }
