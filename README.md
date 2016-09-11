@@ -1,5 +1,5 @@
 # Running-Life---iOS
-[中文](https://github.com/caixindong/Running-Life---iOS/blob/master/README-CN.md)|[English](https://github.com/caixindong/Running-Life---iOS/blob/master/README.md)     
+[中文文档](https://github.com/caixindong/Running-Life---iOS/blob/master/README-CN.md) | [English Document](https://github.com/caixindong/Running-Life---iOS/blob/master/README.md)     
 Running Life(Open Source),a runens GPS social running app,based on 	AMAP and HealthKit。
 
 #Effect
