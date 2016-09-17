@@ -79,17 +79,17 @@
 
 - (XDPageView *)pageView {
     if (!_pageView) {
-        @weakify(self)
+        WeakObj(self)
         _pageView = [[XDPageView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT-64)];
         
         _pageView.pagesCount = ^NSInteger(){
-            return self_weak_.viewModel.recordViewModels.count;
+            return selfWeak.viewModel.recordViewModels.count;
         };
         
         _pageView.loadViewAtIndexBlock = ^UIView *(NSInteger pageIndex,UIView *dequeueView) {
             RecordCardView *cardView = nil;
             if (dequeueView == nil) {
-                dequeueView = [[UIView alloc] initWithFrame:self_weak_.pageView.bounds];
+                dequeueView = [[UIView alloc] initWithFrame:selfWeak.pageView.bounds];
                 cardView = [[RecordCardView alloc] init];
                 cardView.tag = 1;
                 [cardView setFrame:CGRectMake(20 , 0, WIDTH - 40, HEIGHT - 100 - 40)];
@@ -98,7 +98,7 @@
                 cardView = (RecordCardView *)[dequeueView viewWithTag:1];
             }
             
-            cardView.viewModel = self_weak_.viewModel.recordViewModels[pageIndex];
+            cardView.viewModel = selfWeak.viewModel.recordViewModels[pageIndex];
             
             return dequeueView;
         };

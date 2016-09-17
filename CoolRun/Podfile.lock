@@ -1,28 +1,13 @@
 PODS:
   - AMapLocation (1.2.2)
-  - ReactiveCocoa (4.1.0):
-    - ReactiveCocoa/UI (= 4.1.0)
-    - Result (~> 2.0)
-  - ReactiveCocoa/Core (4.1.0):
-    - ReactiveCocoa/no-arc
-    - Result (~> 2.0)
-  - ReactiveCocoa/no-arc (4.1.0):
-    - Result (~> 2.0)
-  - ReactiveCocoa/UI (4.1.0):
-    - ReactiveCocoa/Core
-    - Result (~> 2.0)
-  - Result (2.0.0)
   - UMengSocial (5.0)
 
 DEPENDENCIES:
   - AMapLocation
-  - ReactiveCocoa
   - UMengSocial (~> 5.0)
 
 SPEC CHECKSUMS:
   AMapLocation: 5412fbf0385716d4d481e39a95929057cddc093f
-  ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
-  Result: 9e75e1111c774c6ac594e14907b15057053a7959
   UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
 
 COCOAPODS: 0.38.2

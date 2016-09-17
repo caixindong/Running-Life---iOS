@@ -1,4 +1,2 @@
-use_frameworks!
-pod 'ReactiveCocoa'
 pod 'AMapLocation'
 pod 'UMengSocial', '~> 5.0'

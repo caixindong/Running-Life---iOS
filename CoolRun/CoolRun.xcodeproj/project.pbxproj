@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2912D872E46B0093427EC7CC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74905CBBCC1B6AAE400C5670 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		006294286008069CEF36625D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 505884C08A55AF9DE2F8D824 /* libPods.a */; };
 		4E04FA351D81875B00ED32A6 /* RunnungMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E04FA341D81875B00ED32A6 /* RunnungMapView.m */; };
 		4E04FA371D81877700ED32A6 /* RunnungMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E04FA361D81877700ED32A6 /* RunnungMapView.xib */; };
 		4E04FA3A1D818E1900ED32A6 /* RunningMapViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E04FA391D818E1900ED32A6 /* RunningMapViewModel.m */; };
@@ -399,7 +399,7 @@
 		4E4DEA8F1D6EDAD400B8D699 /* XDRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDRefreshHeader.h; sourceTree = "<group>"; };
 		4E4DEA901D6EDAD400B8D699 /* XDRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDRefreshHeader.m; sourceTree = "<group>"; };
 		4E4DEB081D6EDCB200B8D699 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		74905CBBCC1B6AAE400C5670 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		505884C08A55AF9DE2F8D824 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8037B9DE5811678565F7A14D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B6F2D9A48F54E0686A040FCC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -409,8 +409,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2912D872E46B0093427EC7CC /* Pods.framework in Frameworks */,
 				4E4DEB091D6EDCB200B8D699 /* HealthKit.framework in Frameworks */,
+				006294286008069CEF36625D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,7 +1276,7 @@
 			isa = PBXGroup;
 			children = (
 				4E4DEB081D6EDCB200B8D699 /* HealthKit.framework */,
-				74905CBBCC1B6AAE400C5670 /* Pods.framework */,
+				505884C08A55AF9DE2F8D824 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1301,7 +1301,6 @@
 				4E4DE9421D6ED9CD00B8D699 /* Sources */,
 				4E4DE9431D6ED9CD00B8D699 /* Frameworks */,
 				4E4DE9441D6ED9CD00B8D699 /* Resources */,
-				C033D9FB20441BEE1275EBC4 /* Embed Pods Frameworks */,
 				FD734F148F3EA409B08DA0D9 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1319,7 +1318,7 @@
 		4E4DE93E1D6ED9CD00B8D699 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "蔡欣东";
 				TargetAttributes = {
 					4E4DE9451D6ED9CD00B8D699 = {
@@ -1395,21 +1394,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C033D9FB20441BEE1275EBC4 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD734F148F3EA409B08DA0D9 /* Copy Pods Resources */ = {
@@ -1587,8 +1571,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1633,8 +1619,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1662,11 +1650,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8037B9DE5811678565F7A14D /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CoolRun/Config/CoolRun.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = CoolRun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1681,11 +1670,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6F2D9A48F54E0686A040FCC /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CoolRun/Config/CoolRun.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = CoolRun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

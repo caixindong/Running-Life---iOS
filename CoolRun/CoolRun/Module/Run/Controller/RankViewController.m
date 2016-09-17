@@ -14,6 +14,7 @@
 static NSString *const CELLID = @"RankTableViewCell";
 
 @interface RankViewController ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (strong, nonatomic) UITableView *myTableView;
 
 @property (nonatomic, strong) RankTableHeaderView *headView;

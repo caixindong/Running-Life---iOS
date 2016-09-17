@@ -22,9 +22,6 @@
  */
 @property (nonatomic, copy, readonly) NSArray *runKcalArray;
 
-@property (nonatomic,strong, readonly)RACCommand *getWalkAndRunKcalCommand;
-
-@property (nonatomic,strong, readonly)RACCommand *getRunKcalCommand;
 
 
 
