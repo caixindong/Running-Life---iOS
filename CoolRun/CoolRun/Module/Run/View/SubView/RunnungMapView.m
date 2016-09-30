@@ -22,6 +22,7 @@
     if (self = [super init]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"RunnungMapView" owner:self options:nil] lastObject];
         [_mapView setShowsUserLocation:YES];
+        [_mapView setRegion:MKCoordinateRegionMakeWithDistance(_mapView.userLocation.coordinate, 500, 500)];
     }
     return self;
 }
