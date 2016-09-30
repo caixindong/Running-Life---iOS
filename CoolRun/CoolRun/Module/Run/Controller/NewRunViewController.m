@@ -77,6 +77,8 @@
     self.KVOController = nil;
     
     [self.timer invalidate];
+    
+    self.timer = nil;
 }
 
 - (void)configureView {
@@ -172,29 +174,34 @@
  *  @param timer
  */
 - (void)countDown:(NSTimer*)timer {
-    _downCount--;
-    
-    self.promptLabel.text = [NSString stringWithFormat:@"%d",_downCount];
-    
-    if (_downCount==0) {
-        [self.downTimer invalidate];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _downCount--;
         
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
-                                                      target:self
-                                                    selector:@selector(eachSecond:)
-                                                    userInfo:nil
-                                                     repeats:YES];
+        self.promptLabel.text = [NSString stringWithFormat:@"%d",_downCount];
         
-        AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc]init];
-        
-        AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Start running"];
-        
-        [av speakUtterance:utterance];
-        
-        [self.viewModel beginRunning];
-    
-    }
-    
+        if (_downCount==0) {
+            [self.downTimer invalidate];
+            
+            self.downTimer = nil;
+            
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                                          target:self
+                                                        selector:@selector(eachSecond:)
+                                                        userInfo:nil
+                                                         repeats:YES];
+            
+            [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+            
+            AVSpeechSynthesizer *av = [[AVSpeechSynthesizer alloc]init];
+            
+            AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:@"Start running"];
+            
+            [av speakUtterance:utterance];
+            
+            [self.viewModel beginRunning];
+            
+        }
+    });
 }
 
 /**

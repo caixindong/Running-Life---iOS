@@ -166,19 +166,13 @@ NSString *const SZCalendarCellIdentifier = @"cell";
             [cell.dateLabel setText:[NSString stringWithFormat:@"%ld",(long)day]];
             [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#6f6f6f"]];
             
-            if (i < self.specialDataArr.count) {
-                if ([self.specialDataArr[day-1] intValue] > 0) {
-                    cell.typeView.hidden = NO;
+            if ([self.specialDataArr[day-1] intValue] > 0) {
+                cell.typeView.hidden = NO;
                     
-                }else{
-                    cell.typeView.hidden = YES;
-                    
-                }
             }else{
                 cell.typeView.hidden = YES;
-                
+                    
             }
-        
             
             //this month
             if ([_today isEqualToDate:_date]) {

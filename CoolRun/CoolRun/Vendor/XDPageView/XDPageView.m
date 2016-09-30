@@ -99,6 +99,7 @@
     if (itemW) {
         CGFloat W = self.bounds.size.width;
         //当前页的下标
+        //如果参数是小数，则求最大的整数但不大于本身.
         NSInteger startIndex = floorf((float)_scrollView.contentOffset.x / _pageSize.width);
 
         //如果page数大于1则设置可见item数为2，如果只有一页，那么可见就只有1个

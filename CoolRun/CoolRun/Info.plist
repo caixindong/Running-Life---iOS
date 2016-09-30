@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App需要您的同意,才能访问相册</string>
+    <key>NSCameraUsageDescription</key>
+    <string>App需要您的同意,才能访问相机</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>App需要您的同意,才能访问健康更新</string>
+    <key>NSHealthShareUsageDescription</key>
+    <string>App需要您的同意,才能访问健康分享</string>
 	<key>CFBundleDisplayName</key>
 	<string>Running Life</string>
 	<key>CFBundleDevelopmentRegion</key>
