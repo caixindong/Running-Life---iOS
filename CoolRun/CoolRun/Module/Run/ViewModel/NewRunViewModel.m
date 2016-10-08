@@ -71,35 +71,27 @@
 - (void)beginRunning {
     NSOperationQueue* queue = [[NSOperationQueue alloc]init];
     
-    /**
-     *  陀螺仪是否可用
-     */
-    if (self.motionManger.gyroAvailable) {
-        
-        [self.motionManger startGyroUpdatesToQueue:queue withHandler:^(CMGyroData * _Nullable gyroData, NSError * _Nullable error) {
-            
-            CGFloat y = gyroData.rotationRate.y;
-            
-            CGFloat z = gyroData.rotationRate.z;
-            
-            if (fabs(y)>2||fabs(z)>2) {
-                
-                _stopCount = 0;
-                
-                if(![self.isRunning boolValue]) self.isRunning = @YES;
-                
-            }else{
-                
-                _stopCount++;
-                
-                if (_stopCount > 8) {
-                    
-                    if([self.isRunning boolValue]) self.isRunning = @NO;
-                }
-            }
-        }];
-    }else{
-        NSLog(@"陀螺仪不可用");
+    
+    if (self.motionManger.accelerometerAvailable) {
+       [self.motionManger startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
+           CGFloat y = accelerometerData.acceleration.y;
+           CGFloat z = accelerometerData.acceleration.z;
+           CGFloat x = accelerometerData.acceleration.x;
+           if (fabs(x)>2 || fabs(y)>2 || fabs(z)>2) {
+               _stopCount = 0;
+               
+               if(![self.isRunning boolValue]) self.isRunning = @YES;
+           }else {
+               _stopCount++;
+               
+               if (_stopCount >= 8) {
+                   
+                   if([self.isRunning boolValue]) self.isRunning = @NO;
+               }
+           }
+       }];
+    }else {
+        NSLog(@"加速仪不可用");
     }
     
     [self.locationManager startUpdatingLocation];
@@ -224,7 +216,7 @@
 -(CMMotionManager *)motionManger{
     if (!_motionManger) {
         _motionManger = [[CMMotionManager alloc]init];
-        _motionManger.gyroUpdateInterval = 1.0;
+        _motionManger.accelerometerUpdateInterval = 1.0;
     }
     return _motionManger;
 }
