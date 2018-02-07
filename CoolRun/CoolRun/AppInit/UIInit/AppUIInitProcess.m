@@ -12,6 +12,7 @@ static NSString* SELECTVC = @"SelectViewController";
 
 static NSString* FIRSTVC = @"HomeViewController";
 
+
 @interface AppUIInitProcess()
 
 @property(nonatomic, strong)UIViewController* selectViewController;
@@ -31,7 +32,6 @@ static NSString* FIRSTVC = @"HomeViewController";
 
 
 - (void)initUIWithApplication:(UIApplication*)application{
-    [AMapLocationServices sharedServices].apiKey =@"1ad2f773b7d4c6dfeab95f79b9242811";
     application.delegate.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     application.delegate.window.rootViewController = self.drawController;
     

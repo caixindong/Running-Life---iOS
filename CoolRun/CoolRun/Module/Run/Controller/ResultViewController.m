@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) RecordCardView *recordCardView;
 
+@property (nonatomic, strong) UIImage *shareImage;
+
 @end
 
 @implementation ResultViewController
@@ -33,13 +35,19 @@
         if (self.viewModel.rank) {
             self.recordCardView.rankLabel.text = self.viewModel.rank;
             
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                UIGraphicsBeginImageContext(self.recordCardView.frame.size);
+                [self.recordCardView.layer renderInContext:UIGraphicsGetCurrentContext()];
+                _shareImage = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
         }
     }];
     
     [self.KVOController observe:self.viewModel keyPath:@"netFail" options:NSKeyValueObservingOptionNew  block:^(id observer, id object, NSDictionary *change) {
         if ([self.viewModel.netFail boolValue]) {
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         }
     }];
 }
@@ -51,8 +59,9 @@
     
     UserStatusManager *manager = [UserStatusManager shareManager];
     if (manager.isLogin.boolValue) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         [self.viewModel postRunRecordToServerAndGetRank];
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 
     }
 }
@@ -68,25 +77,31 @@
 }
 
 - (IBAction)shareBtnClick:(UIButton *)sender {
-    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"测试";
-    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"测试";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://www.baidu.com";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://www.baidu.com";
-    if (![[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"weixin://app/wx9f58f3e0c08f1f2a/"]]) {
-        [UMSocialSnsService presentSnsIconSheetView:self
-                                             appKey:nil
-                                          shareText:@"测试"
-                                         shareImage:nil
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,nil]
-                                           delegate:nil];
-    }else {
-        [UMSocialSnsService presentSnsIconSheetView:self
-                                             appKey:nil
-                                          shareText:@"测试"
-                                         shareImage:nil
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,nil]
-                                           delegate:nil];
+    UserStatusManager *manager = [UserStatusManager shareManager];
+    if (manager.isLogin.boolValue) {
+        [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeImage;
         
+        
+        if (![[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"weixin://app/wx9f58f3e0c08f1f2a/"]]) {
+            [UMSocialSnsService presentSnsIconSheetView:self
+                                                 appKey:nil
+                                              shareText:@""
+                                             shareImage:_shareImage
+                                        shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,nil]
+                                               delegate:nil];
+        }else {
+            [UMSocialSnsService presentSnsIconSheetView:self
+                                                 appKey:nil
+                                              shareText:@""
+                                             shareImage:_shareImage
+                                        shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,nil]
+                                               delegate:nil];
+            
+        }
+    } else {
+        UIViewController* loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        
+        [self presentViewController:loginVC animated:YES completion:nil];
     }
 }
 

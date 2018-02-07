@@ -13,6 +13,16 @@
 #import "LocationDataManager.h"
 #import "RunningMapViewModel.h"
 
+#ifdef DEBUG
+
+#define NNSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
+#else
+
+#define NNSLog(...)
+
+#endif
+
 @interface NewRunViewModel()<AMapLocationManagerDelegate>{
     /**
      *  运动距离
@@ -51,6 +61,8 @@
  */
 @property(nonatomic,strong)CMMotionManager* motionManger;
 
+@property(nonatomic, strong)CMMotionActivityManager *motionActivityManager;
+
 @end
 
 @implementation NewRunViewModel
@@ -71,13 +83,18 @@
 - (void)beginRunning {
     NSOperationQueue* queue = [[NSOperationQueue alloc]init];
     
-    
     if (self.motionManger.accelerometerAvailable) {
        [self.motionManger startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
-           CGFloat y = accelerometerData.acceleration.y;
-           CGFloat z = accelerometerData.acceleration.z;
-           CGFloat x = accelerometerData.acceleration.x;
-           if (fabs(x)>2 || fabs(y)>2 || fabs(z)>2) {
+         
+           double y = accelerometerData.acceleration.y;
+           double z = accelerometerData.acceleration.z;
+           double x = accelerometerData.acceleration.x;
+           
+           
+           double value = sqrt(pow(x, 2)+pow(y, 2)+pow(z, 2));
+           
+           
+           if (value > 1.2f) {
                _stopCount = 0;
                
                if(![self.isRunning boolValue]) self.isRunning = @YES;
@@ -114,6 +131,10 @@
     [self.locationManager stopUpdatingLocation];
     
     self.locationManager = nil;
+    
+    [self.motionManger stopAccelerometerUpdates];
+    
+    self.motionManger   = nil;
     
     if (_distance/1000>0.01) {
         [self saveRun];
@@ -156,12 +177,13 @@
 }
 
 - (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location {
-    if (location.horizontalAccuracy < 30) {
+    
+    if (location.horizontalAccuracy > 0) {
         NSDate *eventDate = location.timestamp;
         
         NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
         
-        if (fabs(howRecent) < 2.0 ) {
+        if (fabs(howRecent) < 1.0 ) {
             if (self.locations.count > 0) {
                 _distance += [location distanceFromLocation:self.locations.lastObject];
                 CLLocationCoordinate2D coords[2];
@@ -219,6 +241,13 @@
         _motionManger.accelerometerUpdateInterval = 1.0;
     }
     return _motionManger;
+}
+
+- (CMMotionActivityManager *)motionActivityManager {
+    if (!_motionActivityManager) {
+        _motionActivityManager = [[CMMotionActivityManager alloc] init];
+    }
+    return _motionActivityManager;
 }
 
 - (void)setDuration:(int)duration {

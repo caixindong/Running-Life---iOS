@@ -29,6 +29,8 @@
 #define ISLOGIN @"ISLOGIN"
 //key 用户
 #define USER @"USER"
+//key 是否第一次启动
+#define ISFIRSTLAUNCH @"ISFIRSTLAUNCH"
 
 #define UmengAppkey @"5740280ee0f55a5edc002836"
 #define WEIXINAppID @"wxef505bdf677830a9"

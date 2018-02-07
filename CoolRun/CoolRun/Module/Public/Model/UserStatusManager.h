@@ -38,6 +38,11 @@
 @property(nonatomic, strong, readwrite)UserModel* userModel;
 
 /**
+ * 是否是第一次登陆
+ **/
+@property(nonatomic, strong, readwrite)NSNumber *isFirstLaunch;
+
+/**
  *  用户状态全局管理器
  *
  *  @return 

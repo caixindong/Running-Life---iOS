@@ -70,6 +70,7 @@
         [_mapView setRegion:viewModel.region];
         [_mapView addOverlay:viewModel.polyline];
     }
+
 }
 
 @end

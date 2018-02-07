@@ -56,6 +56,7 @@
             [_locationManager requestAlwaysAuthorization];
         }
     }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -70,6 +71,18 @@
     _rankTimeLabel.text = self.viewModel.rankTimeLabelText;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if ([[UserStatusManager shareManager].isFirstLaunch boolValue]) {
+        UIViewController* loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        
+        [self presentViewController:loginVC animated:NO completion:nil];
+        
+        [UserStatusManager shareManager].isFirstLaunch = @NO;
+        
+    }
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
@@ -80,17 +93,19 @@
     self.rewardBgView.layer.borderWidth = 1;
 }
 
-- (void)KVOhandler {
+- (void)KVOHandler {
     UserStatusManager *manager = [UserStatusManager shareManager];
     [self.KVOController observe:manager keyPath:@"isLogin" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         if ([manager.isLogin boolValue]) {
             [self.viewModel merge];
         }
     }];
+
     
     NSNumber *isLogin = manager.isLogin;
     
     manager.isLogin = isLogin;
+    
 }
 
 #pragma mark - event reponse
@@ -161,3 +176,5 @@
 
 
 @end
+
+

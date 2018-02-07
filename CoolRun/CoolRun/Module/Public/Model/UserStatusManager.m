@@ -12,6 +12,7 @@
 @interface UserStatusManager(){
     NSNumber *_isLogin;
     UserModel* _user;
+    NSNumber *_isFirstLaunch;
 }
 @end
 
@@ -57,6 +58,19 @@
 - (void)setIsLogin:(NSNumber *)isLogin {
     _isLogin = isLogin;
     [[NSUserDefaults standardUserDefaults] setObject:isLogin forKey:ISLOGIN];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSNumber *)isFirstLaunch {
+    if (!_isFirstLaunch) {
+        _isFirstLaunch = [[NSUserDefaults standardUserDefaults] valueForKey:ISFIRSTLAUNCH]?[[NSUserDefaults standardUserDefaults] valueForKey:ISFIRSTLAUNCH]:@YES;
+    }
+    return _isFirstLaunch;
+}
+
+- (void)setIsFirstLaunch:(NSNumber *)isFirstLaunch {
+    _isFirstLaunch = isFirstLaunch;
+    [[NSUserDefaults standardUserDefaults] setObject:isFirstLaunch forKey:ISFIRSTLAUNCH];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
